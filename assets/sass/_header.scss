@@ -1,0 +1,102 @@
+.header {
+    background-color: $color4;
+
+    @media screen and (min-width: 1200px) {
+        background-image: linear-gradient(to right, $color4 0%, $color4 60%, $color2 60%, $color2 100%);
+    }
+}
+
+.header-item {
+    display: flex;
+    align-items: center;
+    padding: 15px !important;
+}
+
+.header-logo-cont,
+.header-contacts-cont {
+    background-color: $color4;
+    position: relative;
+}
+
+.header-logo-cont {
+    position: relative;
+
+    .header-logo-item {
+        width: 50%;
+
+        @media screen and (min-width: 768px) {
+            width: 70%;
+        }
+
+        @media screen and (min-width: 1200px) {
+            position: absolute;
+            left: 0;
+            top: 10px;
+        }
+
+        svg {
+            width: 100%;
+        }
+    }
+
+}
+
+.header-phone {
+    color: $color2;
+    font-size: 1.3rem;
+
+    &:hover {
+        text-decoration: none;
+        color: $color2;
+        opacity: .7;
+    }
+}
+
+.header-license-cont {
+    background-color: $color2; // изменить!!!!!!
+}
+
+.header-license-cont {
+    padding: 0 10px;
+
+    .header-license-item {
+
+        svg {
+            width: 100%;
+            max-height: 90px;
+
+            @media screen and (min-width: 576px) {
+                transform: scale(.8);
+            }
+
+        }
+    }
+}
+
+.header-img-container {
+    min-height: 150px;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @media screen and (min-width: 992px) {
+        min-height: 200px;
+        background-position: center 0;
+    }
+}
+
+/* banners */
+
+.img-index-banners-cont {
+
+    &:hover {
+        box-shadow: 0 0 6px rgba($color: $color1, $alpha: .4);
+        transition: .3s linear;
+        cursor: pointer;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}

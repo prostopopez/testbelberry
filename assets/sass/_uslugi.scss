@@ -1,0 +1,26 @@
+.uslugi-main-cont {
+    .uslugi-main-item {
+        .uslugi-main-img-container {
+            width: 100%;
+            height: 300px;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: top;
+            }
+        }
+
+        .uslugi-main-line-container {
+            width: 100%;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid $color4;
+            border-radius: 15px;
+        }
+    }
+}

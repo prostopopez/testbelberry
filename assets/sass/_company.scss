@@ -1,0 +1,46 @@
+.main-contacts-cont {
+    font-family: $Roboto-regular;
+    font-size: 1.1rem;
+    font-weight: 500;
+
+    a {
+        text-decoration: none;
+        color: $color1;
+
+        &:hover {
+            color: $color4;
+        }
+    }
+
+    svg {
+        width: 20px;
+        height: 20px;
+
+        path {
+            fill: $color4;
+        }
+    }
+
+    .pdf-ico {
+        width: 40px;
+        height: 40px;
+        background-image: url("../img/pdf-ico.png");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+    }
+
+    .pdf-link {
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.iframe-cont {
+    iframe {
+        width: 100%;
+        border: 0 !important;
+        outline: 0 !important;
+    }
+}

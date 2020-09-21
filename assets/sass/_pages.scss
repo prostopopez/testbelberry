@@ -1,0 +1,311 @@
+/* search */
+
+.simplesearch-result {
+    a {
+        color: $color4;
+    }
+}
+
+/* articles */
+
+.article-page-cont {
+
+    .article-page-caption {
+        color: $color4;
+    }
+
+    .article-img-cont {
+        max-height: 300px;
+    }
+}
+
+/* pagination */
+.pagination-cont {
+    background-color: $color7;
+}
+
+nav[aria-label="pagination"] {
+    border: 0 !important;
+
+    #pagination {
+        border: 0 !important;
+        margin-bottom: 0 !important;
+
+        li {
+            border: 0 !important;
+
+            a {
+                font-family: $Roboto-regular;
+                background-color: transparent;
+                color: $color1;
+                border: 0 !important;
+
+                .previous,
+                .next {
+
+                    svg {
+                        width: 20px;
+                        height: 20px;
+                        fill: rgba($color4, .6);
+                        transform: rotate(90deg);
+                        transition: .5s linear;
+
+                        &:hover {
+                            fill: rgba($color4, 1);
+                        }
+
+                    }
+
+                }
+
+                .next {
+                    svg {
+                        transform: rotate(-90deg);
+                    }
+                }
+            }
+
+        }
+
+        &:first-child,
+        &:last-child {
+            a {
+                color: $color4;
+            }
+        }
+
+        .active {
+            a {
+                background-color: transparent !important;
+                color: $color4;
+                text-decoration: underline;
+            }
+        }
+    }
+
+}
+
+/* catalog */
+
+.main-catalog-wrapper {
+
+    .pagination {
+        display: none;
+    }
+
+}
+
+.main-catalog-cont {
+    transition: .3s linear;
+
+
+    &:hover {
+        background-color: rgba($color: $color7, $alpha: .5);
+    }
+
+}
+
+.main-content-cont {
+    font-size: 1.2rem;
+
+    p {
+        margin-bottom: 0;
+    }
+
+}
+
+.catalog-banners-cont {
+    height: 300px;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+/* .catalog-banners-link {
+    width: 100%;
+    height: 100%;
+   background-image: url('../img/ISMA_500.png');
+   background-size: cover;
+} */
+
+.catalog-phone-cont {
+    svg {
+        width: 20px;
+        height: 20px;
+        margin-right: 20px;
+    }
+
+    a {
+        text-decoration: none;
+        color: $color1;
+
+        &:hover {
+            text-decoration: none;
+            color: $color4;
+        }
+    }
+}
+
+.catalog-slider-docs {
+    height: 200px;
+
+    .slick-slider,
+    .slick-list,
+    .slick-track {
+        height: 100%;
+    }
+
+    /* img {
+        height: 100% !important;
+        width: auto;
+    } */
+}
+
+.exclusive-cont {
+    outline: 2px solid $color5;
+    outline-offset: -5px;
+
+    @media screen and (min-width: 768px) {
+        outline: 0;
+        border: 2px solid $color5;
+    }
+}
+
+/* video */
+
+.object-video-cont {
+    a {
+        color: $color4;
+    }
+
+    svg {
+        width: 40px;
+        height: 40px;
+
+        path {
+            fill: $color4;
+        }
+    }
+}
+
+/* lot */
+
+.bread-crumbs-cont {
+    a {
+        text-decoration: none;
+        color: $color1;
+        font-size: .9rem;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.eye-cont {
+    .eye-ico {
+        width: 40px;
+        height: 40px;
+        background-image: url("../img/eye.png");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+    }
+
+    .eye-count {
+        font-weight: 600;
+    }
+}
+
+.object-action-cont {
+    .catalog-price {
+        color: $color4;
+    }
+
+    .catalog-phone-cont {
+        a {
+            color: $color5;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.head-param-cont {
+    .caption {
+        padding: 0 0 15px 0;
+    }
+}
+
+
+.params-caption {
+    color: $color4;
+}
+
+.param-value,
+.params-text {
+    font-weight: 500;
+}
+
+.rieltor-info-main-cont {
+    .rieltor-img-cont {
+        width: 250px;
+        height: 300px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+.catalog-phone-cont {
+    a {
+        color: $color5;
+        font-size: 1.2rem;
+
+        @media screen and (min-width: 768px) {
+            font-size: 1.7rem;
+        }
+
+        svg {
+            path {
+                fill: $color5;
+            }
+        }
+    }
+
+}
+
+
+
+/* about kompany */
+
+.rieltorLicenseSlider {
+
+    @media screen and (min-width: 1200px) {
+        width: 100%;
+        max-height: 500px;
+        overflow-y: hidden;
+
+        .catalog-banners-cont {
+            width: 100%;
+            height: 250px;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+
+    }
+
+
+}

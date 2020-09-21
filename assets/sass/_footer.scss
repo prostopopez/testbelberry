@@ -1,0 +1,103 @@
+.footer {
+    background-color: rgba(0, 0, 0, 0.4);
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-blend-mode: color;
+    transition: .3s linear;
+
+    @media screen and (min-width: 992px) {
+        background-size: cover;
+        background-attachment: fixed;
+    }
+
+    ul {
+        li {
+            a {
+                &:hover {
+                    text-decoration: none;
+                    opacity: .7;
+                }
+            }
+        }
+    }
+
+}
+
+.footer-contacts-cont {
+    a {
+        position: relative;
+        color: $color2;
+
+        &:hover {
+            color: $color4;
+            opacity: .8;
+
+            svg {
+                transition: .3s linear;
+
+                path {
+                    transition: .3s linear;
+                    fill: $color4;
+                }
+            }
+        }
+
+        svg {
+            width: 15px;
+            height: 15px;
+
+            path {
+                transition: .3s linear;
+                fill: $color2;
+            }
+
+        }
+    }
+}
+
+.social-cont {
+
+    &:hover {
+        #vk {
+            transition: .3s linear;
+            fill: #008fe2;
+        }
+
+        #insta {
+            path {
+                transition: .3s linear;
+                fill: url(#Instagram_2_);
+            }
+
+        }
+
+        #ok {
+            transition: .3s linear;
+            fill: #f58d3a;
+        }
+
+        #facebook {
+            transition: .3s linear;
+            fill: #4267B2;
+        }
+
+        #youtube {
+            transition: .3s linear;
+            fill: #ff3300;
+        }
+
+        #twitter {
+            transition: .3s linear;
+            fill: #00d8ff;
+        }
+
+    }
+
+    svg {
+        width: 30px;
+        height: 30px;
+        fill: $color2;
+        transition: .3s linear;
+    }
+
+}
