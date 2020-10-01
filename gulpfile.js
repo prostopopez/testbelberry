@@ -40,7 +40,7 @@ gulp.task(`html`, gulp.series(function () {
 
 gulp.task(`img`, gulp.series(function () {
     return gulp
-        .src(`./img/**/*`, { base: `.` })
+        .src(`./img/[^(svg)]**/*`, { base: `.` })
         .pipe(getPublicFolderPath());
 }));
 
@@ -85,16 +85,17 @@ gulp.task(`styles`, gulp.series(function () {
         .pipe(browserSync.stream());
 }));
 
-gulp.task(`default`, gulp.parallel(`styles`, `html`, `img`, `js`, `jsForPage`, function () {
+gulp.task(`default`, gulp.parallel(`styles`, `html`, `img`, `js`, `jsForPage`, `svgSprite`, function () {
     gulp.watch(`sass/**/*.scss`, gulp.parallel(`styles`));
     gulp.watch(`html/**/*`).on('change', gulp.parallel(`html`));
     gulp.watch(`img/*`).on('change', gulp.parallel(`img`));
     gulp.watch(`js/*`).on('change', gulp.parallel(`js`));
     gulp.watch(`js/*`).on('change', gulp.parallel(`jsForPage`));
+    gulp.watch(`img/svg/*`).on('change', gulp.parallel(`svgSprite`));
     gulp.watch(`public/*`).on('change', browserSync.reload);
 }));
 
-gulp.task(`build`, gulp.parallel(`styles`, `html`, `img`, `js`, `jsForPage`));
+gulp.task(`build`, gulp.parallel(`styles`, `html`, `img`, `js`, `jsForPage`, `svgSprite`));
 
 gulp.task(`sync`, gulp.parallel(`default`, function () {
     browserSync.init({
