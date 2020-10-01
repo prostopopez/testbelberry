@@ -20,7 +20,7 @@ gulp.task('svgSprite', function () {
         .pipe(svgSprite({
                 mode: {
                     stack: {
-                        sprite: '../sprite.svg'
+                        sprite: '../../public/img/sprite.svg'
                     }
                 },
             }

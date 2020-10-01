@@ -1,0 +1,55 @@
+.breadcrumb {
+    .cont {
+        padding-bottom: 10px;
+        display: flex;
+        align-items: flex-end;
+        border-bottom: 2px solid $lightGrayColor;
+    }
+
+    h2 {
+        color: $mainColor;
+        font-size: getFontSize(26, 32);
+        text-transform: uppercase;
+    }
+
+    ul {
+        padding: 6px 46px;
+        list-style: none;
+
+        li {
+            display: inline;
+        }
+
+        li + li:before {
+            color: black;
+            content: "/\00a0";
+        }
+
+        li a {
+            color: black;
+            font-size: 17px;
+            font-weight: 300;
+            text-decoration: none;
+        }
+    }
+
+    @include mediaQuery(mobile) {
+        padding-bottom: 0;
+
+        .cont {
+            padding: 22px 0;
+            border: none;
+            justify-content: center;
+        }
+
+        h2 {
+            font-size: 25px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        ul {
+            display: none;
+        }
+    }
+}

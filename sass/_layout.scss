@@ -1,0 +1,193 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Proba Pro', sans-serif;
+    font-weight: normal;
+}
+
+a.active.focus,
+a.active:focus,
+a.focus,
+a:active.focus,
+a:active:focus,
+a:focus,
+button.active.focus,
+button.active:focus,
+button:active,
+button.focus,
+button:active.focus,
+button:active:focus,
+button:focus,
+.btn.active.focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn:active:focus,
+.btn:focus,
+input:focus,
+textarea:focus {
+    outline: 0 !important;
+}
+
+button {
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background: none;
+}
+
+button::-moz-focus-inner {
+    border: 0;
+}
+
+a,
+button,
+input,
+textarea {
+    transition: all .3s linear;
+    outline: none;
+}
+
+input, textarea {
+    &:focus {
+        border-color: $mainColor !important;
+    }
+}
+
+ul,
+ol {
+    list-style-position: inside;
+}
+
+.cont {
+    margin: 0 auto;
+    width: 98%;
+    max-width: 1500px;
+
+    @media only screen and (min-width: 2500px) {
+        width: 100%;
+        max-width: 2000px;
+    }
+
+    @include mediaQuery(tablet) {
+        max-width: 720px;
+    }
+
+    @include mediaQuery(mobile) {
+        width: 97%;
+        max-width: 414px;
+    }
+}
+
+body.noScroll {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    overflow-y: scroll;
+}
+
+a[href^="tel:"], a[href^="mailto:"] {
+    color: #000;
+
+    &:hover {
+        color: $mainColor;
+    }
+}
+
+input, textarea, .input {
+    background: none;
+    display: block;
+    border: 1px solid $grayColor;
+    height: 60px;
+    padding: 0 20px;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 28px;
+    font-weight: 300;
+    transition: all 0.3s linear;
+
+    &:focus {
+        border-color: $mainColor !important;
+        box-shadow: 1px 1px $mainColor,
+        -1px 1px $mainColor,
+        1px -1px $mainColor,
+        -1px -1px $mainColor;
+    }
+
+    @include mediaQuery(mobile) {
+        font-size: 14px;
+        height: 34px;
+    }
+}
+
+a {
+    color: $mainColor;
+    font-weight: 300;
+    font-size: 25px;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all .3s linear;
+
+    &:not(.icon):hover {
+        border-bottom: 1px solid $mainColor;
+    }
+
+    &.icon:hover {
+        svg {
+            transition: all .3s linear;
+
+            fill: $lightGrayColor;
+        }
+    }
+
+    @include mediaQuery(mobile) {
+        font-size: 13px;
+    }
+}
+
+svg {
+    fill: transparent;
+    transition: all .3s linear;
+
+    &:hover {
+        fill: $mainColor;
+    }
+}
+
+.icon {
+    svg {
+        fill: $mainColor;
+        width: $iconSize;
+        height: $iconSize;
+
+        @include mediaQuery(mobile) {
+            width: 26px;
+            height: 26px;
+        }
+    }
+}
+
+.pageStyle {
+    margin-top: 60px;
+    margin-bottom: 60px;
+
+    @include mediaQuery(mobile) {
+        margin-top: 0;
+        margin-bottom: 35px;
+    }
+}
+
+.doNotUseMobile {
+    @include mediaQuery(mobile) {
+        display: none !important;
+    }
+}
+
+.useOnlyMobile {
+    display: none;
+
+    @include mediaQuery(mobile) {
+        display: block !important;
+    }
+}

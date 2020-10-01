@@ -1,0 +1,14 @@
+footer {
+    background-color: #222;
+
+    .footerCopyright {
+        padding: 6px 0;
+        font-weight: 300;
+        color: white;
+        font-size: 19px;
+
+        @include mediaQuery(mobile) {
+            font-size: 9px;
+        }
+    }
+}
