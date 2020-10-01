@@ -24,7 +24,7 @@ h2,
     }
 }
 
-.f4 {
+.f3 {
     font-size: 30px;
 
     @include mediaQuery(tablet) {
@@ -32,7 +32,7 @@ h2,
     }
 }
 
-.f5 {
+.f4 {
     font-weight: bold;
     font-size: 24px;
     color: $mainColor;
@@ -42,7 +42,7 @@ h2,
     }
 }
 
-.f6 {
+.f5 {
     font-size: 18px;
 
     @include mediaQuery(tablet) {
@@ -50,7 +50,7 @@ h2,
     }
 }
 
-.f7 {
+.f6 {
     font-size: 16px;
 
     @include mediaQuery(tablet) {
@@ -232,8 +232,4 @@ a {
     @include mediaQuery(mobile) {
         display: block !important;
     }
-}
-
-.kak {
-    background-color: black;
 }
