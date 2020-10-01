@@ -6,6 +6,59 @@
     font-weight: normal;
 }
 
+h1,
+.f1 {
+    font-size: 90px;
+
+    @include mediaQuery(tablet) {
+        font-size: 60px;
+    }
+}
+
+h2,
+.f2 {
+    font-size: 50px;
+
+    @include mediaQuery(tablet) {
+        font-size: 36px;
+    }
+}
+
+.f3 {
+    font-size: 30px;
+
+    @include mediaQuery(tablet) {
+        font-size: 24px;
+    }
+}
+
+.f4 {
+    font-weight: bold;
+    font-size: 24px;
+    color: $mainColor;
+
+    @include mediaQuery(tablet) {
+        font-size: 24px;
+    }
+}
+
+.f5 {
+    font-size: 18px;
+
+    @include mediaQuery(tablet) {
+        font-size: 18px;
+    }
+}
+
+.f6 {
+    font-size: 16px;
+
+    @include mediaQuery(tablet) {
+        font-size: 16px;
+    }
+}
+
+
 a.active.focus,
 a.active:focus,
 a.focus,
