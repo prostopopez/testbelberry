@@ -241,14 +241,18 @@ svg {
     }
 }
 
-/* test */
 .button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 192px;
     height: 48px;
+    padding: 5px;
     border-radius: 4px;
+    font-size: 18px;
     background-color: $mainColor;
     color: #ffffff;
-    font-size: 18px;
 
     &:hover {
         background-color: $lightColor;
@@ -259,30 +263,38 @@ svg {
     }
 
     &.withSvg {
-        text-align: left;
-
         .iconBlock {
+            display: flex;
+            align-items: center;
+            justify-content: center;
             content: '';
-            display: inline-block;
-            background-size: cover;
+            position: absolute;
+            left: 5px;
             width: 38px;
             height: 38px;
-            line-height: 38px;
+            background: rgba(255, 255, 255, 0.12);
+            background-size: cover;
             border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 2px;
-            background: rgba(255, 255, 255, 0.12);
-            text-align: center;
-            margin: 5px 44px 5px 5px;
 
             svg {
-                fill: #fff;
+                fill: white;
                 width: 20px;
                 height: 17px;
             }
+        }
+
+        .textBlock {
+            justify-self: center;
         }
     }
 
     @include mediaQuery(mobile) {
         width: 100%;
     }
+}
+
+/* test */
+.button {
+    margin: 10px 0;
 }
