@@ -24,7 +24,7 @@ h2,
     }
 }
 
-.f3 {
+.f4 {
     font-size: 30px;
 
     @include mediaQuery(tablet) {
@@ -32,7 +32,7 @@ h2,
     }
 }
 
-.f4 {
+.f5 {
     font-weight: bold;
     font-size: 24px;
     color: $mainColor;
@@ -42,7 +42,7 @@ h2,
     }
 }
 
-.f5 {
+.f6 {
     font-size: 18px;
 
     @include mediaQuery(tablet) {
@@ -50,7 +50,7 @@ h2,
     }
 }
 
-.f6 {
+.f7 {
     font-size: 16px;
 
     @include mediaQuery(tablet) {
@@ -140,18 +140,9 @@ body.noScroll {
     overflow-y: scroll;
 }
 
-a[href^="tel:"], a[href^="mailto:"] {
-    color: #000;
-
-    &:hover {
-        color: $mainColor;
-    }
-}
-
 input, textarea, .input {
     background: none;
     display: block;
-    border: 1px solid $grayColor;
     height: 60px;
     padding: 0 20px;
     width: 100%;
@@ -175,7 +166,7 @@ input, textarea, .input {
 }
 
 a {
-    color: $mainColor;
+    color: white;
     font-weight: 300;
     font-size: 25px;
     text-decoration: none;
@@ -189,8 +180,6 @@ a {
     &.icon:hover {
         svg {
             transition: all .3s linear;
-
-            fill: $lightGrayColor;
         }
     }
 
@@ -199,14 +188,14 @@ a {
     }
 }
 
-svg {
-    fill: transparent;
-    transition: all .3s linear;
-
-    &:hover {
-        fill: $mainColor;
-    }
-}
+//svg {
+//    fill: transparent;
+//    transition: all .3s linear;
+//
+//    &:hover {
+//        fill: $mainColor;
+//    }
+//}
 
 .icon {
     svg {
@@ -243,4 +232,8 @@ svg {
     @include mediaQuery(mobile) {
         display: block !important;
     }
+}
+
+.kak {
+    background-color: black;
 }
