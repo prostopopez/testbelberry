@@ -13,29 +13,32 @@
                 </button>
             </section>
             <section>
-                <div class="inputBlock">
-                    <div class="authInputName">
+                <div>
+                    <div class="inputBlock">
                         <label for="authInputName">Имя</label>
-                        <input type="text" id="authInputName" placeholder="Введите ваше имя" class="input">
+                        <input class="input" type="text" id="authInputName" placeholder="Введите ваше имя">
                     </div>
-                    <div>
+                    <div class="inputBlock">
                         <label for="authInputEmail">Email</label>
-                        <input type="text" id="authInputEmail" placeholder="Введите ваш Email" class="input">
+                        <input class="input" type="email" id="authInputEmail" placeholder="Введите ваш Email">
                     </div>
                 </div>
             </section>
             <section>
                 <div class="textareaBlock">
-                    <label class="commentLabel">Комментарий</label>
-                    <textarea name="text" placeholder="Введите ваш комментарий"></textarea>
+                    <label for="commentHere">Комментарий</label>
+                    <textarea rows="1" name="text" ID="commentHere" placeholder="Введите ваш комментарий" oninput='this.style.height = "auto"; this.style.height = this.scrollHeight + "px"'></textarea>
                 </div>
             </section>
             <section>
                 <div class="searchBlock">
-                    <label for="searchInput"><svg><use xlink:href="src/img/svg/search.svg"></use></svg>ffff</label>
+                    <label for="searchInput">
+                        <svg>
+                            <use xlink:href="src/img/svg/search.svg"></use>
+                        </svg>
+                        ffff</label>
                     <input type="text" placeholder="Поиск" id="searchInput" class="search">
                 </div>
-
             </section>
         </div>
     </div>
