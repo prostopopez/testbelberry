@@ -27,18 +27,23 @@
             <section>
                 <div class="textareaBlock">
                     <label for="commentHere">Комментарий</label>
-                    <textarea rows="1" name="text" ID="commentHere" placeholder="Введите ваш комментарий" oninput='this.style.height = "auto"; this.style.height = this.scrollHeight + "px"'></textarea>
+                    <textarea rows="1" name="text" ID="commentHere" placeholder="Введите ваш комментарий"
+                              oninput='this.style.height = "auto"; this.style.height = this.scrollHeight + "px"'></textarea>
                 </div>
             </section>
             <section>
-                <div class="searchBlock">
-                    <label for="searchInput">
-                        <svg>
-                            <use xlink:href="src/img/svg/search.svg"></use>
-                        </svg>
-                        ffff</label>
-                    <input type="text" placeholder="Поиск" id="searchInput" class="search">
-                </div>
+                <label class="searchBlock gray" for="searchInput1">
+                    <input type="text" placeholder="Поиск" id="searchInput1" class="search">
+                    <svg>
+                        <use xlink:href="/img/sprite.svg#search"></use>
+                    </svg>
+                </label>
+                <label class="searchBlock purple" for="searchInput2">
+                    <input type="text" placeholder="Поиск" id="searchInput2" class="search">
+                    <svg>
+                        <use xlink:href="/img/sprite.svg#search"></use>
+                    </svg>
+                </label>
             </section>
         </div>
     </div>

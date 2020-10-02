@@ -339,28 +339,41 @@ textarea,
 }
 
 .searchBlock {
-    label {
-        svg {
-            fill: #fff;
-            width: 20px;
-            height: 20px;
+    padding: 12px 20px;
+    border-radius: 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    color: white;
+
+    &.gray {
+        max-width: 292px;
+        background-color: darken($mainGrayColor, 10%);
+    }
+
+    &.purple {
+        max-width: 235px;
+        background-color: $lightColor;
+    }
+
+    .search {
+        font-size: 16px;
+        border: none;
+        background: none;
+        color: white;
+
+        &::placeholder {
+            color: white;
         }
     }
-}
 
-.search {
-    max-width: 292px;
-    height: 42px;
-    border-radius: 2px;
-    font-size: 16px;
-    color: #ffffff;
-    border: none;
-    background-color: #ffffff;
-    opacity: .3;
-}
+    svg {
+        width: 18px;
+        height: 18px;
 
-/* test */
-.button,
-section {
-    margin: 20px 0;
+        &:hover {
+            fill: none;
+        }
+    }
 }
