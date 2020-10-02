@@ -378,7 +378,6 @@ textarea,
 }
 
 .editInputBlock {
-    width: initial;
     display: flex;
 
     .input {
@@ -416,6 +415,14 @@ textarea,
             svg {
                 fill: $mainColor;
             }
+        }
+    }
+
+    @include mediaQuery(mobile) {
+        .input {
+            padding: 3px 0;
+            width: 100%;
+            font-size: 18px;
         }
     }
 }
