@@ -1,0 +1,15 @@
+.inputBlock {
+    label {
+        font-size: 14px;
+        color: $lightGrayColor;
+    }
+
+    .input {
+        margin: 0;
+        padding: 14px 0;
+        max-width: 500px;
+        height: 47px;
+        font-size: 20px;
+        color: $mainBlue;
+    }
+}

@@ -1,0 +1,55 @@
+.reviewsItem {
+  max-width: 353px;
+  min-width: 280px;
+  width: 100%;
+  background: #FFFFFF;
+  box-shadow: 0 4px 10px rgba(95, 91, 97, 0.1);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 33px;
+  box-sizing: border-box;
+
+  &:not(:last-child) {
+    margin-right: 50px;
+  }
+
+  .reviewsAvatar {
+    width: 60px;
+    height: 60px;
+  }
+
+  .reviewsStars {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+
+    svg {
+      width: 18px;
+      height: 18px;
+      fill: $mainColor;
+    }
+  }
+
+  h4 {
+    font-size: 20px;
+    color: $lightGrayColor;
+    font-style: normal;
+    font-weight: normal;
+    margin-bottom: 12px;
+  }
+
+  p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    text-align: center;
+    color: $darkGrayColor;
+
+    a {
+      font-size: 16px;
+    }
+  }
+}

@@ -1,0 +1,40 @@
+.searchBlock {
+    padding: 12px 20px;
+    border-radius: 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    color: white;
+
+    &.gray {
+        max-width: 292px;
+        background-color: darken($mainGrayColor, 10%);
+    }
+
+    &.purple {
+        max-width: 235px;
+        background-color: $lightColor;
+    }
+
+    .search {
+        padding-right: 5px;
+        font-size: 16px;
+        border: none;
+        background: none;
+        color: white;
+
+        &::placeholder {
+            color: white;
+        }
+    }
+
+    svg {
+        width: 18px;
+        height: 18px;
+
+        &:hover {
+            fill: none;
+        }
+    }
+}

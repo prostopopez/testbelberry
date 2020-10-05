@@ -102,12 +102,6 @@ textarea {
     outline: none;
 }
 
-input, textarea {
-    &:focus {
-        border-color: $mainColor !important;
-    }
-}
-
 ul,
 ol {
     list-style-position: inside;
@@ -140,33 +134,16 @@ body.noScroll {
     overflow-y: scroll;
 }
 
-input, textarea, .input {
-    background: none;
-    display: block;
-    height: 60px;
-    padding: 0 20px;
-    width: 100%;
-    border-radius: 5px;
-    font-size: 28px;
-    font-weight: 300;
-    transition: all 0.3s linear;
+a[href^="tel:"], a[href^="mailto:"] {
+    color: #000;
 
-    &:focus {
-        border-color: $mainColor !important;
-        box-shadow: 1px 1px $mainColor,
-        -1px 1px $mainColor,
-        1px -1px $mainColor,
-        -1px -1px $mainColor;
-    }
-
-    @include mediaQuery(mobile) {
-        font-size: 14px;
-        height: 34px;
+    &:hover {
+        color: $mainColor;
     }
 }
 
 a {
-    color: white;
+    color: $mainColor;
     font-weight: 300;
     font-size: 25px;
     text-decoration: none;
@@ -188,14 +165,14 @@ a {
     }
 }
 
-//svg {
-//    fill: transparent;
-//    transition: all .3s linear;
-//
-//    &:hover {
-//        fill: $mainColor;
-//    }
-//}
+svg {
+    fill: transparent;
+    transition: all .3s linear;
+
+    &:hover {
+        fill: $mainColor;
+    }
+}
 
 .icon {
     svg {
@@ -231,5 +208,22 @@ a {
 
     @include mediaQuery(mobile) {
         display: block !important;
+    }
+}
+
+.input,
+.textarea {
+    display: flex;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid $lightGrayColor;
+    transition: all 0.3s linear;
+
+    &::placeholder {
+        color: $mainGrayColor;
+    }
+
+    &:focus {
+        border-color: $mainColor !important;
     }
 }

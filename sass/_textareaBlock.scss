@@ -1,0 +1,38 @@
+.textareaBlock {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    label {
+        font-size: 40px;
+        line-height: 20px;
+    }
+
+    textarea {
+        margin: 0 0 0 120px;
+        padding: 0 0 14px 0;
+        max-width: 1150px;
+        height: 45px;
+        overflow: hidden;
+        resize: none;
+        line-height: 30px;
+        font-size: 24px;
+        color: $darkGrayColor;
+    }
+
+    @media only screen and (max-width: 1024px) {
+        flex-direction: column;
+
+        label {
+            font-size: 30px;
+            line-height: initial;
+        }
+
+        textarea {
+            margin: 14px 0 0 0;
+            height: 30px;
+            line-height: 20px;
+            font-size: 20px;
+        }
+    }
+}
