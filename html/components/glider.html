@@ -1,0 +1,50 @@
+<div class="gliderContain">
+    <h3 class="gliderTitle">{{ gliderTitle }}</h3>
+    <div class="glider {{elementClassName}}">
+        {{elements}}
+    </div>
+    <div id="dots-{{elementClassName}}" class="glider-dots"></div>
+</div>
+
+<script src="/js/_glider.js"></script>
+<script>
+    window.addEventListener('load',function(){
+        window._ = new Glider(document.querySelector('.fnv-{{elementClassName}}'), {
+            draggable: true,
+            slidesToScroll: 4.5,
+            slidesToShow: 4.5,
+            itemWidth: 380,
+            dots: '#dots-{{elementClassName}}',
+            rewind: true,
+            exactWidth: true,
+            scrollLock: false,
+            responsive: [
+                {
+                    breakpoint: 1500,
+                    settings: {
+                        slidesToScroll: 4.1,
+                        slidesToShow: 4.1,
+                        itemWidth: 353,
+                    }
+                },
+                {
+                    breakpoint: 700,
+                    settings: {
+                        itemWidth: 349,
+                        slidesToScroll: 2,
+                        slidesToShow: 2,
+                    }
+                },
+                {
+                    breakpoint: 320,
+                    settings: {
+                        itemWidth: 280,
+                        slidesToScroll: 1.5,
+                        slidesToShow: 1.5,
+                        scrollLock: false
+                    }
+                }
+            ]
+        });
+    });
+</script>
