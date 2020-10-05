@@ -20,12 +20,16 @@
             </nav>
         </div>
         <div class="headerSearch">
-            <label class="searchBlock purple" for="headerSearch">
+            <label class="searchBlock pink" for="headerSearch">
                 <input class="input search" type="text" placeholder="Поиск" id="headerSearch">
                 <svg>
                     <use xlink:href="/img/sprite.svg#search"></use>
                 </svg>
             </label>
+        </div>
+        <div class="phoneBlock">
+            <p class="phoneNumber">8 (985) 231-03-68</p>
+            <p class="callIsFree">Звонок бесплатный</p>
         </div>
         <button class="button f5 iconEqual">
             <span class="iconBlock">
@@ -35,9 +39,30 @@
             </span>
             <span class="textBlock">2</span>
         </button>
-        <div class="phoneBlock">
-            <p class="phoneNumber">8 (985) 231-03-68</p>
-            <p class="callIsFree">Звонок бесплатный</p>
+
+        <div class="userLog active">
+            <div class="newDrop" onclick={this.changeState(!active)}>
+                <svg class="profile">
+                    <use xlink:href="/img/sprite.svg#profile"></use>
+                </svg>
+                <div class="userInfo">
+                    <span>Иван Иванов</span>
+                </div>
+                <svg class="arrow">
+                    <use xlink:href="/img/sprite.svg#arrowDown"></use>
+                </svg>
+            </div>
+            <div class="dropList">
+                <label>
+                    <a href="profile.html">Мой профиль</a>
+                </label>
+                <label>
+                    <a href="orders.html">Мои заказы</a>
+                </label>
+                <label>
+                    <button>Выход</button>
+                </label>
+            </div>
         </div>
     </div>
 </header>

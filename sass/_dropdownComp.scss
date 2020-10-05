@@ -1,0 +1,132 @@
+.userLog {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: darken($lightColor, 3%);
+    font-size: 14px;
+
+    .newDrop {
+        position: relative;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 0.6vw 1.5vw 0.6vw 1.5vw;
+        border: 1px solid $ultraLightColor;
+
+        .arrow {
+            width: 1vw;
+            height: 1vw;
+            fill: none;
+
+            path {
+                stroke: white;
+            }
+        }
+
+        .profile {
+            margin: 0 1.3vw;
+            width: 2.2vw;
+            height: 2.2vw;
+            fill: white;
+        }
+
+        .userInfo {
+            display: flex;
+            flex-direction: column;
+            white-space: nowrap;
+
+            span:last-child {
+                font-size: 0.6vw;
+            }
+        }
+
+        &:hover {
+            cursor: pointer;
+
+            .arrow {
+                animation: hoverArrow 0.5s linear;
+                transition: all 0.2s ease-in-out;
+            }
+
+            @keyframes hoverArrow {
+                from {
+                    padding-top: 0;
+                }
+                25% {
+                    padding-top: 5px;
+                }
+                50% {
+                    padding-top: 15px;
+                }
+                75% {
+                    padding-top: 5px;
+                }
+                to {
+                    padding-top: 0;
+                }
+            }
+        }
+    }
+
+    .dropList {
+        position: absolute;
+        top: 100%;
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        background-color: darken($lightColor, 3%);
+        z-index: 100;
+
+        label {
+            padding: 25px;
+            border-top: 1px solid $ultraLightColor;
+
+            a {
+                color: black;
+            }
+        }
+
+        label:hover {
+            background-color: $lightColor;
+            cursor: pointer;
+
+            a {
+                color: white;
+            }
+        }
+    }
+
+    &.active {
+        border-bottom: none;
+
+        .newDrop {
+            cursor: pointer;
+
+            .arrow {
+                transform: rotate(180deg);
+            }
+
+            &:hover {
+                background-color: $lightColor;
+                color: white;
+
+                .arrow path {
+                    stroke: white;
+                }
+
+                .profile {
+                    fill: white;
+                }
+            }
+        }
+
+        .dropList {
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: none;
+            display: flex;
+            color: black;
+        }
+    }
+}
