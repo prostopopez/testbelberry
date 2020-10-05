@@ -44,6 +44,12 @@ gulp.task(`img`, gulp.series(function () {
         .pipe(getPublicFolderPath());
 }));
 
+gulp.task(`fonts`, gulp.series(function () {
+    return gulp
+        .src(`./fonts/**`, { base: `.` })
+        .pipe(getPublicFolderPath());
+}));
+
 gulp.task(`js`, gulp.series(function () {
     return gulp.src(`js/[^(_)]*.js`)
         .pipe(sourcemaps.init())
@@ -85,17 +91,18 @@ gulp.task(`styles`, gulp.series(function () {
         .pipe(browserSync.stream());
 }));
 
-gulp.task(`default`, gulp.parallel(`styles`, `html`, `img`, `js`, `jsForPage`, `svgSprite`, function () {
+gulp.task(`default`, gulp.parallel(`styles`, `html`, `img`, `js`, `jsForPage`, `svgSprite`, `fonts`, function () {
     gulp.watch(`sass/**/*.scss`, gulp.parallel(`styles`));
     gulp.watch(`html/**/*`).on('change', gulp.parallel(`html`));
     gulp.watch(`img/*`).on('change', gulp.parallel(`img`));
+    gulp.watch(`fonts/*`).on('change', gulp.parallel(`fonts`));
     gulp.watch(`js/*`).on('change', gulp.parallel(`js`));
     gulp.watch(`js/*`).on('change', gulp.parallel(`jsForPage`));
     gulp.watch(`img/svg/*`).on('change', gulp.parallel(`svgSprite`));
     gulp.watch(`public/*`).on('change', browserSync.reload);
 }));
 
-gulp.task(`build`, gulp.parallel(`styles`, `html`, `img`, `js`, `jsForPage`, `svgSprite`));
+gulp.task(`build`, gulp.parallel(`styles`, `html`, `img`, `js`, `jsForPage`, `svgSprite`, `fonts`));
 
 gulp.task(`sync`, gulp.parallel(`default`, function () {
     browserSync.init({
