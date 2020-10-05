@@ -1,0 +1,52 @@
+.button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    padding: 5px 50px;
+    border-radius: 4px;
+    background-color: $mainColor;
+    color: #ffffff;
+
+    &:hover {
+        background-color: $lightColor;
+    }
+
+    &:active {
+        background-color: $darkColor;
+    }
+
+    &.iconButton {
+        .iconBlock {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            content: '';
+            position: absolute;
+            left: 5px;
+            width: 38px;
+            height: 38px;
+            background: rgba(255, 255, 255, 0.12);
+            background-size: cover;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 2px;
+
+            svg {
+                fill: white;
+                width: 20px;
+                height: 17px;
+            }
+        }
+
+        .textBlock {
+            padding-left: 43px;
+        }
+    }
+
+    @include mediaQuery(mobile) {
+        width: 100%;
+        height: 44px;
+        font-size: 15px;
+    }
+}
