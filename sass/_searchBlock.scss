@@ -1,5 +1,6 @@
 .searchBlock {
-    padding: 12px 20px;
+    max-width: 300px;
+    padding-right: 20px;
     border-radius: 3px;
     display: flex;
     justify-content: space-between;
@@ -8,17 +9,15 @@
     color: white;
 
     &.gray {
-        max-width: 292px;
         background-color: darken($mainGrayColor, 10%);
     }
 
     &.purple {
-        max-width: 235px;
         background-color: $lightColor;
     }
 
     .search {
-        padding-right: 5px;
+        padding: 12px 5px 12px 20px;
         font-size: 16px;
         border: none;
         background: none;
@@ -26,6 +25,10 @@
 
         &::placeholder {
             color: white;
+        }
+
+        &:focus {
+            background-color: $lightColor !important;
         }
     }
 

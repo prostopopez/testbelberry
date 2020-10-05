@@ -134,25 +134,12 @@ body.noScroll {
     overflow-y: scroll;
 }
 
-a[href^="tel:"], a[href^="mailto:"] {
-    color: #000;
-
-    &:hover {
-        color: $mainColor;
-    }
-}
-
 a {
-    color: $mainColor;
     font-weight: 300;
     font-size: 25px;
     text-decoration: none;
     border-bottom: 1px solid transparent;
     transition: all .3s linear;
-
-    &:not(.icon):hover {
-        border-bottom: 1px solid $mainColor;
-    }
 
     &.icon:hover {
         svg {
