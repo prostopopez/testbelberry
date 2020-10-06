@@ -81,7 +81,6 @@
         width: 100%;
         flex-direction: column;
         background-color: darken($lightColor, 3%);
-        border-bottom: none;
         z-index: 100;
 
         label {
@@ -117,6 +116,7 @@
 
         .newDrop {
             cursor: pointer;
+            border-bottom: none;
 
             .arrow {
                 transform: rotate(180deg);
