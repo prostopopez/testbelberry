@@ -43,6 +43,50 @@
                 font-size: 16px;
             }
         }
+
+        .categoryToggle {
+            display: flex;
+            align-items: center;
+
+            span {
+                margin-right: 6px;
+                font-weight: bold;
+            }
+
+            .arrow {
+                width: 12px;
+                height: 12px;
+                fill: none;
+                stroke: white;
+            }
+
+            &:hover {
+                cursor: pointer;
+
+                .arrow {
+                    animation: hoverArrow 1s linear;
+                    transition: all 0.5s ease-in-out;
+                }
+
+                @keyframes hoverArrow {
+                    from {
+                        padding-top: 0;
+                    }
+                    25% {
+                        padding-top: 5px;
+                    }
+                    50% {
+                        padding-top: 0;
+                    }
+                    75% {
+                        padding-top: -5px;
+                    }
+                    to {
+                        padding-top: 0;
+                    }
+                }
+            }
+        }
     }
 
     .phoneBlock {

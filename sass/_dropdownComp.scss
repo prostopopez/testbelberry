@@ -50,8 +50,8 @@
             cursor: pointer;
 
             .arrow {
-                animation: hoverArrow 0.5s linear;
-                transition: all 0.5s ease-in-out;
+                animation: hoverArrow 1s linear;
+                transition: all 0.3s ease-in-out;
             }
 
             @keyframes hoverArrow {
