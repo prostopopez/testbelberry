@@ -118,6 +118,10 @@
             cursor: pointer;
             border-bottom: none;
 
+            .profile {
+                margin-bottom: 1px;
+            }
+
             .arrow {
                 transform: rotate(180deg);
             }
