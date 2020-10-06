@@ -9,11 +9,14 @@
 
     .cont {
         display: flex;
+        justify-content: space-between;
         align-items: center;
         margin: auto;
     }
 
-    .iconBlock {
+    .logoBlock {
+        margin-right: 54px;
+
         .logo svg {
             width: 110px;
             height: 40px;
@@ -30,6 +33,10 @@
             display: flex;
             list-style: none;
             justify-content: space-between;
+
+            li {
+                margin-right: 26px;
+            }
 
             a {
                 color: white;
