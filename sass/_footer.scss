@@ -1,14 +1,168 @@
-footer {
-    background-color: #222;
+.footer {
+    background-color: $mainDarkGrayColor;
 
-    .footerCopyright {
-        padding: 6px 0;
-        font-weight: 300;
-        color: white;
-        font-size: 19px;
+    a {
+        color: #fff;
+        font-style: normal;
+
+        &:hover {
+            border-color: #fff;
+        }
+    }
+
+    .topFooter {
+        border-bottom: 1px solid #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px 0;
+
+        .footerLogo {
+            font-size: 14px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: none !important;
+
+            img {
+                margin-right: 30px;
+            }
+
+            p {
+                margin-right: 30px;
+            }
+
+            @include mediaQuery(tablet) {
+                display: block;
+
+                p {
+                    display: none;
+                }
+
+                img {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+
+        .footerLeft {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            @include mediaQuery(tablet) {
+                margin-right: 10px;
+
+                input {
+                    max-width: 230px;
+                    width: 100%;
+                }
+            }
+
+            @include mediaQuery(mobile) {
+                display: block;
+                width: 100%;
+                margin-bottom: 24px;
+
+                input {
+                    max-width: 100%;
+                }
+            }
+        }
+
+        .phoneNumbers {
+            display: flex;
+            justify-content: space-between;
+            color: #fff;
+            max-width: 270px;
+            width: 100%;
+
+            p {
+                font-weight: bold;
+
+                b {
+                    font-size: 10px;
+                }
+
+                span {
+                    font-size: 13px;
+                    font-weight: normal;
+                }
+            }
+
+            @include mediaQuery(mobile) {
+                display: block;
+
+                p {
+                    margin-bottom: 20px;
+                }
+            }
+        }
 
         @include mediaQuery(mobile) {
-            font-size: 9px;
+            display: block;
+            border: none;
+            padding-bottom: 0;
+        }
+    }
+
+    .footerMenu {
+        display: flex;
+        justify-content: space-between;
+        margin: 40px 0;
+
+        ul, li {
+            list-style: none;
+            color: #fff;
+            font-style: normal;
+        }
+
+        > li {
+           > a, p {
+                margin-bottom: 24px;
+                display: block;
+                font-size: 24px;
+            }
+        }
+
+        ul li {
+            margin-bottom: 16px;
+            font-size: 18px;
+
+            a {
+                font-size: 18px;
+            }
+        }
+
+        @include mediaQuery(tablet) {
+            flex-wrap: wrap;
+            justify-content: flex-start;
+
+            > li {
+                width: 33%;
+                margin: 20px 0;
+            }
+        }
+
+        @include mediaQuery(mobile) {
+            flex-direction: column;
+            margin-top: 0;
+
+            > li {
+                width: 100%;
+
+                &:nth-child(1) {
+                    margin-bottom: 0;
+                }
+
+                &:nth-child(2) {
+                    margin-top: 0;
+                }
+
+                > p {
+                    display: none;
+                }
+            }
         }
     }
 }

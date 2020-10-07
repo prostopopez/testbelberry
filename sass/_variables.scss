@@ -5,6 +5,7 @@ $darkColor: #C52C5D;
 $mainGrayColor: #716D6C;
 $lightGrayColor: #C4C4C4;
 $darkGrayColor: #676767;
+$mainDarkGrayColor: #4E4947;
 $mainBlue: #233568;
 $tonedColor: rgba(255, 255, 255, 0.1);
 $lightTonedColor: rgba(255, 255, 255, 0.2);
@@ -40,7 +41,7 @@ $iconSize: 34px;
 
 @mixin mediaQuery($media-query) {
   @if $media-query == tablet {
-    @media only screen and (max-width: 810px) {
+    @media only screen and (max-width: 1024px) {
       @content;
     }
   }
