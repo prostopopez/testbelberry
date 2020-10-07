@@ -18,36 +18,43 @@ function toggleDropdown(active, userDropdown) {
 
 //category modal on header
 const categoryToggle = document.querySelector(`.fnv-categoryToggle`);
-const profileModal = document.querySelector(`.fnv-profileModal`);
-const profileModalBlock = document.querySelector(`.fnv-profileModalBlock`);
+const categoryModal = document.querySelector(`.fnv-categoryModal`);
+const categoryModalBlock = document.querySelector(`.fnv-categoryModalBlock`);
 const headerCont = document.querySelector(`.fnv-header`);
 
-let isOpenProfile = false;
+let isOpenCategory = false;
 
 function toggleProfileModal(value) {
-    isOpenProfile = value;
+    isOpenCategory = value;
 
-    if (isOpenProfile) {
-        profileModal.style.top = `${headerCont.offsetHeight}px`;
-        profileModalBlock.style.width = `100%`;
-        profileModal.style.display = `flex`;
-        profileModalBlock.classList.add(`fnv-modalAnimation`);
+    if (isOpenCategory) {
+        categoryModal.style.top = `${headerCont.offsetHeight}px`;
+        categoryModal.style.display = `flex`;
+        categoryModalBlock.classList.add(`fnv-modalAnimation`);
         document.body.classList.add(`fnv-noScroll`);
     } else {
-        profileModal.style.display = `none`;
-        profileModalBlock.classList.remove(`fnv-modalAnimation`);
+        categoryModal.style.display = `none`;
+        categoryModalBlock.classList.remove(`fnv-modalAnimation`);
         document.body.classList.remove(`fnv-noScroll`);
     }
 }
 
 categoryToggle.addEventListener("click", function (e) {
-    toggleProfileModal(!isOpenProfile);
+    toggleProfileModal(!isOpenCategory);
 });
 
-document.addEventListener("click.Bst", function (event) {
-    const isProfileModal = hasEventByElement(event, profileModalBlock) && hasEventByElement(event, categoryToggle);
+//1280px element switcher on header
+const searchToggle = document.querySelector(`.fnv-headerSearch .fnv-search`);
+const phoneBlock = document.querySelector(`.fnv-phoneBlock`);
 
-    if (isOpenProfile && isProfileModal) {
-        toggleProfileModal(false);
-    }
-});
+if (window.screen.width > 1024 && window.screen.width < 1281) {
+    searchToggle.onfocus = function () {
+        phoneBlock.style.display = 'none';
+        document.querySelector(`.fnv-headerSearch`).classList.remove('fnv-inactive');
+    };
+
+    searchToggle.onblur = function () {
+        phoneBlock.style.display = 'block';
+        document.querySelector(`.fnv-headerSearch`).classList.add('fnv-inactive');
+    };
+}
