@@ -1,6 +1,4 @@
 .searchBlock {
-    padding: 12px 20px;
-    border-radius: 3px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -8,19 +6,43 @@
     color: white;
 
     &.gray {
-        max-width: 292px;
-        background-color: darken($mainGrayColor, 10%);
+        .search {
+            width: 292px;
+            background-color: $mainGrayColor;
+
+            &:focus {
+                background-color: darken($lightColor, 3%);
+                border-color: $lightTonedColor !important;
+            }
+        }
     }
 
-    &.purple {
-        max-width: 235px;
-        background-color: $lightColor;
+    &.pink {
+        .search {
+            width: 235px;
+            background-color: $lightColor;
+
+            &:focus {
+                background-color: darken($lightColor, 3%);
+                border-color: $lightTonedColor !important;
+            }
+
+            @media only screen and (max-width: 1500px) {
+                width: 210px;
+            }
+
+            @media only screen and (max-width: 1280px) {
+                width: 200px;
+            }
+        }
     }
 
     .search {
-        padding-right: 5px;
+        border-radius: 3px;
+        padding: 13px 43px 13px 20px;
+        height: 42px;
         font-size: 16px;
-        border: none;
+        border: 1px solid transparent;
         background: none;
         color: white;
 
@@ -30,11 +52,18 @@
     }
 
     svg {
+        position: absolute;
+        right: 18px;
         width: 18px;
         height: 18px;
 
         &:hover {
             fill: none;
+        }
+
+        @media only screen and (max-width: 1280px) {
+            width: 16px;
+            height: 16px;
         }
     }
 }

@@ -31,7 +31,9 @@ gulp.task('svgSprite', function () {
 gulp.task(`html`, gulp.series(function () {
     return gulp.src(`./html/pages/**/*.html`)
         .pipe(twig({
-            data: {}
+            data: {
+                // dataCatalog
+            }
         }))
         .pipe(htmlClassPrefix(classPrefix))
         .pipe(getPublicFolderPath())

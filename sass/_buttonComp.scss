@@ -27,9 +27,9 @@
             left: 5px;
             width: 38px;
             height: 38px;
-            background: rgba(255, 255, 255, 0.12);
+            background: $tonedColor;
             background-size: cover;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid $lightTonedColor;
             border-radius: 2px;
 
             svg {
@@ -41,6 +41,51 @@
 
         .textBlock {
             padding-left: 43px;
+        }
+    }
+
+    &.iconEqual {
+        align-items: center;
+        width: 72px;
+        height: 42px;
+        padding: 4px 0;
+        border-radius: 2px;
+        border: 1px solid $tonedColor;
+        background-color: darken($lightColor, 3%);
+
+        .iconBlock,
+        .textBlock {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50%;
+            height: 100%;
+            padding: 5px 0;
+        }
+
+        .iconBlock {
+            border-right: 1px solid $lightTonedColor;
+        }
+
+        .textBlock {
+            font-size: 18px;
+        }
+
+        .iconBlock {
+            svg {
+                fill: white;
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        &:hover {
+            background-color: $ultraLightColor;
+        }
+
+        &:active {
+            background-color: $darkColor;
         }
     }
 
