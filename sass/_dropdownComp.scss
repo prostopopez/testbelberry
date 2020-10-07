@@ -85,7 +85,7 @@
         width: 100%;
         flex-direction: column;
         background-color: darken($lightColor, 3%);
-        z-index: 100;
+        z-index: 1001;
 
         label {
             padding: 12px;
