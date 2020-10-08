@@ -1,18 +1,23 @@
 //user dropdown on header
-const userDropdown = document.querySelector(`.fnv-userDropdown`);
-const userToggle = userDropdown.querySelector(`.fnv-newDrop`);
-let userDropdownActive = false;
+const userDropdowns = document.querySelectorAll(`.fnv-userDropdown`);
 
-userToggle.addEventListener('click', function (event) {
-    userDropdownActive = !userDropdownActive;
-    toggleDropdown(userDropdownActive, userDropdown);
-});
+for(let i = 0; i < userDropdowns.length; i++) {
+    const userDropdown = document.querySelectorAll(`.fnv-userDropdown`)[i];
+    const userToggle = userDropdown.querySelector(`.fnv-newDrop`);
+    let userDropdownActive = false;
 
-function toggleDropdown(active, userDropdown) {
-    if (active) {
-        userDropdown.classList.add(`fnv-active`);
-    } else {
-        userDropdown.classList.remove(`fnv-active`);
+
+    userToggle.addEventListener('click', function (event) {
+        userDropdownActive = !userDropdownActive;
+        toggleDropdown(userDropdownActive, userDropdown);
+    });
+
+    function toggleDropdown(active, userDropdown) {
+        if (active) {
+            userDropdown.classList.add(`fnv-active`);
+        } else {
+            userDropdown.classList.remove(`fnv-active`);
+        }
     }
 }
 
@@ -31,11 +36,9 @@ function toggleProfileModal(value) {
         categoryModal.style.top = `${headerCont.offsetHeight}px`;
         categoryModal.style.display = `flex`;
         categoryModalBlock.classList.add(`fnv-modalAnimation`);
-        document.body.classList.add(`fnv-noScroll`);
     } else {
         categoryModal.style.display = `none`;
         categoryModalBlock.classList.remove(`fnv-modalAnimation`);
-        document.body.classList.remove(`fnv-noScroll`);
     }
 }
 
@@ -58,3 +61,41 @@ if (window.screen.width > 1024 && window.screen.width < 1281) {
         document.querySelector(`.fnv-headerSearch`).classList.add('fnv-inactive');
     };
 }
+
+//tablet menu
+const tabletMenuToggle = document.querySelector(`.fnv-tabletMenuToggle`);
+const tabletMenuModal = document.querySelector(`.fnv-tabletMenuModal`);
+const tabletMenuModalBlock = document.querySelector(`.fnv-tabletMenuModalBlock`);
+
+let isOpenTabletMenu = false;
+
+function toggleTabletMenuModal(value) {
+    isOpenTabletMenu = value;
+
+    if (isOpenTabletMenu) {
+        tabletMenuModal.style.top = `${headerCont.offsetHeight}px`;
+        tabletMenuModal.style.display = `flex`;
+        tabletMenuModalBlock.classList.add(`fnv-modalAnimation`);
+
+        if (window.screen.width < 631) {
+            document.body.classList.add(`fnv-noScroll`);
+        }
+    } else {
+        tabletMenuModal.style.display = `none`;
+        tabletMenuModalBlock.classList.remove(`fnv-modalAnimation`);
+        document.body.classList.remove(`fnv-noScroll`);
+        document.body.classList.remove(`fnv-noScroll`);
+    }
+}
+
+tabletMenuToggle.addEventListener("click", function (e) {
+    toggleTabletMenuModal(!isOpenTabletMenu);
+});
+
+document.body.addEventListener("click", function (e) {
+    const isTabletModalBlock = tabletMenuModalBlock.contains(e.target) || tabletMenuToggle.contains(e.target);
+
+    if (!isTabletModalBlock) {
+        toggleTabletMenuModal(false);
+    }
+});

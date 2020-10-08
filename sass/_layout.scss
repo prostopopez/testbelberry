@@ -201,6 +201,22 @@ svg {
     }
 }
 
+.modalAnimation {
+    animation: SHW .3s;
+    animation-fill-mode: both
+}
+
+@keyframes SHW {
+    from {
+        transform: scale(0);
+        opacity: 0
+    }
+    to {
+        transform: scale(1);
+        opacity: 1
+    }
+}
+
 .input,
 .textarea {
     display: flex;

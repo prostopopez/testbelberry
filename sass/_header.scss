@@ -94,12 +94,17 @@
 
         .phoneNumber {
             font-size: 18px;
+            color: white;
         }
 
         .callIsFree {
             font-size: 13px;
             opacity: 0.7;
         }
+    }
+
+    .mobileNav {
+        display: none;
     }
 
     .headerSearch,
@@ -171,6 +176,41 @@
 
         .userDropdown {
             order: 6;
+        }
+    }
+
+    @include mediaQuery(tablet) {
+        .mainMenu,
+        .headerSearch {
+            display: none;
+        }
+
+        .mobileNav {
+            order: 7;
+            display: flex;
+
+            svg {
+                width: 24px;
+                height: 24px;
+                fill: white;
+            }
+        }
+    }
+
+    @include mediaQuery(mobile) {
+        .logoBlock {
+            p {
+                font-size: 10px;
+            }
+        }
+
+        .iconEqual,
+        .userDropdown {
+            display: none;
+        }
+
+        .tabletMenuToggle {
+            margin: 0 10px;
         }
     }
 }
