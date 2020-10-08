@@ -48,6 +48,10 @@ h2,
     @include mediaQuery(tablet) {
         font-size: 18px;
     }
+
+    @include mediaQuery(mobile) {
+        font-size: 16px;
+    }
 }
 
 .f6 {
@@ -123,7 +127,6 @@ ol {
 
     @include mediaQuery(mobile) {
         width: 97%;
-        max-width: 414px;
     }
 }
 

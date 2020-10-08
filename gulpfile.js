@@ -15,6 +15,8 @@ const svgSprite = require(`gulp-svg-sprite`);
 const getPublicFolderPath = (ext = ``) => gulp.dest(`./public/${ext}`);
 const classPrefix = `fnv-`;
 
+const possibilityData = require('./data/possibilityData');
+
 gulp.task('svgSprite', function () {
     return gulp.src('img/svg/*.svg')
         .pipe(svgSprite({
@@ -32,7 +34,8 @@ gulp.task(`html`, gulp.series(function () {
     return gulp.src(`./html/pages/**/*.html`)
         .pipe(twig({
             data: {
-                // dataCatalog
+                title: `Return cards`,
+                possibilityData,
             }
         }))
         .pipe(htmlClassPrefix(classPrefix))
