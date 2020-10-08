@@ -11,7 +11,7 @@
             background-color: $mainGrayColor;
 
             &:focus {
-                background-color: darken($lightColor, 3%);
+                background-color: darken($mainGrayColor, 3%);
                 border-color: $lightTonedColor !important;
             }
         }

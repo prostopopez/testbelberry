@@ -46,6 +46,14 @@ categoryToggle.addEventListener("click", function (e) {
     toggleProfileModal(!isOpenCategory);
 });
 
+document.body.addEventListener("click", function (e) {
+    const isCategoryModalBlock = categoryModalBlock.contains(e.target) || categoryToggle.contains(e.target);
+
+    if (!isCategoryModalBlock) {
+        toggleProfileModal(false);
+    }
+});
+
 //1280px element switcher on header
 const searchToggle = document.querySelector(`.fnv-headerSearch .fnv-search`);
 const phoneBlock = document.querySelector(`.fnv-phoneBlock`);
