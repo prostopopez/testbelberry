@@ -1,9 +1,6 @@
 @import "variables";
 @import "fonts";
 @import "layout";
-@import "header";
-@import "breadcrumb";
-@import "footer";
 @import "index";
 @import "catalog";
 @import "product";
@@ -15,6 +12,10 @@
 @import "profile";
 
 //components
+@import "breadcrumb";
+@import "alphabetComp";
+@import "header";
+@import "footer";
 @import "buttonComp";
 @import "inputBlock";
 @import "textareaBlock";
@@ -29,3 +30,4 @@
 @import "categoriesModal";
 @import "checkboxComponent";
 @import "tabletMenuModal";
+@import "alphabetCompModal";

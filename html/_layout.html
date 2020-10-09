@@ -16,16 +16,18 @@
     ></script>
   </head>
   <body>
-    {% include 'header.html' %}
+    {% include 'components/header.html' %}
+    {% include 'components/alphabetComp.html' %}
 
     {% if block('title') %}
-        {% include 'breadcrumb.html' with { 'pageName': block('title') } %}
+        {% include 'components/breadcrumb.html' with { 'pageName': block('title') } %}
     {% endif %}
 
     {% block page %}{% endblock %}
-    {% include 'footer.html' %}
-    {% include './components/categoriesModal.html' %}
-    {% include './components/tabletMenuModal.html' %}
+    {% include 'components/footer.html' %}
+    {% include 'components/categoriesModal.html' %}
+    {% include 'components/tabletMenuModal.html' %}
+    {% include 'components/alphabetCompModal.html' %}
     <script src="/js/main.mini.js"></script>
     {% block scripts %}{% endblock %}
   </body>
