@@ -1,0 +1,31 @@
+{%
+    include '../modalWindow.html' with {
+        'id': 'registrationModal',
+        'content': '
+            <h2>Регистрация</h2>
+            <form>
+                <div class="inputBlock modalInputWrapper">
+                    <label for="authInputName">Имя</label>
+                    <input class="input" type="text" id="authInputName" placeholder="Введите ваше имя">
+                </div>
+                <div class="inputBlock modalInputWrapper">
+                    <label for="authInputEmail">Email</label>
+                    <input class="input" type="text" id="authInputEmail" placeholder="Введите почту">
+                </div>
+                <div class="inputBlock modalInputWrapper">
+                    <label for="authInputPassword">Пароль</label>
+                    <input class="input" type="password" id="authInputPassword" placeholder="Введите пароль">
+                </div>
+                <div class="inputBlock modalInputWrapper">
+                    <label for="authInputPassword2">Пароль</label>
+                    <input class="input" type="password" id="authInputPassword2" placeholder="Подтвердите пароль">
+                </div>
+                <button class="button">Создать аккаунт</button>
+                <p>
+                    Уже есть аккаунт?
+                    <a href="#">Войдите</a>
+                </p>
+            </form>
+        '
+    }
+%}

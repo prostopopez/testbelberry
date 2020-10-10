@@ -59,3 +59,36 @@ function alphabetCatalogListWrap() {
         }
     }
 }
+
+
+// Modal window
+const $modalWindow = $(`.fnv-modalWindow`);
+const $modalWindowCloseButton = $(`.fnv-modalWindowCloseButton`);
+
+$modalWindowCloseButton.on(`click`, () => {
+    $(`body`).removeClass(`fnv-noScroll`);
+    $modalWindow.css(`display`, `none`)
+})
+
+function openModel(id) {
+    const $modal = $(id);
+
+    $(`body`).addClass(`fnv-noScroll`);
+    $modal.css(`display`, `flex`)
+}
+
+function openAuthModal() {
+    openModel(`#authModal`)
+}
+
+function openCallBackModal() {
+    openModel(`#callBackModal`)
+}
+
+function openRegistrationModal() {
+    openModel(`#registrationModal`)
+}
+
+function openThanksModal() {
+    openModel(`#thanksModal`)
+}

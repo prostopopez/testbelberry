@@ -1,0 +1,30 @@
+{%
+    include '../modalWindow.html' with {
+        'id': 'authModal',
+        'content': '
+            <h2>Авторизация</h2>
+            <form>
+                <div class="inputBlock modalInputWrapper">
+                    <label for="authInputEmail">Email</label>
+                    <input class="input" type="text" id="authInputEmail" placeholder="Введите почту">
+                </div>
+                <div class="inputBlock modalInputWrapper">
+                    <label for="authInputPassword">Пароль</label>
+                    <input class="input" type="password" id="authInputPassword">
+                </div>
+                <div style="width: 100%">
+                    <div class="checkbox modalInputWrapper">
+                        <input type="checkbox" id="rememberMe" name="rememberMe">
+                        <label for="rememberMe">Запомнить меня</label>
+                    </div>
+                </div>
+                <button class="button">Войти</button>
+                <a href="#">Забыли пароль?</a>
+                <p>
+                    Нет аккаунта?
+                    <a href="#">Зарегистрируйтесь</a>
+                </p>
+            </form>
+        '
+    }
+%}
