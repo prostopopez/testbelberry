@@ -1,1 +1,94 @@
-.aboutUsPage {}
+.aboutUsPage {
+
+  .bannerGradientContainer {
+    button {
+      width: 220px;
+
+      @include mediaQuery(mobile) {
+        width: 100%;
+      }
+    }
+  }
+
+  .advantagesBlock {
+    margin: 90px 0 50px;
+
+    .mainTextHead {
+      margin-bottom: 1rem;
+
+      @include mediaQuery(tablet) {
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    .mainTextParagraph {
+      color: $lightGrayColor;
+      font-weight: normal;
+      padding-bottom: 2rem;
+
+      @include mediaQuery(tablet) {
+        padding-bottom: 1rem;
+        line-height: 24px;
+      }
+    }
+  }
+
+  .advantagesBlockItems {
+    margin: 50px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .advantagesItem {
+      max-width: 290px;
+      min-width: 180px;
+      width: auto;
+      margin: 10px 0;
+
+      h3 {
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 26px;
+      }
+
+      p {
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 24px;
+        color: $lightGrayColor;
+      }
+
+      svg {
+        height: 50px;
+        width: 50px;
+        fill: $mainColor;
+        margin-bottom: 28px;
+        display: flex;
+        align-items: flex-start;
+      }
+
+      @include mediaQuery(tablet) {
+        max-width: 350px;
+        min-width: 320px;
+        display: flex;
+        align-items: flex-start;
+
+        svg {
+          height: 40px;
+          width: 60px;
+          margin-right: 10px;
+        }
+      }
+
+      @include mediaQuery(mobile) {
+        max-width: 100%;
+        min-width: 100%;
+      }
+    }
+
+    @include mediaQuery(mobile) {
+      margin: 0;
+    }
+  }
+}

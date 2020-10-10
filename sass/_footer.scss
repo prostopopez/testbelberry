@@ -1,6 +1,10 @@
 .footer {
     background-color: $mainDarkGrayColor;
 
+    .cont {
+        overflow: hidden;
+    }
+
     a {
         color: #fff;
         font-style: normal;
