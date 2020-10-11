@@ -32,14 +32,14 @@
                 margin-right: 30px;
             }
 
-            p {
+            span {
                 margin-right: 30px;
             }
 
             @include mediaQuery(tablet) {
                 display: block;
 
-                p {
+                span {
                     display: none;
                 }
 
@@ -81,7 +81,7 @@
             max-width: 270px;
             width: 100%;
 
-            p {
+            .phoneNumber {
                 font-weight: bold;
 
                 b {
@@ -95,9 +95,9 @@
             }
 
             @include mediaQuery(mobile) {
-                display: block;
+                flex-direction: column;
 
-                p {
+                .phoneNumber {
                     margin-bottom: 20px;
                 }
             }

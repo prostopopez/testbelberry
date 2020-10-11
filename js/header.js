@@ -65,7 +65,7 @@ if (window.screen.width > 1024 && window.screen.width < 1281) {
     };
 
     searchToggle.onblur = function () {
-        phoneBlock.style.display = 'block';
+        phoneBlock.style.display = 'flex';
         document.querySelector(`.fnv-headerSearch`).classList.add('fnv-inactive');
     };
 }
