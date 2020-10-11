@@ -17,6 +17,8 @@ const classPrefix = `fnv-`;
 
 const possibilityData = require('./data/possibilityData');
 const cardDeliveryItems = require('./data/cardDeliveryItems');
+const dataForProductCards = require('./data/dataForProductCards');
+const dataForCatalogCard = require('./data/dataForCatalogCard');
 
 gulp.task('svgSprite', function () {
     return gulp.src('img/svg/*.svg')
@@ -38,6 +40,8 @@ gulp.task(`html`, gulp.series(function () {
                 title: `Return cards`,
                 possibilityData,
                 cardDeliveryItems,
+                dataForProductCards,
+                dataForCatalogCard,
             }
         }))
         .pipe(htmlClassPrefix(classPrefix))
@@ -47,13 +51,13 @@ gulp.task(`html`, gulp.series(function () {
 
 gulp.task(`img`, gulp.series(function () {
     return gulp
-        .src(`./img/[^(svg)]**/*`, {base: `.`})
+        .src(`./img/[^(svg)]**/*`, { base: `.` })
         .pipe(getPublicFolderPath());
 }));
 
 gulp.task(`fonts`, gulp.series(function () {
     return gulp
-        .src(`./fonts/**`, {base: `.`})
+        .src(`./fonts/**`, { base: `.` })
         .pipe(getPublicFolderPath());
 }));
 

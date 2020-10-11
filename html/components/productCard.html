@@ -1,0 +1,39 @@
+<div class="productCardContainer">
+  <div id="productCards">
+    {% block cards %} {% for item in dataForProductCards %}
+    <div class="productCard">
+      <img src="/img/product/{{item.img}}.png" alt="{{name}}" />
+      <p class="productName">{{item.name}}</p>
+      <p class="f4 productPrice">{{item.price}}</p>
+      <button class="button f5 iconButton hiddenButton">
+        <span class="iconBlock">
+          <svg>
+            <use xlink:href="/img/sprite.svg#basket"></use>
+          </svg>
+        </span>
+        <span class="textBlock"> Купить </span>
+      </button>
+    </div>
+    {% endfor %} {% endblock %}
+  </div>
+
+  <div class="productCardSlider">
+    {% include 'glider.html' with { 'elementClassName': elementClassName,
+    'gliderTitle': gliderTitle, 'elements': block('cards') } %}
+  </div>
+
+  <button class="button f5 productCardButton">
+    <span class="textBlock"> {{buttonName}} </span>
+  </button>
+</div>
+
+<!-- Для подключения на страницу: -->
+{# 
+    {%
+    include '/components/productCard.html' with {
+        'elementClassName': "productCards",
+        'gliderTitle': "Может быть интересно",
+        'buttonName': "Смотреть всё"
+    }
+%}  
+#}
