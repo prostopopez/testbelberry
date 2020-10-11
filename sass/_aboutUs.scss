@@ -1,4 +1,5 @@
 .aboutUsPage {
+  margin-bottom: 0;
 
   .bannerGradientContainer {
     button {
@@ -90,5 +91,10 @@
     @include mediaQuery(mobile) {
       margin: 0;
     }
+  }
+
+  .reviewsWrapper {
+    background-color: $mainBgColor;
+    padding: 60px 0;
   }
 }
