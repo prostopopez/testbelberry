@@ -1,1 +1,339 @@
-.deliveryPage {}
+.deliveryPage {
+    .bannerGradientContainer {
+        margin-bottom: 80px;
+    }
+
+    .deliveryPageTitle {
+        margin-bottom: 50px;
+        font-size: 50px;
+        font-weight: 500;
+
+        @include mediaQuery(tablet) {
+            margin-bottom: 30px;
+        }
+
+        @include mediaQuery(mobile) {
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+    }
+
+    .deliveryCards {
+        margin-bottom: 90px;
+
+        .deliveryCardTitle {
+            font-size: 30px;
+            margin-bottom: 12px;
+
+            @include mediaQuery(mobile) {
+                font-size: 24px;
+            }
+        }
+
+        .deliveryCardSubtitle {
+            color: $mainGrayColor;
+            font-size: 18px;
+            margin-bottom: 36px;
+            line-height: 24px;
+        }
+
+        .priceContainer {
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            width: 100%;
+
+            @include mediaQuery(mobile) {
+                justify-content: center;
+                margin-bottom: 50px;
+            }
+        }
+    }
+
+    .deliveryPageTitleLilMar {
+        margin-bottom: 36px;
+        margin-left: 0;
+    }
+
+    .sumDeliveryItemSmall {
+        white-space: nowrap;
+        font-size: 24px;
+        color: $mainColor;
+        line-height: 24px;
+
+        @include mediaQuery(tablet) {
+            white-space: normal;
+        }
+    }
+
+    .deliveryCardsPurple {
+        background: linear-gradient(to bottom, $purple 80%, #ffffff 20%);
+        margin-left: 0;
+        padding-top: 80px;
+        margin-right: 0;
+
+        @include mediaQuery(tablet) {
+            background: linear-gradient(to bottom, $purple 90%, #ffffff 10%);
+            padding: 30px 24px 0 24px;
+        }
+
+        @include mediaQuery(mobile) {
+            padding: 30px 12px 0 12px;
+        }
+    }
+
+    .deliveryCardTitleBold {
+        margin-top: 70px;
+
+        @include mediaQuery(mobile) {
+            margin-top: 40px;
+        }
+    }
+
+    .deliveryTimeBlocks {
+        max-width: 1120px;
+        min-height: 146px;
+        display: flex;
+        align-items: flex-start;
+        background: #ffffff;
+        padding: 32px 20px;
+        box-shadow: 0 4px 50px #F5EBF9;
+        border-radius: 8px;
+
+        @include mediaQuery(tablet) {
+            flex-wrap: wrap;
+        }
+
+        @include mediaQuery(mobile) {
+            justify-content: center;
+        }
+
+        @include mediaQuery(mobile) {
+            padding: 4px 10px;
+        }
+    }
+
+    .deliveryTimeBlock {
+        max-height: 100%;
+        border-right: 2px solid $purple;
+        padding: 0 60px;
+
+        .addDeliveryItem {
+            font-size: 18px;
+            color: $mainGrayColor;
+        }
+
+        &:first-of-type {
+            padding-left: 20px;
+        }
+
+        &:last-of-type {
+            padding-right: 20px;
+            border-right: none;
+        }
+
+        @include mediaQuery(tablet) {
+            flex: 1 0 20%;
+            padding: 0 24px;
+        }
+
+        @include mediaQuery(mobile) {
+            border-right: none;
+            max-height: 270px;
+            flex: 1 0 100%;
+            margin-right: 0;
+            padding: 20px 0;
+            border-bottom: 2px solid $purple;
+
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+
+        @include mediaQuery(mobile) {
+            padding: 20px 14px;
+        }
+    }
+
+    .bonusBlock {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 90px;
+
+        @include mediaQuery(tablet) {
+            margin-bottom: 40px;
+        }
+
+        @include mediaQuery(mobile) {
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+            justify-content: center;
+        }
+    }
+
+    .bonusItem {
+        overflow: hidden;
+        flex: 1 1 32%;
+        max-width: 480px;
+        min-height: 335px;
+        background: #F5E7FB;
+        position: relative;
+        margin-right: 10px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        @include mediaQuery(mobile) {
+            margin-bottom: 20px;
+            margin-right: 0;
+            flex: 0 1 100%;
+            max-width: 100%;
+        }
+
+        @media (max-width: 576px) {
+            min-height: 168px;
+        }
+    }
+
+    .bonusItemSecond {
+        background: #E9E9EB;
+    }
+
+    .bonusItemThird {
+        background: #F6E1EB;
+    }
+
+    .bonusText {
+        padding: 40px;
+        font-size: 29px;
+        line-height: 40px;
+        max-width: 230px;
+
+        @include mediaQuery(mobile) {
+            font-size: 24px;
+            line-height: 30px;
+            z-index: 1;
+        }
+    }
+
+    .bonusIgmContainer {
+        position: absolute;
+
+        img {
+            width: 100%;
+        }
+
+        &First {
+            width: 60%;
+            right: 0;
+            bottom: -1%;
+        }
+
+        &Second {
+            width: 40%;
+            right: 10%;
+            bottom: -1%;
+        }
+
+        &Third {
+            width: 70%;
+            right: 5%;
+            bottom: -1%;
+        }
+
+        @include mediaQuery(mobile) {
+            &First {
+                width: 45%;
+                right: 0;
+                bottom: -1%;
+            }
+
+            &Second {
+                width: 30%;
+                right: 10%;
+                bottom: -1%;
+            }
+
+            &Third {
+                width: 60%;
+                right: 5%;
+                bottom: -1%;
+            }
+
+            @media (max-width: 576px) {
+                &First {
+                    width: 35%;
+                    right: 0;
+                    bottom: -1%;
+                }
+
+                &Second {
+                    width: 21%;
+                    right: 10%;
+                    bottom: -1%;
+                }
+
+                &Third {
+                    width: 40%;
+                    right: 5%;
+                    bottom: -1%;
+                }
+            }
+        }
+    }
+
+    .bannerClaims {
+        position: relative;
+
+        .bannerClaimsContent {
+            width: initial;
+        }
+
+        .bannerClaimsText {
+            padding: 30px 0;
+            max-width: 500px;
+            align-items: flex-start;
+
+            h2 {
+                margin-bottom: 34px;
+                font-size: 50px;
+            }
+
+            .inputBlock .input {
+                background: transparent;
+                font-size: 22px;
+            }
+
+            .attention {
+                width: 60%;
+                margin-top: 16px;
+                color: $lightGrayColor;
+            }
+
+            .attention, a {
+                font-size: 14px;
+            }
+        }
+
+        @include mediaQuery(tablet) {
+            .bannerClaimsText {
+                align-items: flex-end;
+
+                h2 {
+                    font-size: 40px;
+                }
+
+                .attention {
+                    width: 100%;
+                }
+            }
+        }
+
+        @include mediaQuery(mobile) {
+            .bannerClaimsText {
+                max-width: initial;
+            }
+        }
+    }
+}

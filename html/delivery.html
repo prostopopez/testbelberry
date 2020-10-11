@@ -1,1 +1,115 @@
-<div class="deliveryPage pageStyle"></div>
+<div class="deliveryPage pageStyle">
+    <div class="bannerGradientContainer">
+        <div class="bannerGradient">
+            <div class="bannerText cont">
+                <div class="mainTextBanner">
+                    <h1 class="f2 mainTextHead">Закажите бесконтактную доставку!</h1>
+                    <p class="f5 mainTextParagraph">Курьер оставит заказ у вашей двери по адресу, указанному
+                        при оформлении заказа, отойдет на безопасное расстояние
+                        и сообщит о доставке по телефону.</p>
+                </div>
+            </div>
+        </div>
+        <div class="bannerImg">
+            <img src="/img/delivery/boxDelivery.png" alt="refundBanner">
+        </div>
+    </div>
+    <div class="cont">
+        <h2 class="deliveryPageTitle">Доставка по Москве и области</h2>
+        <div class="deliveryCards">
+            <h3 class="deliveryCardTitle">Доставка в пределах МКАД</h3>
+            <p class="deliveryCardSubtitle">Осуществляется курьером на следующий день после оформления заказа, при
+                условии, что заказ был оформлен до 15:00. Заказы, оформленные после 15:00, будут приниматься с доставкой
+                через день.</p>
+            <div class="priceContainer">
+                {% for item in cardDeliveryItems %}
+                {% include 'components/deliveryCard.html' with {'sum': item.sum, 'addition': item.addition} %}
+                {% endfor %}
+            </div>
+        </div>
+        <div class="deliveryCards">
+            <h3 class="deliveryCardTitle">Доставка за пределы МКАД (до 20 км.)</h3>
+            <p class="deliveryCardSubtitle">Осуществляется в течении 2-х рабочих дней с момента принятия заказа.
+                Временной интервал доставки за МКАД в течении рабочего дня с 10:00 до 21:00.</p>
+            <div class="priceContainer">
+                {% for item in cardDeliveryItems %}
+                {% include 'components/deliveryCard.html' with {'sum': item.sum, 'addition': item.addition} %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="bonusBlock cont">
+        <div class="bonusItem">
+            <p class="bonusText">Бесплатная доставка по Москве</p>
+            <div class="bonusIgmContainer bonusIgmContainerFirst">
+                <img src="/img/delivery/gift.png" alt="">
+            </div>
+        </div>
+        <div class="bonusItem bonusItemSecond">
+            <p class="bonusText">Подарок за покупку</p>
+            <div class="bonusIgmContainer bonusIgmContainerSecond">
+                <img src="/img/delivery/flacon.png" alt="">
+            </div>
+        </div>
+        <div class="bonusItem bonusItemThird">
+            <p class="bonusText">Дарим 500 руб</p>
+            <div class="bonusIgmContainer bonusIgmContainerThird">
+                <img src="/img/delivery/hand.png" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="deliveryCards deliveryCardsPurple">
+        <div class="cont">
+            <h2 class="deliveryPageTitle deliveryPageTitleLilMar">Доставка по России</h2>
+            <div class="priceContainer">
+                {% for item in cardDeliveryItems %}
+                {% include 'components/deliveryCard.html' with {'sum': item.sum, 'addition': item.addition} %}
+                {% endfor %}
+            </div>
+
+            <h3 class="deliveryCardTitle deliveryCardTitleBold">Время доставки</h3>
+            <p class="deliveryCardSubtitle">Заказы, оформленные до 15:00 часов по, московскому времени, будут
+                передаваться в
+                отделение службы доставки на следующий день.</p>
+            <div class="deliveryTimeBlocks">
+                <div class="deliveryTimeBlock">
+                    <p class="sumDeliveryItem sumDeliveryItemSmall">до 14 рабочих дней</p>
+                    <p class="addDeliveryItem">доставка Почтой России</p>
+                </div>
+
+                <div class="deliveryTimeBlock">
+                    <p class="sumDeliveryItem sumDeliveryItemSmall">до 7 рабочих дней</p>
+                    <p class="addDeliveryItem">доставка EMS Почтой России (с момента
+                        поступления в отделение почты)</p>
+                </div>
+
+                <div class="deliveryTimeBlock">
+                    <p class="sumDeliveryItem sumDeliveryItemSmall">до 3 рабочих дней</p>
+                    <p class="addDeliveryItem">доставка компанией СДЭК</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bannerClaims">
+        <div class="bannerClaimsImg">
+            <img src="/img/refund/bannerClaims.png" alt="claims">
+        </div>
+        <div class="bannerClaimsText cont">
+            <div class="bannerClaimsContent">
+                <form action="" class="form">
+                    <h2>Подпишитесь на рассылку скидок</h2>
+                    <div class="inputBlock">
+                        <label for="emailInput">Email</label>
+                        <input class="input" type="text" id="emailInput" placeholder="Введите ваш email">
+                    </div>
+                    <p class="attention">Нажимая на кнопку «Отправить», я даю согласие на обработку <a href="">персональных
+                        данных</a></p>
+                    <button class="button f5">
+                        Подписаться
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

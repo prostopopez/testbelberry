@@ -16,6 +16,7 @@ const getPublicFolderPath = (ext = ``) => gulp.dest(`./public/${ext}`);
 const classPrefix = `fnv-`;
 
 const possibilityData = require('./data/possibilityData');
+const cardDeliveryItems = require('./data/cardDeliveryItems');
 
 gulp.task('svgSprite', function () {
     return gulp.src('img/svg/*.svg')
@@ -36,6 +37,7 @@ gulp.task(`html`, gulp.series(function () {
             data: {
                 title: `Return cards`,
                 possibilityData,
+                cardDeliveryItems,
             }
         }))
         .pipe(htmlClassPrefix(classPrefix))
@@ -45,13 +47,13 @@ gulp.task(`html`, gulp.series(function () {
 
 gulp.task(`img`, gulp.series(function () {
     return gulp
-        .src(`./img/[^(svg)]**/*`, { base: `.` })
+        .src(`./img/[^(svg)]**/*`, {base: `.`})
         .pipe(getPublicFolderPath());
 }));
 
 gulp.task(`fonts`, gulp.series(function () {
     return gulp
-        .src(`./fonts/**`, { base: `.` })
+        .src(`./fonts/**`, {base: `.`})
         .pipe(getPublicFolderPath());
 }));
 
@@ -84,8 +86,8 @@ gulp.task(`styles`, gulp.series(function () {
     return gulp.src(`sass/*.scss`)
         .pipe(sourcemaps.init())
         .pipe(sass().on(`error`, sass.logError))
-        .pipe(cssClassPrefix(classPrefix, { ignored: [/\.ui-/] }))
-        .pipe(cleanCSS({ compatibility: ` 'ie8'` }))
+        .pipe(cssClassPrefix(classPrefix, {ignored: [/\.ui-/]}))
+        .pipe(cleanCSS({compatibility: ` 'ie8'`}))
         .pipe(autoprefixer({
             browsers: [`last 2 versions`],
             cascade: false,
