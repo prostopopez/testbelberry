@@ -1,9 +1,8 @@
-{% for item in dataForCatalogCard %}
 <div class="catalogCardContainer">
   <div class="catalogCard">
     <img src="/img/product/{{item.img}}.png" alt="{{name}}" />
     <p class="catalogCardName">{{item.name}}</p>
-    <p class="f4 catalogCardPrice">{{item.price}}</p>
+    <p class="f4 catalogCardPrice">{{item.price}} Р</p>
     <button class="button f5 iconButton">
       <span class="iconBlock">
         <svg>
@@ -14,7 +13,7 @@
     </button>
   </div>
 </div>
-{% endfor %}
-
 <!-- Для подключения на страницу: -->
-{# {% include '/components/catalogCard.html' %} #}
+<!--{% for item in dataProductCards %}-->
+<!--{% include '/components/catalogCard.html' %}-->
+<!--{% endfor %}-->

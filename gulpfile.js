@@ -17,8 +17,7 @@ const classPrefix = `fnv-`;
 
 const possibilityData = require('./data/possibilityData');
 const cardDeliveryItems = require('./data/cardDeliveryItems');
-const dataForProductCards = require('./data/dataForProductCards');
-const dataForCatalogCard = require('./data/dataForCatalogCard');
+const dataProductCards = require('./data/dataProductCards');
 
 gulp.task('svgSprite', function () {
     return gulp.src('img/svg/*.svg')
@@ -40,8 +39,7 @@ gulp.task(`html`, gulp.series(function () {
                 title: `Return cards`,
                 possibilityData,
                 cardDeliveryItems,
-                dataForProductCards,
-                dataForCatalogCard,
+                dataProductCards
             }
         }))
         .pipe(htmlClassPrefix(classPrefix))
