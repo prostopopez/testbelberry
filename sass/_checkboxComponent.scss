@@ -48,7 +48,9 @@
     border: none;
     background-size: 100%;
     background: url("/img/sprite.svg#done" ) no-repeat center $ultraLightColor;
+    fill: #fff;
     background-size: 50% 50%;
+
     svg {
       fill: #ffffff;
     }

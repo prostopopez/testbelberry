@@ -5,3 +5,15 @@
 {% block page %}
 {% include '../basket.html' %}
 {% endblock %}
+
+{% block scripts %}
+<script>
+    function placeOrder() {
+        $(`#basketOrderWrapper`).addClass(`fnv-active`);
+
+        $("html, body").animate({
+            scrollTop: $("#basketOrderWrapper").offset().top
+        }, 800);
+    }
+</script>
+{% endblock %}

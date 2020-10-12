@@ -1,6 +1,7 @@
 .basketPage {
   background-color: $mainBgColor;
   padding: 70px 0;
+  margin-bottom: 0;
 
   .f2 {
     span {
@@ -254,31 +255,165 @@
       top: 5px;
     }
   }
+}
 
-  .basketOrder {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+.orderRegistration {
+  margin: 80px 0;
 
-    p {
-      margin: 0;
-      margin-right: 34px;
-      font-size: 24px;
-      padding-top: 6px;
+  .f2 {
+    margin: 10px 0;
+  }
 
-      span {
-        color: $mainColor;
+  .f3 {
+    margin: 60px 0 40px;
+  }
+
+  .inputBlock {
+    margin: 10px 0;
+  }
+
+  .button {
+    margin: 20px 0;
+  }
+}
+
+.orderDelivery {
+  background-color: $mainBgColor;
+  padding: 70px 0 10px;
+
+  .orderDeliveryStepsWrapper {
+    padding: 12px;
+    margin: 40px 0;
+    background-color: #fff;
+    box-shadow: 0 10px 40px rgba(95, 91, 97, 0.08);
+    border-radius: 4px;
+
+    .orderDeliveryStep {
+      padding: 38px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid #CFCFCF;
+      }
+
+      &.active {
+        background-color: #F8F8F9;
+
+        .orderDeliveryStepCenterContainer h4, .orderDeliveryStepCost {
+          color: $mainColor;
+        }
+
+        svg {
+          fill: $mainColor;
+        }
+      }
+
+      .orderDeliveryStepCenterContainer {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        h4 {
+          color: #3D3D3D;
+          margin-bottom: 12px;
+          font-size: 26px;
+
+          @include mediaQuery(tablet) {
+            font-size: 22px;
+          }
+        }
+
+        p {
+          color: #818181;
+          font-size: 16px;
+        }
+
+        .inputBlock {
+          margin: 10px 0;
+        }
+
+        .input {
+          background: none;
+        }
+      }
+
+      .orderDeliveryStepCost {
+        font-weight: bold;
         font-size: 40px;
-        margin-left: 10px;
+
+        @include mediaQuery(tablet) {
+          margin-left: 20px;
+        }
+
+        @include mediaQuery(mobile) {
+          font-size: 20px;
+        }
+      }
+
+      svg {
+        width: 16px;
+        height: 16px;
+        fill: #BDBDBD;
+        margin-right: 24px;
+        margin-top: 4px;
+        max-width: 16px;
+        min-width: 16px;
+      }
+
+      @include mediaQuery(mobile) {
+        padding: 20px 10px;
       }
     }
 
     @include mediaQuery(mobile) {
-     flex-direction: column;
+      padding: 5px;
+      border-radius: 8px;
+    }
+  }
+}
 
-      button {
-        width: 220px;
-      }
+.basketOrderWrapper {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}
+
+.orderPayment {
+  margin: 60px 0;
+
+  .textareaBlock {
+    margin: 40px 0;
+  }
+}
+
+.basketOrder {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 60px 0 120px;
+
+  p {
+    margin: 0;
+    margin-right: 34px;
+    font-size: 24px;
+    padding-top: 6px;
+
+    span {
+      color: $mainColor;
+      font-size: 40px;
+      margin-left: 10px;
+    }
+  }
+
+  @include mediaQuery(mobile) {
+    flex-direction: column;
+
+    button {
+      width: 220px;
     }
   }
 }
