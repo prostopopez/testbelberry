@@ -5,6 +5,10 @@
 
     .glider {
         min-height: 650px;
+
+        @include mediaQuery(tablet) {
+            min-height: initial;
+        }
     }
 
     .glider-dots {
