@@ -1,5 +1,6 @@
 <div class="productCardContainer">
   <div id="productCards">
+      <h3 class="f2 gliderTitle">{{ gliderTitle }}</h3>
     {% block cards %} {% for item in dataProductCards %}
     <div class="productCard">
       <img src="/img/product/{{item.img}}.png" alt="{{name}}" />

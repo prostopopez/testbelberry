@@ -154,5 +154,13 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+
+        .gliderTitle {
+            align-self: flex-start;
+
+            span {
+                color: $mainColor;
+            }
+        }
     }
 }
