@@ -1,19 +1,19 @@
-<div class="catalogCardContainer">
-  <div class="catalogCard">
-    <img src="/img/product/{{item.img}}.png" alt="{{name}}" />
-    <p class="catalogCardName">{{item.name}}</p>
-    <p class="f4 catalogCardPrice">{{item.price}} Р</p>
-    <button class="button f5 iconButton">
-      <span class="iconBlock">
-        <svg>
-          <use xlink:href="/img/sprite.svg#basket"></use>
-        </svg>
-      </span>
-      <span class="textBlock"> Купить </span>
-    </button>
-  </div>
+<div class="catalogCard">
+  <img src="/img/product/{{item.img}}.png" alt="{{name}}" />
+  <p class="catalogCardName">{{item.name}}</p>
+  <p class="f4 catalogCardPrice">{{item.price}} Р</p>
+  <button class="button f5 iconButton">
+    <span class="iconBlock">
+      <svg>
+        <use xlink:href="/img/sprite.svg#basket"></use>
+      </svg>
+    </span>
+    <span class="textBlock"> Купить </span>
+  </button>
 </div>
+
+{#
 <!-- Для подключения на страницу: -->
 <!--{% for item in dataProductCards %}-->
 <!--{% include '/components/catalogCard.html' %}-->
-<!--{% endfor %}-->
+<!--{% endfor %}-->#}

@@ -59,4 +59,9 @@ module.exports = [
         name: 'Hugo Boss Deep Red',
         price: '3 172',
     },
+    {
+        img: 'product4',
+        name: 'Hugo Boss Deep Red',
+        price: '3 172',
+    },
 ];
