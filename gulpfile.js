@@ -36,7 +36,7 @@ gulp.task(`html`, gulp.series(function () {
     return gulp.src(`./html/pages/**/*.html`)
         .pipe(twig({
             data: {
-                title: `Return cards`,
+                title: `Main`,
                 possibilityData,
                 cardDeliveryItems,
                 dataProductCards

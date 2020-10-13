@@ -1,3 +1,35 @@
+//slider for cards adjust
+window.onload = function () {
+    if (window.screen.width > 1024) {
+        let sliderCards = [];
+        const sliderCardContainers = document.querySelectorAll(`.fnv-productCardContainer`);
+
+        for (let i = 0; i < sliderCardContainers.length; i++) {
+            let whileInCont = sliderCardContainers[i].querySelectorAll(`.fnv-productCard`);
+            Array.from(whileInCont).map(item => sliderCards.push(item));
+        }
+
+        sliderCards.map(item => {
+            item.style.height = '386px';
+
+            item.addEventListener("mouseover", function (e) {
+                changeCardHeight(item, true);
+            });
+
+            item.addEventListener("mouseout", function (e) {
+                changeCardHeight(item, false);
+            });
+        })
+
+        function changeCardHeight(item, change) {
+            change
+                ? item.style.height = 'auto'
+                : item.style.height = '386px';
+        }
+    }
+}
+
+
 //alphabet modal under breadcrumbs
 const headerCont = document.querySelector(`.fnv-header`);
 const alphabetComp = document.querySelector(`.fnv-alphabetComp`);

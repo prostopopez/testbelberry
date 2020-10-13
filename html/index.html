@@ -29,6 +29,19 @@
             </section>
         </div>
     </div>
+    <div class="cont">
+        {% include '/components/productCard.html' with {
+                'elementClassName': "productCards",
+                'gliderTitle': "Может быть интересно",
+                'buttonName': "Смотреть всё",
+        } %}
+
+        {% include '/components/productCard.html' with {
+            'elementClassName': "productCards2",
+            'gliderTitle': "Может быть интересно",
+            'buttonName': "Смотреть всё",
+        } %}
+    </div>
 </div>
 
 
