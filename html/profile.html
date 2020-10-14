@@ -1,1 +1,87 @@
-<div class="profilePage pageStyle"></div>
+<div class="profilePage pageStyle">
+    <div class="myProfile">
+        <div class="cont">
+            <h2 class="f2">
+                Мой профиль
+            </h2>
+            <div class="myProfileContent f3">
+                <div class="myProfileColumn">
+                    <div class="profileField">
+                        <label for="profileName">Имя</label>
+                        <div class="profileFieldContent">
+                            <input type="text" id="profileName" value="Иванов Иван Иванович" readonly="readonly" size="20">
+                            <svg>
+                                <use xlink:href="/img/sprite.svg#edit"></use>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="profileField">
+                        <label for="profileAddress">Адрес доставки</label>
+                        <div class="profileFieldContent">
+                            <input type="text" id="profileAddress" value="Москва, ул. Московская 18" readonly="readonly"
+                                   size="23">
+                            <svg>
+                                <use xlink:href="/img/sprite.svg#edit"></use>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="profileField">
+                        <label for="profilePhone">Телефон</label>
+                        <div class="profileFieldContent">
+                            <input type="text" id="profilePhone" value="8(955)4485555" readonly="readonly" size="13">
+                            <svg>
+                                <use xlink:href="/img/sprite.svg#edit"></use>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="myProfileColumn">
+                    <div class="profileField">
+                        <label for="profileEmail">Email</label>
+                        <div class="profileFieldContent">
+                            <input type="text" id="profileEmail" value="hgfhjd@dfdf.com" readonly="readonly" size="15">
+                            <svg>
+                                <use xlink:href="/img/sprite.svg#edit"></use>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="profileField">
+                        <label for="profilePassword">Пароль</label>
+                        <div class="profileFieldContent">
+                            <input type="password" id="profilePassword" value="Иванов Иван Иванович" readonly="readonly"
+                                   size="8">
+                            <svg>
+                                <use xlink:href="/img/sprite.svg#edit"></use>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="discount f3">
+                Ваша персональная скидка: <span> 20% </span>
+            </div>
+        </div>
+    </div>
+    <div class="cont">
+        <div class="profileOrderHeader">
+            <h2 class="f2">
+                Ваши заказы
+            </h2>
+            <button class="button f5 profileButton">
+                Все заказы
+            </button>
+        </div>
+        <div class="yourOrder">
+            {% include '/components/productCard.html' with {
+            'elementClassName': "productCards",
+            'buttonName': "Смотреть всё",
+            } %}
+        </div>
+
+        {% include '/components/productCard.html' with {
+        'elementClassName': "productCards2",
+        'gliderTitle': "Ранее вы смотрели",
+        'buttonName': "Смотреть всё",
+        } %}
+    </div>
+</div>

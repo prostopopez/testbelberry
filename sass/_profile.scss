@@ -1,1 +1,255 @@
-.profilePage {}
+.profilePage {
+    .myProfile {
+        background: $mainBgColor;
+        padding: 3rem 0 7rem 0;
+        margin-bottom: 6rem;
+        position: relative;
+
+        @media only screen and (max-width: 1320px) {
+            padding: 3rem 0 7rem 0;
+        }
+
+        @include mediaQuery(tablet) {
+            padding: 3rem 0 5rem 0;
+        }
+
+        @media only screen and (max-width: 800px) {
+            padding: 3rem 0 7rem 0;
+        }
+
+        @media only screen and (max-width: 690px) {
+            padding: 0 0 5rem 0;
+        }
+
+        @include mediaQuery(mobile) {
+            padding: 2rem 0 4rem 0;
+        }
+    }
+
+    .myProfileColumn {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 55%;
+
+        @include mediaQuery(mobile) {
+            width: 100%;
+        }
+    }
+
+    .myProfileColumn:nth-child(2) {
+        width: 45%;
+        padding-left: 5rem;
+
+        label {
+            width: 20%;
+        }
+
+        @media only screen and (max-width: 1320px) {
+            padding-left: 3rem;
+        }
+
+        @media only screen and (max-width: 690px) {
+            width: 40%;
+            padding-left: 0;
+        }
+
+        @include mediaQuery(mobile) {
+            width: 100%;
+            padding-left: 0;
+        }
+    }
+
+    .profileOrderHeader {
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+
+        h2 {
+            margin-right: 2rem;
+        }
+
+        .profileButton {
+            @include mediaQuery(mobile) {
+                display: none;
+            }
+        }
+
+        @include mediaQuery(tablet) {
+            justify-content: space-between;
+        }
+    }
+
+    .profileOrderContent {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .myProfileContent {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        margin-top: 2rem;
+
+        @include mediaQuery(mobile) {
+            flex-wrap: wrap;
+        }
+
+        @include mediaQuery(mobile) {
+            margin-top: 0.5rem;
+        }
+
+        .profileField {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            align-items: center;
+            margin: 1rem 0;
+
+            @include mediaQuery(mobile) {
+                margin: 0.5rem 0;
+            }
+        }
+
+        .profileFieldContent {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            width: 60%;
+            align-items: center;
+            flex-direction: row;
+
+            @media only screen and (max-width: 1280px) {
+                width: 100%;
+            }
+        }
+
+        label {
+            color: #6F6F6F;
+            width: 40%;
+            margin: 0;
+            line-height: 30px;
+            min-width: 120px;
+            font-size: 30px;
+
+            @media only screen and (max-width: 1280px) {
+                width: 100%;
+                margin-bottom: 1rem;
+            }
+
+            @media only screen and (max-width: 1000px) {
+                font-size: 18px;
+                margin-bottom: 0;
+            }
+        }
+
+        input {
+            text-align: start;
+            display: block;
+            background: $mainBgColor;
+            border: none;
+
+            @include mediaQuery(mobile) {
+                font-size: 18px;
+                line-height: 18px;
+            }
+        }
+
+        input[type="password"] {
+            font-size: 50px;
+
+            @include mediaQuery(tablet) {
+                font-size: 40px;
+            }
+        }
+
+        svg {
+            fill: #D5D5D5;
+            width: 18px;
+            height: 18px;
+            margin: 0 10px 5px 10px;
+            cursor: pointer;
+        }
+    }
+
+    .lineInput {
+        border-bottom: 1px solid $mainColor !important;
+    }
+
+    .discount {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 35%;
+        background: #ffffff;
+        position: absolute;
+        bottom: -1.5rem;
+        left: 4rem;
+        box-shadow: 0 4px 10px rgba(95, 91, 97, 0.1);
+        border-radius: 6px;
+
+        span {
+            color: $mainColor;
+            margin-left: 1rem;
+            padding: 1.5rem 0;
+            font-weight: bold;
+
+            @include mediaQuery(tablet) {
+                padding: 1rem 0;
+            }
+
+            @include mediaQuery(mobile) {
+                margin-left: 0;
+                padding: 0;
+                font-size: 30px;
+            }
+        }
+
+        @media only screen and (max-width: 1320px) {
+            left: 3rem;
+        }
+
+        @include mediaQuery(tablet) {
+            left: 25%;
+        }
+
+        @media only screen and (max-width: 1280px) {
+            width: 50%;
+        }
+
+        @media only screen and (max-width: 800px) {
+            width: 60%;
+            left: 22%;
+        }
+
+        @include mediaQuery(mobile) {
+            padding: 20px 28px;
+            flex-direction: column;
+            width: 90%;
+            bottom: -3rem;
+            left: 5%;
+            font-size: 24px;
+            line-height: 30px;
+        }
+
+        @media only screen and (max-width: 380px) {
+            align-items: center;
+            font-size: 18px;
+        }
+    }
+
+    .yourOrder .productCard {
+        pointer-events: none;
+
+        button {
+            display: none;
+        }
+    }
+
+    .colorEdit {
+        fill: $mainColor;
+    }
+}
