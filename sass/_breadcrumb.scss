@@ -1,54 +1,44 @@
 .breadcrumb {
     .cont {
-        padding-bottom: 10px;
         display: flex;
         align-items: flex-end;
     }
 
-    h2 {
-        color: $mainColor;
-        font-size: getFontSize(26, 32);
-        text-transform: uppercase;
-    }
-
     ul {
-        padding: 6px 46px;
+        margin-bottom: 0;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
         list-style: none;
 
         li {
+            margin-right: 20px;
             display: inline;
-        }
 
-        li + li:before {
-            color: black;
-            content: "/\00a0";
+            &.active a {
+                color: $mainColor;
+            }
         }
 
         li a {
-            color: black;
-            font-size: 17px;
-            font-weight: 300;
+            color: $lightGrayColor;
+            font-size: 20px;
+            font-weight: 400;
             text-decoration: none;
+
+            &:hover {
+                color: $mainColor;
+            }
+        }
+
+        svg {
+            fill: $lightGrayColor;
+            width: 20px;
+            height: 20px;
         }
     }
 
     @include mediaQuery(mobile) {
-        padding-bottom: 0;
-
-        .cont {
-            padding: 22px 0;
-            border: none;
-            justify-content: center;
-        }
-
-        h2 {
-            font-size: 25px;
-            font-weight: bold;
-            text-align: center;
-        }
-
-        ul {
-            display: none;
-        }
+        padding: 20px 0;
     }
 }

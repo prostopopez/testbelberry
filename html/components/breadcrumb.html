@@ -1,9 +1,13 @@
 <div class="breadcrumb">
     <div class="cont">
-        <h2>{{pageName}}</h2>
         <ul>
             <li><a href="/">Главная</a></li>
-            <li><a href="#">{{pageName}}</a></li>
+            <li>
+                <svg>
+                    <use xlink:href="/img/sprite.svg#arrowLong"></use>
+                </svg>
+            </li>
+            <li class="active"><a href="#">{{pageName}}</a></li>
         </ul>
     </div>
 </div>
