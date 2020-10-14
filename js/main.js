@@ -12,11 +12,11 @@ window.onload = function () {
         sliderCards.map(item => {
             item.style.height = '386px';
 
-            item.addEventListener("mouseover", function (e) {
+            item.addEventListener('mouseover', function (e) {
                 changeCardHeight(item, true);
             });
 
-            item.addEventListener("mouseout", function (e) {
+            item.addEventListener('mouseout', function (e) {
                 changeCardHeight(item, false);
             });
         })
@@ -43,7 +43,7 @@ for (let i = 0; i < alphabetToggles.length; i++) {
     const alphabetToggle = alphabetToggles[i];
 
     //alphabet catalog list wrap
-    alphabetToggle.addEventListener("click", function (e) {
+    alphabetToggle.addEventListener('click', function (e) {
         alphabetToggleModal(!isOpenAlphabet);
         alphabetCatalogListWrap();
     });
@@ -62,7 +62,7 @@ function alphabetToggleModal(value) {
     }
 }
 
-document.body.addEventListener("click", function (e) {
+document.body.addEventListener('click', function (e) {
     const isAlphabetModalBlock = alphabetModalBlock.contains(e.target) || alphabetComp.contains(e.target);
 
     if (!isAlphabetModalBlock) {
@@ -124,3 +124,4 @@ function openRegistrationModal() {
 function openThanksModal() {
     openModel(`#thanksModal`)
 }
+
