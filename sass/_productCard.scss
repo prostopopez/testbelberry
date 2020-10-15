@@ -1,8 +1,4 @@
 .productCardContainer {
-    div[class*='productCards'] {
-        z-index: 2;
-    }
-
     .glider {
         min-height: 650px;
 
@@ -14,6 +10,8 @@
         @include mediaQuery(mobile) {
             padding: 0;
         }
+
+        z-index: 2;
     }
 
     .glider-dots {

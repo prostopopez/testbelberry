@@ -9,26 +9,32 @@
 h1,
 .f1 {
     font-size: 90px;
+    line-height: 90px;
 
     @include mediaQuery(tablet) {
         font-size: 60px;
+        line-height: 60px;
     }
 }
 
 h2,
 .f2 {
     font-size: 50px;
+    line-height: 50px;
 
     @include mediaQuery(tablet) {
         font-size: 36px;
+        line-height: 36px;
     }
 }
 
 .f3 {
     font-size: 30px;
+    line-height: 30px;
 
     @include mediaQuery(tablet) {
         font-size: 24px;
+        line-height: 24px;
     }
 }
 
@@ -231,5 +237,51 @@ svg {
 
     &:focus {
         border-color: $mainColor !important;
+    }
+}
+
+.inputCounter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #FFFFFF;
+    border: 2px solid #D1D1D1;
+    box-sizing: border-box;
+    border-radius: 4px;
+    height: 56px;
+
+    input {
+        width: 50%;
+        height: 100%;
+        border: none;
+        background: #FFFFFF;
+        border-left: 2px solid #D1D1D1;
+        border-right: 2px solid #D1D1D1;
+        box-sizing: border-box;
+        text-align: center;
+        color: $tonedBlackColor;
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    }
+
+    button {
+        width: 25%;
+        align-items: center;
+        font-weight: bold;
+        font-size: 36px;
+        color: $mainColor;
+
+        @include mediaQuery(tablet) {
+            width: 36px;
+        }
+
+        @include mediaQuery(mobile) {
+            height: 46px;
+            line-height: 46px;
+        }
     }
 }
