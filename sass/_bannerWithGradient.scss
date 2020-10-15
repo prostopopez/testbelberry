@@ -12,6 +12,7 @@
         height: 100%;
         position: absolute;
         background: linear-gradient(to right, #F4F6F8 50%, transparent);
+
         @include mediaQuery(mobile) {
             position: relative;
             background: #F4F6F8;

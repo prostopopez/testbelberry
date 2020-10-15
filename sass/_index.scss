@@ -1,0 +1,588 @@
+.mainPage {
+    .bipolarBanner {
+        background: linear-gradient(to right, #E3E2E0 0%, #E3E2E0 35%, white 36%, white 49%, #F0F0F0 50%);
+
+        .bipolarCont {
+            min-height: 578px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .leftBipolar,
+        .rightBipolar {
+            display: flex;
+            align-items: flex-start;
+            overflow: hidden;
+            position: relative;
+
+            @include mediaQuery(mobile) {
+                flex-direction: column;
+            }
+
+            .bipolarText {
+                height: 100%;
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                z-index: 2;
+
+                @include mediaQuery(tablet) {
+                    padding: 30px 40px;
+                    flex-direction: column;
+                }
+
+                @include mediaQuery(mobile) {
+                    padding: 30px 20px 10px 20px;
+                    min-width: 100%;
+                    max-width: 100%;
+                    box-shadow: 0 50px 50px #F6E1EB;
+                }
+            }
+
+            .bipolarDescr {
+                margin-bottom: 24px;
+                color: $mainGrayColor;
+            }
+
+            .imgBipolarBlock {
+                z-index: 1;
+                position: absolute;
+                align-self: flex-end;
+                height: 100%;
+                right: 0;
+                vertical-align: middle;
+
+                img {
+                    height: 100%;
+                }
+
+                @include mediaQuery(mobile) {
+                    display: flex;
+                    justify-content: flex-end;
+                    position: relative;
+                    max-width: 100%;
+                    height: auto;
+
+                    img {
+                        width: 90%;
+                    }
+                }
+            }
+        }
+
+        .leftBipolar {
+            width: 39%;
+            background-color: #E3E2E0;
+
+            .bipolarText {
+                padding: 6vw;
+                max-width: 65%;
+            }
+
+            .bipolarDescr {
+                font-size: 18px;
+            }
+
+            @media only screen and (max-width: 1500px) {
+                .bipolarText {
+                    max-width: 80%;
+                }
+            }
+        }
+
+        .rightBipolar {
+            width: 60%;
+            background-color: #F0F0F0;
+
+            .bipolarText {
+                padding: 6vw;
+
+                .f1 {
+                    line-height: 90px;
+                }
+            }
+
+            .bipolarDescr {
+                font-size: 24px;
+            }
+
+            .bipolarDiscount {
+                display: flex;
+                align-items: center;
+
+                span {
+                    margin-right: 12px;
+                    font-size: 40px;
+                    color: $mainColor;
+                    font-weight: 700;
+                }
+
+                button {
+                    width: 120px;
+                    padding: 0 16px;
+                    font-size: 24px;
+                    font-weight: 900;
+                }
+            }
+
+            //.imgBipolarBlock {
+            //    img {
+            //        width: 100%;
+            //    }
+            //}
+
+            h3 {
+               span {
+                   color: $mainColor;
+               }
+            }
+        }
+    }
+
+    .mainAdvantages {
+        margin-top: 90px;
+        margin-bottom: 50px;
+        display: flex;
+        justify-content: space-between;
+
+        .advantage {
+            margin-right: 40px;
+            margin-bottom: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            &:last-of-type {
+                margin-right: 0;
+            }
+
+            svg {
+                width: 58px;
+                height: 58px;
+                fill: $lightColor;
+            }
+
+            span {
+                overflow-wrap: break-word;
+                margin-top: 23px;
+                text-align: center;
+                font-weight: 400;
+                color: $mainGrayColor;
+            }
+        }
+
+        @include mediaQuery(tablet) {
+            flex-wrap: wrap;
+            margin-top: 45px;
+            margin-bottom: 5px;
+
+            .advantage {
+                margin-right: 0;
+                min-width: 30%;
+            }
+        }
+
+        @include mediaQuery(mobile) {
+            margin-top: 50px;
+            margin-bottom: 38px;
+
+            .advantage {
+                min-width: 50%;
+                max-width: 50%;
+
+                svg {
+                    width: 45px;
+                    height: 45px;
+                }
+
+                span {
+                    margin-top: 12px;
+                }
+            }
+        }
+    }
+
+    .whyCheapBlock {
+        margin-bottom: 100px;
+        display: flex;
+        align-items: flex-start;
+        overflow: hidden;
+        background: #F6E1EB;
+        position: relative;
+
+        @include mediaQuery(tablet) {
+            margin-bottom: 70px;
+        }
+
+        @include mediaQuery(mobile) {
+            flex-direction: column;
+        }
+
+        .textCheapBlock {
+            padding: 40px 60px;
+            height: 100%;
+            max-width: 70%;
+            position: relative;
+            display: flex;
+            justify-content: stretch;
+            align-items: center;
+            z-index: 2;
+
+            @include mediaQuery(tablet) {
+                padding: 30px 40px;
+                flex-direction: column;
+            }
+
+            @include mediaQuery(mobile) {
+                align-items: flex-start;
+                padding: 30px 20px 10px 20px;
+                min-width: 100%;
+                max-width: 100%;
+                box-shadow: 35px 50px 50px #F6E1EB;
+            }
+
+            .cheapText {
+                margin-right: 40px;
+
+                h3 {
+                    font-size: 50px;
+
+                    @media only screen and (max-width: 1500px) {
+                        font-size: getFontSize(27, 35);
+                    }
+
+                    @include mediaQuery(mobile) {
+                        margin-bottom: 20px;
+                        font-size: 24px;
+                    }
+                }
+
+                @include mediaQuery(mobile) {
+                    margin-right: 0;
+                }
+            }
+
+            .cheapBlock {
+                display: flex;
+                flex-direction: column;
+                align-self: center;
+
+                span {
+                    margin-bottom: 10px;
+                    font-size: 24px;
+                }
+
+                @include mediaQuery(tablet) {
+                    width: 100%;
+                    flex-direction: row;
+                    align-items: center;
+
+                    span {
+                        margin-bottom: 0;
+                        margin-right: 20px;
+                        font-size: 18px;
+                    }
+                }
+
+                @include mediaQuery(mobile) {
+                    flex-direction: column;
+                    align-items: flex-start;
+
+                    span {
+                        margin-bottom: 10px;
+                        margin-right: 0;
+                    }
+                }
+            }
+
+            button {
+                width: 280px;
+
+                @include mediaQuery(tablet) {
+                    width: 180px;
+                }
+
+                @include mediaQuery(mobile) {
+                    width: 100%;
+                }
+            }
+        }
+
+        .imgCheapBlock {
+            z-index: 1;
+            position: absolute;
+            align-self: flex-end;
+            height: 100%;
+            right: 0;
+            vertical-align: middle;
+
+            img {
+                height: 100%;
+            }
+
+            @media only screen and (max-width: 1190px) {
+                right: -10%;
+            }
+
+            @include mediaQuery(tablet) {
+                right: -25%;
+            }
+
+            @media only screen and (max-width: 810px) {
+                right: -32%;
+            }
+
+            @include mediaQuery(mobile) {
+                right: 0;
+                display: flex;
+                justify-content: flex-end;
+                position: relative;
+                max-width: 100%;
+                height: auto;
+
+                img {
+                    width: 90%;
+                }
+            }
+        }
+    }
+
+    .productCardContainer {
+        @include mediaQuery(tablet) {
+            margin-bottom: 70px;
+        }
+
+        .gliderTitle.firstWord {
+            color: $mainColor;
+        }
+    }
+
+    .gridGiftContainer {
+        margin-top: 100px;
+        margin-bottom: 100px    ;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(10, 40px);
+        grid-column-gap: 30px;
+        grid-row-gap: 30px;
+
+        @include mediaQuery(tablet) {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(7, 1fr);
+            grid-column-gap: 22px;
+            grid-row-gap: 22px;
+        }
+
+        @include mediaQuery(mobile) {
+            margin-right: 0;
+            max-width: 100%;
+            display: flex;
+            flex-direction: column;
+            grid-column-gap: 0;
+            grid-row-gap: 0;
+        }
+
+        .bonusItem {
+            display: flex;
+            align-items: flex-start;
+            overflow: hidden;
+            background: #F5E7FB;
+            position: relative;
+
+            &:first-of-type {
+                grid-column-start: 1;
+                grid-column-end: 1;
+                grid-row-start: 1;
+                grid-row-end: 5;
+            }
+
+            &:nth-of-type(2) {
+                background: #F4F6F8;
+                grid-column-start: 1;
+                grid-column-end: 1;
+                grid-row-start: 5;
+                grid-row-end: 11;
+            }
+
+            &:nth-of-type(3) {
+                background: #DFDFE1;
+                grid-column-start: 2;
+                grid-column-end: 2;
+                grid-row-start: 1;
+                grid-row-end: 6;
+
+                .bonusIgmContainer {
+                    width: 60%;
+                }
+            }
+
+            &:nth-of-type(4) {
+                background: #F6E1EB;
+                grid-column-start: 3;
+                grid-column-end: 3;
+                grid-row-start: 1;
+                grid-row-end: 6;
+
+                .bonusIgmContainer {
+                    width: 75%;
+                    height: 70%;
+                }
+            }
+
+            &:last-of-type {
+                margin-right: 0;
+                background: #dfdedc;
+                grid-column-start: 2;
+                grid-column-end: 4;
+                grid-row-start: 6;
+                grid-row-end: 11;
+
+                .bonusIgmContainer {
+                    width: 60%;
+                    height: 100%;
+                }
+            }
+
+            @media only screen and (min-width: 2499px) {
+                &:last-of-type {
+                    .bonusIgmContainer {
+                        width: initial;
+                    }
+                }
+            }
+
+            @include mediaQuery(tablet) {
+                &:first-of-type {
+                    grid-column-start: 1;
+                    grid-column-end: 1;
+                    grid-row-start: 1;
+                    grid-row-end: 3;
+                }
+
+                &:nth-of-type(2) {
+                    grid-column-start: 1;
+                    grid-column-end: 1;
+                    grid-row-start: 3;
+                    grid-row-end: 6;
+                }
+
+                &:nth-of-type(3) {
+                    grid-column-start: 2;
+                    grid-column-end: 2;
+                    grid-row-start: 1;
+                    grid-row-end: 4;
+                }
+
+                &:nth-of-type(4) {
+                    grid-column-start: 2;
+                    grid-column-end: 2;
+                    grid-row-start: 4;
+                    grid-row-end: 6;
+                }
+
+                &:last-of-type {
+                    grid-column-start: 1;
+                    grid-column-end: 3;
+                    grid-row-start: 6;
+                    grid-row-end: 8;
+
+                    .bonusText {
+                        max-width: 100%;
+                    }
+
+                    .bonusIgmContainer {
+                        width: initial;
+                    }
+                }
+            }
+
+            @include mediaQuery(mobile) {
+                min-height: 168px;
+                margin-bottom: 12px;
+
+                &:last-of-type {
+                    .bonusText {
+                        max-width: 70%;
+                    }
+                }
+            }
+        }
+
+        .bonusText {
+            height: 100%;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            z-index: 2;
+            padding: 40px;
+            font-size: 29px;
+            max-width: 60%;
+
+            .forText {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .bonusSmallText {
+                font-size: 18px;
+                color: $mainGrayColor;
+            }
+
+            button {
+                width: 192px;
+                padding: 5px;
+            }
+
+            @include mediaQuery(tablet) {
+                padding: 30px;
+                font-size: 24px;
+
+                .forText {
+                    margin-bottom: 40px;
+                }
+            }
+
+            @include mediaQuery(mobile) {
+                .forText {
+                    margin-bottom: initial;
+                }
+
+                .bonusSmallText {
+                    display: none;
+                }
+            }
+        }
+
+        .bonusIgmContainer {
+            z-index: 1;
+            position: absolute;
+            align-self: flex-end;
+            height: 80%;
+            right: 0;
+            vertical-align: middle;
+
+            img {
+                height: 100%;
+            }
+
+            @media only screen and (max-width: 1500px) {
+                width: 50%;
+            }
+
+            @include mediaQuery(tablet) {
+                width: 40%;
+            }
+
+            @include mediaQuery(mobile) {
+                width: 40% !important;
+            }
+        }
+    }
+
+    .hitCardSlider {
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+}
