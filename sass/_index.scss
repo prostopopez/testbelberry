@@ -1,11 +1,14 @@
 .mainPage {
     .bipolarBanner {
-        background: linear-gradient(to right, #E3E2E0 0%, #E3E2E0 35%, white 36%, white 49%, #F0F0F0 50%);
-
         .bipolarCont {
             min-height: 578px;
             display: flex;
             justify-content: space-between;
+
+            @include mediaQuery(tablet) {
+                min-height: initial;
+                flex-direction: column;
+            }
         }
 
         .leftBipolar,
@@ -14,10 +17,6 @@
             align-items: flex-start;
             overflow: hidden;
             position: relative;
-
-            @include mediaQuery(mobile) {
-                flex-direction: column;
-            }
 
             .bipolarText {
                 height: 100%;
@@ -29,14 +28,11 @@
 
                 @include mediaQuery(tablet) {
                     padding: 30px 40px;
-                    flex-direction: column;
                 }
 
                 @include mediaQuery(mobile) {
-                    padding: 30px 20px 10px 20px;
                     min-width: 100%;
                     max-width: 100%;
-                    box-shadow: 0 50px 50px #F6E1EB;
                 }
             }
 
@@ -76,17 +72,42 @@
             background-color: #E3E2E0;
 
             .bipolarText {
-                padding: 6vw;
-                max-width: 65%;
+                padding: 100px 100px 100px calc((100vw - 1500px) / 2);
+
+                @media only screen and (min-width: 2500px) {
+                    padding: 100px 100px 100px calc((100vw - 2000px) / 2);
+                }
+
+                @media only screen and (max-width: 1500px) {
+                    padding: 90px;
+                }
+
+                @include mediaQuery(tablet) {
+                    padding: 60px 24px;
+                }
+
+                @include mediaQuery(mobile) {
+                    padding: 40px 20px 170px 20px;
+                }
             }
 
             .bipolarDescr {
                 font-size: 18px;
             }
 
-            @media only screen and (max-width: 1500px) {
-                .bipolarText {
-                    max-width: 80%;
+            @include mediaQuery(tablet) {
+                width: 100%;
+                order: 2;
+            }
+
+            @include mediaQuery(mobile) {
+                .imgBipolarBlock {
+                    position: absolute;
+                    height: 100%;
+
+                    img {
+                        width: auto;
+                    }
                 }
             }
         }
@@ -96,15 +117,17 @@
             background-color: #F0F0F0;
 
             .bipolarText {
-                padding: 6vw;
-
-                .f1 {
-                    line-height: 90px;
-                }
+                margin-left: 0;
+                max-width: 60%;
+                padding: 75px 75px 40px 75px;
             }
 
             .bipolarDescr {
                 font-size: 24px;
+
+                @include mediaQuery(tablet) {
+                    font-size: 18px;
+                }
             }
 
             .bipolarDiscount {
@@ -120,22 +143,140 @@
 
                 button {
                     width: 120px;
-                    padding: 0 16px;
+                    height: initial;
+                    padding: 6px 16px;
                     font-size: 24px;
                     font-weight: 900;
                 }
             }
 
-            //.imgBipolarBlock {
-            //    img {
-            //        width: 100%;
-            //    }
-            //}
-
             h3 {
-               span {
-                   color: $mainColor;
-               }
+                span {
+                    color: $mainColor;
+                }
+            }
+
+            .forSvgs {
+                margin-top: 60px;
+                display: flex;
+
+                button {
+                    margin-right: 20px;
+                }
+
+                svg {
+                    width: 20px;
+                    height: 20px;
+                    fill: $ultraLightColor;
+
+                    &.active {
+                        fill: $mainColor;
+                    }
+                }
+
+                @include mediaQuery(tablet) {
+                    margin-top: 50px;
+
+                    svg {
+                        width: 14px;
+                        height: 14px;
+                    }
+                }
+
+                @include mediaQuery(mobile) {
+                    position: absolute;
+                    top: 145%;
+                }
+            }
+
+            @media only screen and (min-width: 2500px) {
+                .bipolarText {
+                    max-width: 40%;
+                }
+            }
+
+            @media only screen and (max-width: 1920px) {
+                .bipolarText {
+                    max-width: 80%;
+                }
+
+                .imgBipolarBlock {
+                    right: -20%;
+                }
+            }
+
+            @media only screen and (max-width: 1500px) {
+                .bipolarText {
+                    max-width: 95%;
+                }
+
+                .imgBipolarBlock {
+                    right: -35%;
+                }
+            }
+
+            @media only screen and (max-width: 1280px) {
+                .bipolarText {
+                    max-width: 100%;
+                }
+
+                .imgBipolarBlock {
+                    right: -50%;
+                }
+            }
+
+            @include mediaQuery(tablet) {
+                margin-bottom: 10px;
+                width: 100%;
+                order: 1;
+
+                .bipolarText {
+                    margin-left: 0;
+                    max-width: 65%;
+                    padding: 38px 24px;
+                }
+
+                .imgBipolarBlock {
+                    right: -10%;
+                }
+            }
+
+            @include mediaQuery(mobile) {
+                flex-direction: column;
+
+                .bipolarText {
+                    padding: 20px 20px 0 20px;
+                    box-shadow: 35px 50px 50px #F0F0F0;
+                }
+
+                .bipolarDiscount {
+                    span {
+                        font-size: 30px;
+                    }
+
+                    button {
+                        width: 85px;
+                        font-size: 18px;
+                    }
+                }
+
+                .bipolarDescr {
+                    font-size: 17px;
+                }
+
+                h3 {
+                    font-size: 50px;
+                }
+
+                .imgBipolarBlock {
+                    height: 251px;
+                    right: 0;
+
+                    img {
+                        object-fit: cover;
+                        width: 100%;
+                    }
+                }
             }
         }
     }
@@ -360,7 +501,7 @@
 
     .gridGiftContainer {
         margin-top: 100px;
-        margin-bottom: 100px    ;
+        margin-bottom: 100px;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(10, 40px);
