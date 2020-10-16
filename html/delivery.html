@@ -19,7 +19,7 @@
         <div class="deliveryCards">
             <h3 class="deliveryCardTitle">Доставка в пределах МКАД</h3>
             <p class="deliveryCardSubtitle">Осуществляется курьером на следующий день после оформления заказа, при
-                условии, что заказ был оформлен до 15:00. Заказы, оформленные после 15:00, будут приниматься с доставкой
+                условии, что заказ был <br> оформлен до 15:00. Заказы, оформленные после 15:00, будут приниматься с доставкой
                 через день.</p>
             <div class="priceContainer">
                 {% for item in cardDeliveryItems %}
@@ -30,7 +30,7 @@
         <div class="deliveryCards">
             <h3 class="deliveryCardTitle">Доставка за пределы МКАД (до 20 км.)</h3>
             <p class="deliveryCardSubtitle">Осуществляется в течении 2-х рабочих дней с момента принятия заказа.
-                Временной интервал доставки за МКАД в течении рабочего дня с 10:00 до 21:00.</p>
+                Временной <br> интервал доставки за МКАД в течении рабочего дня с 10:00 до 21:00.</p>
             <div class="priceContainer">
                 {% for item in cardDeliveryItems %}
                 {% include 'components/deliveryCard.html' with {'sum': item.sum, 'addition': item.addition} %}
@@ -68,7 +68,7 @@
             </div>
 
             <h3 class="deliveryCardTitle deliveryCardTitleBold">Время доставки</h3>
-            <p class="deliveryCardSubtitle">Заказы, оформленные до 15:00 часов по, московскому времени, будут
+            <p class="deliveryCardSubtitle">Заказы, оформленные до 15:00 часов по, московскому времени, будут <br>
                 передаваться в
                 отделение службы доставки на следующий день.</p>
             <div class="deliveryTimeBlocks">

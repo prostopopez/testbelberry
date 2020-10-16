@@ -15,9 +15,9 @@
     }
 
     .glider-dots {
-        bottom: 20%;
+        bottom: 15%;
         position: absolute;
-        z-index: 1;
+        z-index: 3;
 
         @include mediaQuery(tablet) {
             position: relative;
@@ -50,7 +50,7 @@
 
         .emergingBlock {
             display: none;
-            position: relative;
+            //position: relative;
 
             @include mediaQuery(tablet) {
                 display: flex;

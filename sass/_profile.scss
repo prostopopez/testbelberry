@@ -1,9 +1,9 @@
 .profilePage {
     .myProfile {
-        background: $mainBgColor;
-        padding: 3rem 0 7rem 0;
-        margin-bottom: 6rem;
         position: relative;
+        margin-bottom: 126px;
+        padding: 3rem 0 7rem 0;
+        background: $mainBgColor;
 
         .cont {
             position: relative;
@@ -14,6 +14,7 @@
         }
 
         @include mediaQuery(tablet) {
+            margin-bottom: 100px;
             padding: 3rem 0 5rem 0;
         }
 
@@ -22,6 +23,7 @@
         }
 
         @include mediaQuery(mobile) {
+            margin-bottom: 115px;
             padding: 2rem 0 4rem 0;
         }
     }
@@ -182,7 +184,7 @@
         width: 35%;
         background: #ffffff;
         position: absolute;
-        bottom: -10rem;
+        bottom: -9.3rem;
         box-shadow: 0 4px 10px rgba(95, 91, 97, 0.1);
         border-radius: 6px;
 
@@ -212,10 +214,11 @@
         }
 
         @include mediaQuery(tablet) {
-            bottom: -7rem;
+            bottom: -6.8rem;
         }
 
         @include mediaQuery(mobile) {
+            bottom: -7rem;
             padding: 20px 28px;
             flex-direction: column;
             width: 100%;

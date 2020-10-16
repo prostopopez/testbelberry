@@ -1,6 +1,33 @@
 .deliveryPage {
     .bannerGradientContainer {
-        margin-bottom: 80px;
+        .bannerGradient {
+            background: linear-gradient(to right, #F4F6F8 0%, #F4F6F8 60%, transparent 65%);
+
+            @media only screen and (min-width: 2000px) {
+                background: linear-gradient(to right, #F4F6F8 0%, #F4F6F8 73%, transparent 75%)
+            }
+
+            @media only screen and (max-width: 1500px) {
+                background: linear-gradient(to right, #F4F6F8 0%, #F4F6F8 50%, transparent 60%)
+            }
+
+            @include mediaQuery(tablet) {
+                background: linear-gradient(to right, #F4F6F8 0%, #F4F6F8 50%, transparent 70%)
+            }
+
+            @include mediaQuery(mobile) {
+                background: #F4F6F8;
+                box-shadow: 100px 50px 50px #F4F6F8;
+            }
+        }
+
+        @include mediaQuery(mobile) {
+            max-height: initial;
+
+            .bannerImg {
+                background: linear-gradient(to right, #F4F6F8 5%, transparent);
+            }
+        }
     }
 
     .deliveryPageTitle {
@@ -35,6 +62,12 @@
             font-size: 18px;
             margin-bottom: 36px;
             line-height: 24px;
+
+            @include mediaQuery(tablet) {
+                br {
+                    display: none;
+                }
+            }
         }
 
         .priceContainer {

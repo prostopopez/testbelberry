@@ -169,7 +169,9 @@
                     height: 20px;
                     fill: $ultraLightColor;
 
-                    &.active {
+                    &.active,
+                    :active,
+                    :hover {
                         fill: $mainColor;
                     }
                 }
@@ -500,7 +502,7 @@
     }
 
     .gridGiftContainer {
-        margin-top: 100px;
+        margin-top: 0;
         margin-bottom: 100px;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -723,7 +725,7 @@
     }
 
     .hitCardSlider {
-        margin-top: 100px;
+        margin-top: 0;
         margin-bottom: 100px;
     }
 }

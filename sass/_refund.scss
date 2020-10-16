@@ -1,5 +1,32 @@
 .refundPage {
     .bannerGradientContainer {
+        .bannerGradient {
+            background: linear-gradient(to right, #F4F6F8 0%, #F4F6F8 50%, transparent 65%);
+
+            @media only screen and (min-width: 2000px) {
+                background: linear-gradient(to right, #F4F6F8 0%, #F4F6F8 60%, transparent 63%)
+            }
+
+            @media only screen and (max-width: 1500px) {
+                background: linear-gradient(to right, #F4F6F8 0%, #F4F6F8 50%, transparent 60%)
+            }
+
+            @include mediaQuery(tablet) {
+                background: linear-gradient(to right, #F4F6F8 0%, #F4F6F8 50%, transparent 70%)
+            }
+
+            @include mediaQuery(mobile) {
+                background: #F4F6F8;
+                box-shadow: 35px 50px 50px #F4F6F8;
+            }
+        }
+
+        @include mediaQuery(mobile) {
+            .bannerImg {
+                background: linear-gradient(to right, #F4F6F8 5%, transparent);
+            }
+        }
+
         .mainTextBanner {
             border-bottom: 4px solid #DFDFDF;
         }
@@ -42,7 +69,7 @@
 
     .returnCards {
         .returnCardsHead {
-            margin: 2rem 0;
+            margin: 0 0 2rem 0;
             width: 100%;
 
             @media only screen and (max-width: 1350px) {
@@ -51,12 +78,13 @@
 
             @include mediaQuery(mobile) {
                 width: 90%;
-                margin: 3rem 0 1rem;
+                margin: 0 0 1rem 0;
             }
         }
 
         .returnOfQualityGoods,
         .returnOfQualityDefects {
+            margin-bottom: 90px;
             display: flex;
             flex-wrap: wrap;
             flex-direction: row;

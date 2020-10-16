@@ -185,11 +185,9 @@ svg {
 }
 
 .pageStyle {
-    margin-top: 40px;
     margin-bottom: 40px;
 
     @include mediaQuery(mobile) {
-        margin-top: 0;
         margin-bottom: 35px;
     }
 }

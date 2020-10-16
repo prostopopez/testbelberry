@@ -2,11 +2,15 @@
 window.onload = function () {
     if (window.screen.width > 1024) {
         let sliderCards = [];
+        let dotConts = [];
         const sliderCardContainers = document.querySelectorAll(`.fnv-productCardContainer`);
 
         for (let i = 0; i < sliderCardContainers.length; i++) {
             let whileInCont = sliderCardContainers[i].querySelectorAll(`.fnv-productCard`);
             Array.from(whileInCont).map(item => sliderCards.push(item));
+
+            let dotsCont = sliderCardContainers[i].querySelector(`.fnv-glider-dots`);
+            dotConts.push(dotsCont);
         }
 
         sliderCards.map(item => {
@@ -22,9 +26,19 @@ window.onload = function () {
         })
 
         function changeCardHeight(item, change) {
-            change
-                ? item.style.height = 'auto'
-                : item.style.height = '386px';
+            if (change) {
+                item.style.height = 'auto'
+
+                dotConts.map(dot => {
+                    dot.style.zIndex = '1';
+                })
+            } else {
+                item.style.height = '386px';
+
+                dotConts.map(dot => {
+                    dot.style.zIndex = '3';
+                })
+            }
         }
     }
 }
