@@ -12,6 +12,16 @@
     box-sizing: border-box;
     cursor: pointer;
 
+    a {
+        color: black;
+
+        &:hover,
+        &:active {
+            cursor: pointer;
+            color: $mainColor;
+        }
+    }
+
     @include mediaQuery(tablet) {
         min-width: 227px;
         max-width: 100%;

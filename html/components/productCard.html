@@ -4,7 +4,7 @@
     {% block cards %} {% for item in dataProductCards %}
     <div class="productCard">
       <img src="/img/product/{{item.img}}.png" alt="{{name}}" />
-      <p class="productName">{{item.name}}</p>
+      <a class="productName" href="../product.html">{{item.name}}</a>
       <p class="f4 productPrice">{{item.price}}</p>
     <div class="emergingBlock">
         {% if {{item.description}} %}

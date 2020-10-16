@@ -20,11 +20,11 @@ h1,
 h2,
 .f2 {
     font-size: 50px;
-    line-height: 50px;
+    line-height: 60px;
 
     @include mediaQuery(tablet) {
-        font-size: 36px;
-        line-height: 36px;
+        font-size: 40px;
+        line-height: 40px;
     }
 }
 

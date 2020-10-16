@@ -39,6 +39,16 @@
         margin: 1rem;
         box-sizing: border-box;
 
+        a {
+            color: black;
+
+            &:hover,
+            &:active {
+                cursor: pointer;
+                color: $mainColor;
+            }
+        }
+
         @include mediaQuery(tablet) {
             margin: 1rem;
         }

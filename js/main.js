@@ -1,5 +1,14 @@
 //slider for cards adjust
 window.onload = function () {
+    cardAdjust();
+
+    window.onresize = function () {
+        cardAdjust();
+    }
+};
+
+
+function cardAdjust() {
     if (window.screen.width > 1024) {
         let sliderCards = [];
         let dotConts = [];
@@ -42,7 +51,6 @@ window.onload = function () {
         }
     }
 }
-
 
 //alphabet modal under breadcrumbs
 const headerCont = document.querySelector(`.fnv-header`);
