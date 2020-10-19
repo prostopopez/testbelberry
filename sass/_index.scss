@@ -1,7 +1,7 @@
 .mainPage {
     .bipolarBanner {
         .bipolarCont {
-            min-height: 578px;
+            min-height: 580px;
             display: flex;
             justify-content: space-between;
 
@@ -42,15 +42,16 @@
             }
 
             .imgBipolarBlock {
+                right: 0;
                 z-index: 1;
                 position: absolute;
                 align-self: flex-end;
                 height: 100%;
-                right: 0;
                 vertical-align: middle;
 
                 img {
                     height: 100%;
+                    object-fit: cover;
                 }
 
                 @include mediaQuery(mobile) {
@@ -119,7 +120,7 @@
             .bipolarText {
                 margin-left: 0;
                 max-width: 60%;
-                padding: 75px 75px 40px 75px;
+                padding: 75px 75px 115px 75px;
             }
 
             .bipolarDescr {
@@ -141,12 +142,27 @@
                     font-weight: 700;
                 }
 
-                button {
+                .linkLikeButton {
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
                     width: 120px;
-                    height: initial;
-                    padding: 6px 16px;
+                    border-radius: 4px;
+                    background-color: $mainColor;
+                    color: #ffffff;
+                    line-height: initial;
+                    padding: 10px 16px;
                     font-size: 24px;
                     font-weight: 900;
+
+                    &:hover {
+                        background-color: $lightColor;
+                    }
+
+                    &:active {
+                        background-color: $darkColor;
+                    }
                 }
             }
 
@@ -156,64 +172,15 @@
                 }
             }
 
-            .forSvgs {
-                margin-top: 60px;
-                display: flex;
-
-                button {
-                    margin-right: 20px;
-                }
-
-                svg {
-                    width: 20px;
-                    height: 20px;
-                    fill: $ultraLightColor;
-
-                    &.active,
-                    :active,
-                    :hover {
-                        fill: $mainColor;
-                    }
-                }
-
-                @include mediaQuery(tablet) {
-                    margin-top: 50px;
-
-                    svg {
-                        width: 14px;
-                        height: 14px;
-                    }
-                }
-
-                @include mediaQuery(mobile) {
-                    position: absolute;
-                    top: 145%;
-                }
-            }
-
-            @media only screen and (min-width: 2500px) {
-                .bipolarText {
-                    max-width: 40%;
-                }
-            }
-
             @media only screen and (max-width: 1920px) {
                 .bipolarText {
                     max-width: 80%;
-                }
-
-                .imgBipolarBlock {
-                    right: -20%;
                 }
             }
 
             @media only screen and (max-width: 1500px) {
                 .bipolarText {
                     max-width: 95%;
-                }
-
-                .imgBipolarBlock {
-                    right: -35%;
                 }
             }
 
@@ -222,8 +189,8 @@
                     max-width: 100%;
                 }
 
-                .imgBipolarBlock {
-                    right: -50%;
+                .f1 {
+                    font-size: 78px;
                 }
             }
 
@@ -234,12 +201,18 @@
 
                 .bipolarText {
                     margin-left: 0;
+                    padding: 40px 24px 115px calc(24px + (100vw - 720px) / 2);
                     max-width: 65%;
-                    padding: 38px 24px;
                 }
 
-                .imgBipolarBlock {
-                    right: -10%;
+                .f1 {
+                    font-size: 60px;
+                }
+            }
+
+            @media only screen and (max-width: 720px) {
+                .bipolarText {
+                    padding: 40px 24px 115px 24px;
                 }
             }
 
@@ -247,7 +220,7 @@
                 flex-direction: column;
 
                 .bipolarText {
-                    padding: 20px 20px 0 20px;
+                    padding: 30px 20px 0 20px;
                     box-shadow: 35px 50px 50px #F0F0F0;
                 }
 
@@ -256,7 +229,7 @@
                         font-size: 30px;
                     }
 
-                    button {
+                    .linkLikeButton {
                         width: 85px;
                         font-size: 18px;
                     }
@@ -279,6 +252,74 @@
                         width: 100%;
                     }
                 }
+            }
+        }
+
+        .gliderContain {
+            height: 100%;
+
+            .glider {
+                padding: 0;
+                position: relative;
+                height: 100%;
+                display: flex;
+                justify-content: flex-end;
+            }
+
+            .gliderTitle {
+                display: none;
+            }
+
+            .glider-dots {
+                margin: 0;
+                padding: 75px 75px 40px 75px;
+                position: absolute;
+                bottom: 35px;
+
+                .glider-dot {
+                    width: 14px;
+                    height: 14px;
+                    margin-right: 20px;
+                }
+
+                @include mediaQuery(tablet) {
+                    padding: 75px 24px 40px calc(24px + (100vw - 720px) / 2);;
+                }
+
+                @media only screen and (max-width: 720px) {
+                    padding: 40px 24px 40px 24px;
+                }
+
+                @include mediaQuery(mobile) {
+                    bottom: 20px;
+                    padding: 20px 20px 40px 20px;
+
+                    .glider-dot {
+                        width: 10px;
+                        height: 10px;
+                        margin-right: 10px;
+                    }
+
+                }
+
+            }
+        }
+
+        .bipolarSliderItem {
+            position: relative;
+            max-width: 60vw;
+            min-width: 60vw;
+            width: 100%;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            box-sizing: border-box;
+
+            @include mediaQuery(tablet) {
+                max-width: 100vw;
+                min-width: 100vw;
             }
         }
     }

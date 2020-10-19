@@ -1,0 +1,32 @@
+<div style="display: none">
+    {% block bipolarRight %}
+    {% for i in range(0, 8) %}
+    <div class="bipolarSliderItem">
+        <div class="bipolarText">
+            <h3 class="f1">
+                Montale
+                Aoud
+                Forest
+                <span>1+1=3</span>
+            </h3>
+            <span class="bipolarDescr">При покупке двух флаконов Montale,<br>
+                        третий флакон - в подарок! </span>
+            <div class="bipolarDiscount">
+                <span>Акция</span>
+                <a class="linkLikeButton f5" href="../catalog.html">1+1=3</a>
+            </div>
+        </div>
+        <div class="imgBipolarBlock">
+            <img src="/img/main/bottlePurple.png" alt="">
+        </div>
+    </div>
+    {% endfor %}
+
+    {% endblock %}
+</div>
+
+{%
+include 'glider.html' with {
+'elements': block('bipolarRight')
+}
+%}
