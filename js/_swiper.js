@@ -20,8 +20,25 @@ const BtnGroup = class BtnGroup {
         this.refreshPath();
         this.initButtons();
 
-        for (const button of this.buttons) {
-            button.addEventListener('click', e => this.onClick(e));
+        for (let i = 0; i < this.buttons.length; i++) {
+            startRepeat(i, this.buttons, false);
+
+            this.buttons[i].addEventListener('click', e => {
+                this.onClick(e);
+                startRepeat(i, this.buttons, true);
+            });
+        }
+
+        function startRepeat(i, buttons, stop) {
+            let timeout = setTimeout((e) => buttons[i].click(), i * 3000);
+            let interval = setInterval((e) =>
+                setTimeout((e) =>
+                    buttons[i].click(), i * 3000), buttons.length * 3000);
+
+            if (stop) {
+                clearTimeout(timeout);
+                clearInterval(interval);
+            }
         }
     }
 
@@ -30,19 +47,19 @@ const BtnGroup = class BtnGroup {
             const center = this.center(i);
             const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
             let pathStr = '';
-            pathStr += 'M' + (center    ) + ', 14 ';
+            pathStr += 'M' + (center) + ', 14 ';
             pathStr += 'C' + (center + 3) + ', 14 ';
-            pathStr +=       (center + 6) + ', 11 ';
-            pathStr +=       (center + 6) + ',  8 ';
+            pathStr += (center + 6) + ', 11 ';
+            pathStr += (center + 6) + ',  8 ';
             pathStr += 'C' + (center + 6) + ',  5 ';
-            pathStr +=       (center + 3) + ',  2 ';
-            pathStr +=       (center    ) + ',  2 ';
+            pathStr += (center + 3) + ',  2 ';
+            pathStr += (center) + ',  2 ';
             pathStr += 'C' + (center - 3) + ',  2 ';
-            pathStr +=       (center - 6) + ',  5 ';
-            pathStr +=       (center - 6) + ',  8 ';
+            pathStr += (center - 6) + ',  5 ';
+            pathStr += (center - 6) + ',  8 ';
             pathStr += 'C' + (center - 6) + ', 11 ';
-            pathStr +=       (center - 3) + ', 14 ';
-            pathStr +=       (center    ) + ', 14 ';
+            pathStr += (center - 3) + ', 14 ';
+            pathStr += (center) + ', 14 ';
             path.setAttributeNS(null, 'd', pathStr);
             path.classList.add('circle');
         }
@@ -81,30 +98,30 @@ const BtnGroup = class BtnGroup {
         const offset = 0;
         const sign = index < this.currentIndex ? -1 : 1;
         this.currentPath += 'C' + (lastCenter + sign * 3) + ', 14 ';
-        this.currentPath +=       (lastCenter + sign * 6) + ', 11 ';
-        this.currentPath +=       (lastCenter + sign * 6) + ',  8 ';
+        this.currentPath += (lastCenter + sign * 6) + ', 11 ';
+        this.currentPath += (lastCenter + sign * 6) + ',  8 ';
         this.currentPath += 'C' + (lastCenter + sign * 6) + ',  5 ';
-        this.currentPath +=       (lastCenter + sign * 3) + ',  2 ';
-        this.currentPath +=       (lastCenter           ) + ',  2 ';
+        this.currentPath += (lastCenter + sign * 3) + ',  2 ';
+        this.currentPath += (lastCenter) + ',  2 ';
         this.currentPath += 'C' + (lastCenter - sign * 3) + ',  2 ';
-        this.currentPath +=       (lastCenter - sign * 6) + ',  5 ';
-        this.currentPath +=       (lastCenter - sign * 6) + ',  8 ';
+        this.currentPath += (lastCenter - sign * 6) + ',  5 ';
+        this.currentPath += (lastCenter - sign * 6) + ',  8 ';
         this.currentPath += 'C' + (lastCenter - sign * 6) + ', 11 ';
-        this.currentPath +=       (lastCenter - sign * 3) + ', 14 ';
-        this.currentPath +=       (lastCenter           ) + ', 14 ';
-        this.currentPath += 'L' + (nextCenter           ) + ', 14 ';
+        this.currentPath += (lastCenter - sign * 3) + ', 14 ';
+        this.currentPath += (lastCenter) + ', 14 ';
+        this.currentPath += 'L' + (nextCenter) + ', 14 ';
         this.currentPath += 'C' + (nextCenter + sign * 3) + ', 14 ';
-        this.currentPath +=       (nextCenter + sign * 6) + ', 11 ';
-        this.currentPath +=       (nextCenter + sign * 6) + ',  8 ';
+        this.currentPath += (nextCenter + sign * 6) + ', 11 ';
+        this.currentPath += (nextCenter + sign * 6) + ',  8 ';
         this.currentPath += 'C' + (nextCenter + sign * 6) + ',  5 ';
-        this.currentPath +=       (nextCenter + sign * 3) + ',  2 ';
-        this.currentPath +=       (nextCenter           ) + ',  2 ';
+        this.currentPath += (nextCenter + sign * 3) + ',  2 ';
+        this.currentPath += (nextCenter) + ',  2 ';
         this.currentPath += 'C' + (nextCenter - sign * 3) + ',  2 ';
-        this.currentPath +=       (nextCenter - sign * 6) + ',  5 ';
-        this.currentPath +=       (nextCenter - sign * 6) + ',  8 ';
+        this.currentPath += (nextCenter - sign * 6) + ',  5 ';
+        this.currentPath += (nextCenter - sign * 6) + ',  8 ';
         this.currentPath += 'C' + (nextCenter - sign * 6) + ', 11 ';
-        this.currentPath +=       (nextCenter - sign * 3) + ', 14 ';
-        this.currentPath +=       (nextCenter           ) + ', 14 ';
+        this.currentPath += (nextCenter - sign * 3) + ', 14 ';
+        this.currentPath += (nextCenter) + ', 14 ';
         this.removeClass('fnv-active');
         this.currentIndex = index;
         this.addClass('fnv-active');
