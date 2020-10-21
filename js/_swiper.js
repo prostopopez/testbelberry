@@ -21,25 +21,21 @@ const BtnGroup = class BtnGroup {
         this.initButtons();
 
         for (let i = 0; i < this.buttons.length; i++) {
-            startRepeat(i, this.buttons, false);
+            this.startRepeat(i, this.buttons);
 
             this.buttons[i].addEventListener('click', e => {
                 this.onClick(e);
-                startRepeat(i, this.buttons, true);
             });
         }
 
-        function startRepeat(i, buttons, stop) {
-            let timeout = setTimeout((e) => buttons[i].click(), i * 3000);
-            let interval = setInterval((e) =>
-                setTimeout((e) =>
-                    buttons[i].click(), i * 3000), buttons.length * 3000);
+    }
 
-            if (stop) {
-                clearTimeout(timeout);
-                clearInterval(interval);
-            }
-        }
+    startRepeat(i, buttons) {
+        let timeout = setTimeout((e) => buttons[i].click(), i * 5000);
+        let interval = setInterval((e) => {
+            setTimeout((e) =>
+                buttons[i].click(), i * 5000);
+        }, buttons.length * 5000);
     }
 
     initButtons() {
