@@ -1,4 +1,6 @@
 const pathLength = 39;
+let timeout;
+let interval;
 
 const BtnGroup = class BtnGroup {
     constructor(group) {
@@ -19,15 +21,12 @@ const BtnGroup = class BtnGroup {
         this.svg.appendChild(this.path);
         this.refreshPath();
         this.initButtons();
-
-        window.onload = () => {
-            this.startRepeat(this.buttons);
-        };
+        this.startRepeat(this.buttons);
 
         for (let i = 0; i < this.buttons.length; i++) {
             this.buttons[i].addEventListener('click', e => {
                 this.onClick(e);
-                this.startRepeat(i, this.buttons, true);
+                this.stopRepeat();
             });
         }
     }
@@ -36,15 +35,18 @@ const BtnGroup = class BtnGroup {
         for (let i = 0; i < this.buttons.length; i++) {
             let sliderTrigger = new Event('sliderTrigger');
             buttons[i].addEventListener('sliderTrigger', e => this.onClick(e));
-            let timeout = setTimeout((e) => buttons[i].dispatchEvent(sliderTrigger), i * 5000);
-            let interval = setInterval((e) => {
+
+            timeout = setTimeout((e) => buttons[i].dispatchEvent(sliderTrigger), i * 5000);
+            interval = setInterval((e) => {
                 setTimeout((e) =>
                     buttons[i].dispatchEvent(sliderTrigger), i * 5000);
             }, buttons.length * 5000);
         }
+    }
 
-        // window.clearTimeout(timeout);
-        // window.clearInterval(interval);
+    stopRepeat() {
+        clearTimeout(timeout);
+        clearTimeout(interval);
     }
 
     initButtons() {
