@@ -1,6 +1,6 @@
 const pathLength = 39;
-let timeout;
-let interval;
+let sliderTimeout = [];
+let sliderInterval;
 
 const BtnGroup = class BtnGroup {
     constructor(group) {
@@ -31,22 +31,27 @@ const BtnGroup = class BtnGroup {
         }
     }
 
-    startRepeat(buttons, stop) {
-        for (let i = 0; i < this.buttons.length; i++) {
-            let sliderTrigger = new Event('sliderTrigger');
+    startRepeat(buttons) {
+        let sliderTrigger = new Event('sliderTrigger');
+
+        for (let i = 0; i < buttons.length; i++) {
             buttons[i].addEventListener('sliderTrigger', e => this.onClick(e));
 
-            timeout = setTimeout((e) => buttons[i].dispatchEvent(sliderTrigger), i * 5000);
-            interval = setInterval((e) => {
-                setTimeout((e) =>
-                    buttons[i].dispatchEvent(sliderTrigger), i * 5000);
-            }, buttons.length * 5000);
+            sliderTimeout.push(setTimeout((e) => buttons[i].dispatchEvent(sliderTrigger), i * 5000));
         }
+
+        sliderInterval = setInterval((e) => {
+            for (let i = 0; i < buttons.length; i++) {
+                sliderTimeout.push(setTimeout((e) => buttons[i].dispatchEvent(sliderTrigger), i * 5000));
+            }
+        }, buttons.length * 5000);
     }
 
     stopRepeat() {
-        clearTimeout(timeout);
-        clearTimeout(interval);
+        clearInterval(sliderInterval);
+        for (let i = 0; i < sliderTimeout.length; i++) {
+            clearTimeout(sliderTimeout[i]);
+        }
     }
 
     initButtons() {
