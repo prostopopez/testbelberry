@@ -20,25 +20,31 @@ const BtnGroup = class BtnGroup {
         this.refreshPath();
         this.initButtons();
 
-        for (let i = 0; i < this.buttons.length; i++) {
-            this.startRepeat(i, this.buttons);
+        window.onload = () => {
+            this.startRepeat(this.buttons);
+        };
 
+        for (let i = 0; i < this.buttons.length; i++) {
             this.buttons[i].addEventListener('click', e => {
                 this.onClick(e);
+                this.startRepeat(i, this.buttons, true);
             });
         }
-
     }
 
-    startRepeat(i, buttons) {
-        let sliderTrigger = new Event('sliderTrigger');
-        buttons[i].addEventListener('sliderTrigger', e => this.onClick(e));
+    startRepeat(buttons, stop) {
+        for (let i = 0; i < this.buttons.length; i++) {
+            let sliderTrigger = new Event('sliderTrigger');
+            buttons[i].addEventListener('sliderTrigger', e => this.onClick(e));
+            let timeout = setTimeout((e) => buttons[i].dispatchEvent(sliderTrigger), i * 5000);
+            let interval = setInterval((e) => {
+                setTimeout((e) =>
+                    buttons[i].dispatchEvent(sliderTrigger), i * 5000);
+            }, buttons.length * 5000);
+        }
 
-        let timeout = setTimeout((e) => buttons[i].dispatchEvent(sliderTrigger), i * 5000);
-        let interval = setInterval((e) => {
-            setTimeout((e) =>
-                buttons[i].dispatchEvent(sliderTrigger), i * 5000);
-        }, buttons.length * 5000);
+        // window.clearTimeout(timeout);
+        // window.clearInterval(interval);
     }
 
     initButtons() {

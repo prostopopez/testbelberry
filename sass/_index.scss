@@ -50,7 +50,6 @@
                 vertical-align: middle;
 
                 img {
-                    width: 100%;
                     height: 100%;
                     object-fit: cover;
                 }
@@ -183,6 +182,10 @@
             @media only screen and (max-width: 1500px) {
                 .bipolarText {
                     max-width: 95%;
+                }
+
+                .imgBipolarBlock img{
+                    width: 100%;
                 }
             }
 
