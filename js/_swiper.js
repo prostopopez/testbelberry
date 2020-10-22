@@ -31,10 +31,13 @@ const BtnGroup = class BtnGroup {
     }
 
     startRepeat(i, buttons) {
-        let timeout = setTimeout((e) => buttons[i].click(), i * 5000);
+        let sliderTrigger = new Event('sliderTrigger');
+        buttons[i].addEventListener('sliderTrigger', e => this.onClick(e));
+
+        let timeout = setTimeout((e) => buttons[i].dispatchEvent(sliderTrigger), i * 5000);
         let interval = setInterval((e) => {
             setTimeout((e) =>
-                buttons[i].click(), i * 5000);
+                buttons[i].dispatchEvent(sliderTrigger), i * 5000);
         }, buttons.length * 5000);
     }
 
@@ -123,13 +126,13 @@ const BtnGroup = class BtnGroup {
         this.addClass('fnv-active');
         this.refreshPath();
     }
-}
+};
 
 const groups = Array.prototype.slice.call(document.querySelectorAll('.fnv-btn-group'));
 
 for (const group of groups) {
     $(group).parent().parent().find(`.fnv-slides .fnv-bipolarSliderItem`).each((i) => {
         $(group).append(`<div class="fnv-btn${i === 0 ? ' fnv-active' : ''}"></div>`)
-    })
+    });
     new BtnGroup(group)
 }

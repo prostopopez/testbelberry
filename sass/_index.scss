@@ -60,7 +60,8 @@
                     justify-content: flex-end;
                     position: relative;
                     max-width: 100%;
-                    height: auto;
+                    height: 50%;
+                    //height: auto;
 
                     img {
                         width: 90%;
@@ -256,60 +257,14 @@
             }
         }
 
-        .gliderContain {
-            height: 100%;
-
-            .glider {
-                padding: 0;
-                position: relative;
-                height: 100%;
-                display: flex;
-                justify-content: flex-end;
-            }
-
-            .gliderTitle {
-                display: none;
-            }
-
-            .glider-dots {
-                margin: 0;
-                padding: 75px 75px 40px 75px;
-                position: absolute;
-                bottom: 35px;
-
-                .glider-dot {
-                    width: 14px;
-                    height: 14px;
-                    margin-right: 20px;
-                }
-
-                @include mediaQuery(tablet) {
-                    padding: 75px 24px 40px calc(24px + (100vw - 720px) / 2);;
-                }
-
-                @media only screen and (max-width: 720px) {
-                    padding: 40px 24px 40px 24px;
-                }
-
-                @include mediaQuery(mobile) {
-                    bottom: 20px;
-                    padding: 20px 20px 40px 20px;
-
-                    .glider-dot {
-                        width: 10px;
-                        height: 10px;
-                        margin-right: 10px;
-                    }
-
-                }
-
-            }
+        .slides {
+            width: 100% !important;
         }
 
         .bipolarSliderItem {
             position: relative;
-            max-width: 60vw;
-            min-width: 60vw;
+            max-width: 100%;
+            min-width: 100%;
             width: 100%;
             border-radius: 8px;
             display: flex;
@@ -321,6 +276,8 @@
             @include mediaQuery(tablet) {
                 max-width: 100vw;
                 min-width: 100vw;
+                position: relative;
+                min-height: 500px;
             }
         }
     }

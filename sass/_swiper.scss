@@ -9,6 +9,14 @@
     @include mediaQuery(mobile) {
         height: 500px;
     }
+    
+    @media only screen and (max-width: 414px) {
+        height: 600px;
+    }
+
+    @media only screen and (max-width: 350px) {
+        height: 650px;
+    }
 }
 
 .btn-group {
@@ -56,10 +64,6 @@
     .bipolarSliderItem {
         height: 100%;
         width: 100%;
-    }
-
-    @media only screen and (max-width: 720px) {
-        height: initial;
     }
 }
 
