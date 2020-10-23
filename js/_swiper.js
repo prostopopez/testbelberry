@@ -1,12 +1,9 @@
 const pathLength = 39;
 let sliderTimeout = [];
 let sliderInterval;
-let posInitial;
+let rect;
 let posX1 = 0;
 let posX2 = 0;
-let posFinal;
-let threshold = 50;
-let allowShift = true;
 
 const BtnGroup = class BtnGroup {
     constructor(group) {
@@ -15,6 +12,7 @@ const BtnGroup = class BtnGroup {
         this.buttons = Array.prototype.slice.call(this.group.querySelectorAll('.fnv-btn'));
         this.slides = Array.prototype.slice.call(document.querySelectorAll('.fnv-slide'));
         this.slideContainer = document.querySelector('.fnv-slides');
+        this.bipolarSlideItems = document.querySelectorAll('.fnv-bipolarSliderItem');
         this.slideContainer.style.width = this.slides.length + '00vw';
         this.svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
         this.svg.setAttribute('viewbox', '0 0 ' + (this.buttonSpacing * this.buttons.length) + ' 16');
@@ -36,71 +34,49 @@ const BtnGroup = class BtnGroup {
             });
         }
 
-        // Mouse events
-        this.slideContainer.onmousedown = dragStart;
-        // Touch events
-        this.slideContainer.addEventListener('touchstart', dragStart);
-        this.slideContainer.addEventListener('touchend', dragEnd);
-        this.slideContainer.addEventListener('touchmove', dragAction);
+        for (let i = 0; i < this.bipolarSlideItems.length; i++) {
+            // Mouse events
+            this.bipolarSlideItems[i].addEventListener('mousedown', e => this.dragStart(e, this.bipolarSlideItems[i]));
+            this.bipolarSlideItems[i].addEventListener('mousemove', e => this.dragAction(e));
+            this.bipolarSlideItems[i].addEventListener('mouseup', e => this.dragEnd(e, this.buttons));
+            // Touch events
+            this.bipolarSlideItems[i].addEventListener('touchstart', e => this.dragStart(e, this.bipolarSlideItems[i]));
+            this.bipolarSlideItems[i].addEventListener('touchmove', e => this.dragAction(e));
+            this.bipolarSlideItems[i].addEventListener('touchend', e => this.dragEnd(e, this.buttons));
+        }
+    }
 
-        function dragStart (e) {
-            e = e || window.event;
-            e.preventDefault();
-            posInitial = this.slideContainer.style.offsetLeft;
+    dragStart(e, bipolarSliderItem) {
+        this.stopRepeat();
+        bipolarSliderItem.style.userSelect = 'none';
+        rect = bipolarSliderItem.getBoundingClientRect();
+        posX1 = e.clientX - rect.left;
+    }
 
-            if (e.type == 'touchstart') {
-                posX1 = e.touches[0].clientX;
-            } else {
-                posX1 = e.clientX;
-                document.onmouseup = dragEnd;
-                document.onmousemove = dragAction;
+    dragAction(e) {
+        console.log('inProcess');
+    }
+
+    dragEnd(e, buttons) {
+        posX2 = e.clientX - rect.left;
+        let swipeTrigger = new Event('swipeTrigger');
+
+        for (let i = 0; i < buttons.length; i++) {
+            if (buttons[i].classList.contains(`fnv-active`)) {
+                if (posX1 - posX2 > 0 && i + 1 < buttons.length) {
+                    buttons[i + 1].addEventListener('swipeTrigger', e => this.onClick(e));
+                    buttons[i + 1].dispatchEvent(swipeTrigger);
+                    break;
+                } else if (posX1 - posX2 < 0 && i - 1 >= 0) {
+                    buttons[i - 1].addEventListener('swipeTrigger', e => this.onClick(e));
+                    buttons[i - 1].dispatchEvent(swipeTrigger);
+                    break;
+                }
             }
         }
 
-        function dragAction (e) {
-            e = e || window.event;
-
-            if (e.type == 'touchmove') {
-                posX2 = posX1 - e.touches[0].clientX;
-                posX1 = e.touches[0].clientX;
-            } else {
-                posX2 = posX1 - e.clientX;
-                posX1 = e.clientX;
-            }
-            this.slideContainer.style.left = (this.slideContainer.style.offsetLeft - posX2) + "px";
-        }
-
-        function dragEnd (e) {
-            posFinal = this.slideContainer.style.offsetLeft;
-            // if (posFinal - posInitial < -threshold) {
-            //     shiftSlide(1, 'drag');
-            // } else if (posFinal - posInitial > threshold) {
-            //     shiftSlide(-1, 'drag');
-            // } else {
-                this.slideContainer.style.left = (posInitial) + "px";
-            // }
-
-            document.onmouseup = null;
-            document.onmousemove = null;
-        }
-
-        // function shiftSlide(dir, action) {
-        //     this.slideContainer.classList.add('shifting');
-        //
-        //     if (allowShift) {
-        //         if (!action) { posInitial = this.slideContainer.offsetLeft; }
-        //
-        //         if (dir == 1) {
-        //             this.slideContainer.style.left = (posInitial - slideSize) + "px";
-        //             index++;
-        //         } else if (dir == -1) {
-        //             this.slideContainer.style.left = (posInitial + slideSize) + "px";
-        //             index--;
-        //         }
-        //     };
-        //
-        //     allowShift = false;
-        // }
+        document.onmouseup = null;
+        document.onmousemove = null;
     }
 
     startRepeat(buttons) {
