@@ -92,7 +92,6 @@ function toggleTabletMenuModal(value) {
         tabletMenuModal.style.display = `none`;
         tabletMenuModalBlock.classList.remove(`fnv-modalAnimation`);
         document.body.classList.remove(`fnv-noScroll`);
-        document.body.classList.remove(`fnv-noScroll`);
     }
 }
 

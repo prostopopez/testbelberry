@@ -116,34 +116,50 @@ function alphabetCatalogListWrap() {
 
 
 // Modal window
-const $modalWindow = $(`.fnv-modalWindow`);
-const $modalWindowCloseButton = $(`.fnv-modalWindowCloseButton`);
+let isModalOpened = false;
+let modalWindowContent;
+let modalWindowCloseButton;
 
-$modalWindowCloseButton.on(`click`, () => {
-    $(`body`).removeClass(`fnv-noScroll`);
-    $modalWindow.css(`display`, `none`)
-})
+function modalAction(id, value) {
+    const modal = document.querySelector(id);
+    modalWindowContent = modal.querySelector(`.fnv-modalWindowContent`);
+    modalWindowCloseButton = modal.querySelector(`.fnv-modalWindowCloseButton`);
+    isModalOpened = value;
 
-function openModel(id) {
-    const $modal = $(id);
+    modalWindowCloseButton.addEventListener("click", function (e) {
+        modalAction(id, false);
+    });
 
-    $(`body`).addClass(`fnv-noScroll`);
-    $modal.css(`display`, `flex`)
+    document.body.addEventListener("click", function (e) {
+        const isModalBlock = modalWindowContent.contains(e.target) || openCallBackButton.contains(e.target);
+
+        if (!isModalBlock) {
+            modalAction(id, false);
+        }
+    });
+
+    if (isModalOpened) {
+        document.body.classList.add(`fnv-noScroll`);
+        modal.style.display = `flex`;
+    } else {
+        document.body.classList.remove(`fnv-noScroll`);
+        modal.style.display = `none`;
+    }
+}
+
+function callBackModal() {
+    modalAction(`#callBackModal`, !isModalOpened);
 }
 
 function openAuthModal() {
-    openModel(`#authModal`)
-}
-
-function openCallBackModal() {
-    openModel(`#callBackModal`)
+    modalAction(`#authModal`, !isModalOpened);
 }
 
 function openRegistrationModal() {
-    openModel(`#registrationModal`)
+    modalAction(`#registrationModal`, !isModalOpened);
 }
 
 function openThanksModal() {
-    openModel(`#thanksModal`)
+    modalAction(`#thanksModal`, !isModalOpened);
 }
 

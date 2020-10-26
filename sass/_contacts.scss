@@ -23,7 +23,11 @@
 
             p,
             a {
-                color: #757575;
+                color: $darkGrayColor;
+            }
+
+            a:hover {
+                color: $mainColor !important;
             }
 
             h3 {
@@ -37,6 +41,7 @@
 
                 @include mediaQuery(tablet) {
                     font-size: 25px;
+                    padding-bottom: 12px;
                 }
             }
         }
@@ -305,7 +310,13 @@
 
             p,
             a {
-                color: #4e4e4e;
+                color: $darkGrayColor;
+            }
+
+            a:hover {
+                &:hover {
+                    color: $mainColor;
+                }
             }
         }
 
