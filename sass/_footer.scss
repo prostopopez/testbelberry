@@ -121,15 +121,13 @@
             font-style: normal;
         }
 
-        > li {
-           > a, p {
-                margin-bottom: 24px;
-                display: block;
-                font-size: 24px;
-            }
+        .outerHead {
+            margin-bottom: 24px;
+            display: block;
+            font-size: 24px;
         }
 
-        ul li {
+        .insideElements li {
             margin-bottom: 16px;
             font-size: 18px;
 
@@ -138,11 +136,15 @@
             }
         }
 
+        .withoutHead {
+            padding-top: 64px;
+        }
+
         @include mediaQuery(tablet) {
             flex-wrap: wrap;
             justify-content: flex-start;
 
-            > li {
+            .outerElement {
                 margin: 20px 0;
 
                 &:nth-of-type(3n+1) {
@@ -162,7 +164,7 @@
         }
 
         @media only screen and (max-width: 720px) {
-            > li {
+            .outerElement {
                 &:nth-of-type(3n+1) {
                     margin-right: 6%;
                     width: 30%;
@@ -183,7 +185,11 @@
             flex-direction: column;
             margin-top: 0;
 
-            > li {
+            .withoutHead {
+                padding-top: 0;
+            }
+
+            .outerElement {
                 width: 100% !important;
 
                 &:nth-child(1) {
@@ -194,7 +200,7 @@
                     margin-top: 0;
                 }
 
-                > p {
+                p.outerHead {
                     display: none;
                 }
             }

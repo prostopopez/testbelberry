@@ -28,17 +28,17 @@
             font-style: normal;
         }
 
-        > li {
-            > a, p {
+        .outerElement {
+            .outerHead {
                 margin-bottom: 24px;
                 display: block;
                 font-size: 24px;
                 color: white;
             }
+        }
 
-            > ul > p {
-                display: none;
-            }
+        .withoutHead {
+            padding-top: 64px;
         }
 
         ul li {
@@ -65,7 +65,7 @@
             flex-wrap: wrap;
             justify-content: flex-start;
 
-            > li {
+            .outerElement {
                 margin: 20px 0 0 0;
 
                 &:nth-of-type(3n+1) {
@@ -94,7 +94,7 @@
         }
 
         @media only screen and (max-width: 720px) {
-            > li {
+            .outerElement {
                 &:nth-of-type(3n+1) {
                     margin-right: 6%;
                     width: 30%;
@@ -131,26 +131,23 @@
 
             ul, li,
             ul li a,
-            > li > a,
-            > li p {
+            .outerElement .outerHead {
                 color: black;
             }
 
-            > li {
-                > a, p {
-                    font-weight: bold;
-                }
+            .withoutHead {
+                padding-top: 0;
             }
 
-            > li {
+            .outerElement {
                 width: 100% !important;
+
+                .outerHead {
+                    font-weight: bold;
+                }
 
                 &.forSearchLi {
                     order: 1;
-
-                    .searchBlock .search {
-
-                    }
                 }
 
                 &.captionLi {

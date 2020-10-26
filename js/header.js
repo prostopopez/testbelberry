@@ -1,7 +1,7 @@
 //user dropdown on header
 const userDropdowns = document.querySelectorAll(`.fnv-userDropdown`);
 
-for(let i = 0; i < userDropdowns.length; i++) {
+for (let i = 0; i < userDropdowns.length; i++) {
     const userDropdown = document.querySelectorAll(`.fnv-userDropdown`)[i];
     const userToggle = userDropdown.querySelector(`.fnv-newDrop`);
     let userDropdownActive = false;
