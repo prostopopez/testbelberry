@@ -31,7 +31,7 @@
                             <input type="number" min="1" value="1">
                             <button>+</button>
                         </div>
-                        <p><span>15&nbsp;669</span>&nbsp;Р</p>
+                        <p class="bigNumber">15669</p>
                     </div>
                 </div>
                 <button class="basketDeleteButton">
@@ -69,7 +69,7 @@
                             <input type="number" min="1" value="1">
                             <button>+</button>
                         </div>
-                        <p><span>3&nbsp;199</span>&nbsp;Р</p>
+                        <p class="bigNumber">3199</p>
                     </div>
                 </div>
                 <button class="basketDeleteButton">
@@ -107,7 +107,7 @@
                             <input type="number" min="1" value="1">
                             <button>+</button>
                         </div>
-                        <p><span>4&nbsp;049</span>&nbsp;Р</p>
+                        <p class="bigNumber">4049</p>
                     </div>
                 </div>
                 <button class="basketDeleteButton">
@@ -154,63 +154,66 @@
                         <svg>
                             <use xlink:href="/img/sprite.svg#check"></use>
                         </svg>
-                       <div>
-                           <h4>Доставка в пределах МКАД</h4>
-                           <p>При заказе от 3000 рублей доставка бесплатная</p>
+                        <div>
+                            <h4>Доставка в пределах МКАД</h4>
+                            <p>При заказе от 3000 рублей доставка бесплатная</p>
 
 
-                           <div class="selectMate" data-mate-select="active">
-                               <label for="">Страна</label>
-                               <select name="" onchange="" onclick="return false;" id="f32432">
-                                   <option value="" disabled selected>Введите страну</option>
-                                   <option value="1">Select option 1</option>
-                                   <option value="2">Select option 2</option>
-                                   <option value="3">Select option 3</option>
-                               </select>
-                               <p class="selecionadoOpcion" onclick="openSelect(this)"></p>
-                               <span onclick="openSelect(this)" class="iconSelectMate">
-                                    <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
-                                        <path d="M0-.75h24v24H0z" fill="none"/>
+                            <div class="selectMate" data-mate-select="active">
+                                <label for="">Страна</label>
+                                <select name="" onchange="" onclick="return false;" id="f32432">
+                                    <option value="" disabled selected>Введите страну</option>
+                                    <option value="1">Select option 1</option>
+                                    <option value="2">Select option 2</option>
+                                    <option value="3">Select option 3</option>
+                                </select>
+                                <p class="selecionadoOpcion" onclick="openSelect(this)"></p>
+                                <span onclick="openSelect(this)" class="iconSelectMate">
+                                    <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z" />
+                                        <path d="M0-.75h24v24H0z" fill="none" />
                                     </svg>
                                 </span>
-                               <div class="contListSelectMate">
-                                   <ul class="contSelectInt"></ul>
-                               </div>
-                           </div>
+                                <div class="contListSelectMate">
+                                    <ul class="contSelectInt"></ul>
+                                </div>
+                            </div>
 
-                           <div class="selectMate" data-mate-select="active">
-                               <label for="">Регион</label>
-                               <select name="" onchange="" onclick="return false;" id="fdsf">
-                                   <option value="" disabled selected>Выберите область</option>
-                                   <option value="1">Select option 1</option>
-                                   <option value="2">Select option 2</option>
-                                   <option value="3">Select option 3</option>
-                               </select>
-                               <p class="selecionadoOpcion" onclick="openSelect(this)"></p>
-                               <span onclick="openSelect(this)" class="iconSelectMate">
-                                    <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
-                                        <path d="M0-.75h24v24H0z" fill="none"/>
+                            <div class="selectMate" data-mate-select="active">
+                                <label for="">Регион</label>
+                                <select name="" onchange="" onclick="return false;" id="fdsf">
+                                    <option value="" disabled selected>Выберите область</option>
+                                    <option value="1">Select option 1</option>
+                                    <option value="2">Select option 2</option>
+                                    <option value="3">Select option 3</option>
+                                </select>
+                                <p class="selecionadoOpcion" onclick="openSelect(this)"></p>
+                                <span onclick="openSelect(this)" class="iconSelectMate">
+                                    <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z" />
+                                        <path d="M0-.75h24v24H0z" fill="none" />
                                     </svg>
                                 </span>
-                               <div class="contListSelectMate">
-                                   <ul class="contSelectInt"></ul>
-                               </div>
-                           </div>
+                                <div class="contListSelectMate">
+                                    <ul class="contSelectInt"></ul>
+                                </div>
+                            </div>
 
-                           <div class="inputBlock">
-                               <label for="orderCity">Город</label>
-                               <input class="input" type="text" id="orderCity" placeholder="Введите город">
-                           </div>
-                           <div class="inputBlock">
-                               <label for="orderHomeAddress">Адрес дома</label>
-                               <input class="input" type="text" id="orderHomeAddress" placeholder="Улица, дом, квартира">
-                           </div>
-                       </div>
+                            <div class="inputBlock">
+                                <label for="orderCity">Город</label>
+                                <input class="input" type="text" id="orderCity" placeholder="Введите город">
+                            </div>
+                            <div class="inputBlock">
+                                <label for="orderHomeAddress">Адрес дома</label>
+                                <input class="input" type="text" id="orderHomeAddress"
+                                    placeholder="Улица, дом, квартира">
+                            </div>
+                        </div>
                     </div>
                     <div class="orderDeliveryStepCost">
-                        0 Р
+                        <p class="bigNumber">0</p>
                     </div>
                 </div>
                 <div class="orderDeliveryStep">
@@ -227,7 +230,7 @@
                         </div>
                     </div>
                     <div class="orderDeliveryStepCost">
-                        0&nbsp;Р
+                        <p class="bigNumber">0</p>
                     </div>
                 </div>
                 <div class="orderDeliveryStep">
@@ -241,7 +244,7 @@
                         </div>
                     </div>
                     <div class="orderDeliveryStepCost">
-                        350&nbsp;Р
+                        <p class="bigNumber">350</p>
                     </div>
                 </div>
                 <div class="orderDeliveryStep">
@@ -251,11 +254,12 @@
                         </svg>
                         <div>
                             <h4>СДЭК до отделения</h4>
-                            <p>Стоимость доставки при заказе до 5000 руб. - от 350 рублей, точную стоимость уточняйте у менеджера.</p>
+                            <p>Стоимость доставки при заказе до 5000 руб. - от 350 рублей, точную стоимость уточняйте у
+                                менеджера.</p>
                         </div>
                     </div>
                     <div class="orderDeliveryStepCost">
-                        0&nbsp;Р
+                        <p class="bigNumber">0</p>
                     </div>
                 </div>
                 <div class="orderDeliveryStep">
@@ -265,11 +269,12 @@
                         </svg>
                         <div>
                             <h4>СДЭК до двери</h4>
-                            <p>Стоимость доставки при заказе до 5000 руб. - от 700 рублей, точную стоимость уточняйте у менеджера.</p>
+                            <p>Стоимость доставки при заказе до 5000 руб. - от 700 рублей, точную стоимость уточняйте у
+                                менеджера.</p>
                         </div>
                     </div>
                     <div class="orderDeliveryStepCost">
-                        350&nbsp;Р
+                        <p class="bigNumber">350</p>
                     </div>
                 </div>
             </div>
@@ -289,15 +294,15 @@
             <div class="textareaBlock">
                 <label for="commentHere">Комментарий</label>
                 <textarea class="textarea" rows="1" name="text" ID="commentHere"
-                          placeholder="Напишите пару слов"
-                          oninput='this.style.height = "auto"; this.style.height = this.scrollHeight + "px"'></textarea>
+                    placeholder="Напишите пару слов"
+                    oninput='this.style.height = "auto"; this.style.height = this.scrollHeight + "px"'></textarea>
             </div>
         </div>
     </div>
 </div>
 <div class="cont">
     <div class="basketOrder">
-        <p>Итого:&nbsp;<span>31 677 Р</span></p>
+        <p>Итого: <span class="bigNumber">31667</span></p>
         <button onClick="placeOrder()" class="button">Заказать</button>
     </div>
 </div>

@@ -163,3 +163,8 @@ function openThanksModal() {
     modalAction(`#thanksModal`, !isModalOpened);
 }
 
+let bigNumbers = document.querySelectorAll(`.fnv-bigNumber`);
+
+for (let i = 0; i < bigNumbers.length; i++) {
+    bigNumbers[i].textContent = bigNumbers[i].textContent.replace(/(\d)(?=(\d{3})+(\D|$))/g, '$1 ') + ' Р';
+}
