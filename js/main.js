@@ -169,10 +169,3 @@ let bigNumbers = document.querySelectorAll(`.fnv-bigNumber`);
 for (let i = 0; i < bigNumbers.length; i++) {
     bigNumbers[i].textContent = bigNumbers[i].textContent.replace(/(\d)(?=(\d{3})+(\D|$))/g, '$1 ') + ' Р';
 }
-
-// scrollX glider
-let gliders = document.querySelectorAll(`.fnv-glider-track`);
-
-for (let i = 0; i < gliders.length; i++) {
-    gliders[i].scrollLeft = 2500;
-}
