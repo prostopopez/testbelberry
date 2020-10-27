@@ -110,7 +110,7 @@
           return;
         }
 
-        // letiable containing last hash value set by fancyBox
+        // variable containing last hash value set by fancyBox
         // It will be used to determine if fancyBox needs to close after hash change is detected
         instance.currentHash = gallery + (instance.group.length > 1 ? "-" + (current.index + 1) : "");
 

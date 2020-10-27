@@ -390,7 +390,7 @@
     }
   };
 
-  // Few useful letiables and methods
+  // Few useful variables and methods
   // ================================
 
   let $W = $(window);
@@ -2171,7 +2171,7 @@
       slide.$content.siblings().hide();
 
       // Re-check if there is a valid content
-      // (in some cases, ajax response can contain letious elements or plain text)
+      // (in some cases, ajax response can contain various elements or plain text)
       if (!slide.$content.length) {
         slide.$content = slide.$slide
           .wrapInner("<div></div>")

@@ -7,7 +7,7 @@
     margin: 0 0 1.5rem;
 
     svg {
-        fill: let(--bg);
+        fill: var(--bg);
         width: 15px;
         height: 15px;
         margin-right: 1rem;
@@ -21,7 +21,7 @@
         display: block;
         height: 5px;
         width: 90%;
-        background: let(--bg);
+        background: var(--bg);
         border-radius: 5px;
     }
 
