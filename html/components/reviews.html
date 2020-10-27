@@ -35,10 +35,8 @@
     {% endblock %}
 </div>
 
-{%
-include 'glider.html' with {
-'elementClassName': elementClassName,
-'gliderTitle': gliderTitle,
-'elements': block('reviewsElements')
-}
-%}
+{% include 'glider.html' with {
+    'elementClassName': elementClassName,
+    'gliderTitle': gliderTitle,
+    'elements': block('reviewsElements')
+} %}

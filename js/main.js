@@ -7,7 +7,6 @@ window.onload = function () {
     }
 };
 
-
 function cardAdjust() {
     if (window.screen.width > 1024) {
         let sliderCards = [];
@@ -114,11 +113,12 @@ function alphabetCatalogListWrap() {
     }
 }
 
-
 // Modal window
 let isModalOpened = false;
 let modalWindowContent;
 let modalWindowCloseButton;
+
+const openModalButton = document.querySelector(`.fnv-openModalButton`);
 
 function modalAction(id, value) {
     const modal = document.querySelector(id);
@@ -131,7 +131,7 @@ function modalAction(id, value) {
     });
 
     document.body.addEventListener("click", function (e) {
-        const isModalBlock = modalWindowContent.contains(e.target) || openCallBackButton.contains(e.target);
+        const isModalBlock = modalWindowContent.contains(e.target) || openModalButton.contains(e.target);
 
         if (!isModalBlock) {
             modalAction(id, false);
@@ -139,11 +139,11 @@ function modalAction(id, value) {
     });
 
     if (isModalOpened) {
-        document.body.classList.add(`fnv-noScroll`);
         modal.style.display = `flex`;
+        document.body.classList.add(`fnv-noScroll`);
     } else {
-        document.body.classList.remove(`fnv-noScroll`);
         modal.style.display = `none`;
+        document.body.classList.remove(`fnv-noScroll`);
     }
 }
 
@@ -163,8 +163,16 @@ function openThanksModal() {
     modalAction(`#thanksModal`, !isModalOpened);
 }
 
+// Big Numbers Indents
 let bigNumbers = document.querySelectorAll(`.fnv-bigNumber`);
 
 for (let i = 0; i < bigNumbers.length; i++) {
     bigNumbers[i].textContent = bigNumbers[i].textContent.replace(/(\d)(?=(\d{3})+(\D|$))/g, '$1 ') + ' Р';
+}
+
+// scrollX glider
+let gliders = document.querySelectorAll(`.fnv-glider-track`);
+
+for (let i = 0; i < gliders.length; i++) {
+    gliders[i].scrollLeft = 2500;
 }

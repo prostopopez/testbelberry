@@ -7,12 +7,12 @@
 (function (document, $) {
   "use strict";
 
-  var prevTime = new Date().getTime();
+  let prevTime = new Date().getTime();
 
   $(document).on({
     "onInit.fb": function (e, instance, current) {
       instance.$refs.stage.on("mousewheel DOMMouseScroll wheel MozMousePixelScroll", function (e) {
-        var current = instance.current,
+        let current = instance.current,
           currTime = new Date().getTime();
 
         if (instance.group.length < 2 || current.opts.wheel === false || (current.opts.wheel === "auto" && current.type !== "image")) {

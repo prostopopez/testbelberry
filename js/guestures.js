@@ -7,7 +7,7 @@
 (function (window, document, $) {
   "use strict";
 
-  var requestAFrame = (function () {
+  let requestAFrame = (function () {
     return (
       window.requestAnimationFrame ||
       window.webkitRequestAnimationFrame ||
@@ -20,7 +20,7 @@
     );
   })();
 
-  var cancelAFrame = (function () {
+  let cancelAFrame = (function () {
     return (
       window.cancelAnimationFrame ||
       window.webkitCancelAnimationFrame ||
@@ -32,13 +32,13 @@
     );
   })();
 
-  var getPointerXY = function (e) {
-    var result = [];
+  let getPointerXY = function (e) {
+    let result = [];
 
     e = e.originalEvent || e || window.e;
     e = e.touches && e.touches.length ? e.touches : e.changedTouches && e.changedTouches.length ? e.changedTouches : [e];
 
-    for (var key in e) {
+    for (let key in e) {
       if (e[key].pageX) {
         result.push({
           x: e[key].pageX,
@@ -55,7 +55,7 @@
     return result;
   };
 
-  var distance = function (point2, point1, what) {
+  let distance = function (point2, point1, what) {
     if (!point1 || !point2) {
       return 0;
     }
@@ -69,7 +69,7 @@
     return Math.sqrt(Math.pow(point2.x - point1.x, 2) + Math.pow(point2.y - point1.y, 2));
   };
 
-  var isClickable = function ($el) {
+  let isClickable = function ($el) {
     if (
       $el.is('a,area,button,[role="button"],input,label,select,summary,textarea,video,audio,iframe') ||
       $.isFunction($el.get(0).onclick) ||
@@ -79,7 +79,7 @@
     }
 
     // Check for attributes like data-fancybox-next or data-fancybox-close
-    for (var i = 0, atts = $el[0].attributes, n = atts.length; i < n; i++) {
+    for (let i = 0, atts = $el[0].attributes, n = atts.length; i < n; i++) {
       if (atts[i].nodeName.substr(0, 14) === "data-fancybox-") {
         return true;
       }
@@ -88,8 +88,8 @@
     return false;
   };
 
-  var hasScrollbars = function (el) {
-    var overflowY = window.getComputedStyle(el)["overflow-y"],
+  let hasScrollbars = function (el) {
+    let overflowY = window.getComputedStyle(el)["overflow-y"],
       overflowX = window.getComputedStyle(el)["overflow-x"],
       vertical = (overflowY === "scroll" || overflowY === "auto") && el.scrollHeight > el.clientHeight,
       horizontal = (overflowX === "scroll" || overflowX === "auto") && el.scrollWidth > el.clientWidth;
@@ -97,8 +97,8 @@
     return vertical || horizontal;
   };
 
-  var isScrollable = function ($el) {
-    var rez = false;
+  let isScrollable = function ($el) {
+    let rez = false;
 
     while (true) {
       rez = hasScrollbars($el.get(0));
@@ -117,8 +117,8 @@
     return rez;
   };
 
-  var Guestures = function (instance) {
-    var self = this;
+  let Guestures = function (instance) {
+    let self = this;
 
     self.instance = instance;
 
@@ -132,7 +132,7 @@
   };
 
   Guestures.prototype.destroy = function () {
-    var self = this;
+    let self = this;
 
     self.$container.off(".fb.touch");
 
@@ -150,7 +150,7 @@
   };
 
   Guestures.prototype.ontouchstart = function (e) {
-    var self = this,
+    let self = this,
       $target = $(e.target),
       instance = self.instance,
       current = instance.current,
@@ -292,7 +292,7 @@
   };
 
   Guestures.prototype.onscroll = function (e) {
-    var self = this;
+    let self = this;
 
     self.isScrolling = true;
 
@@ -300,7 +300,7 @@
   };
 
   Guestures.prototype.ontouchmove = function (e) {
-    var self = this;
+    let self = this;
 
     // Make sure user has not released over iframe or disabled element
     if (e.originalEvent.buttons !== undefined && e.originalEvent.buttons === 0) {
@@ -341,7 +341,7 @@
   };
 
   Guestures.prototype.onSwipe = function (e) {
-    var self = this,
+    let self = this,
       instance = self.instance,
       swiping = self.isSwiping,
       left = self.sliderStartPos.left || 0,
@@ -375,7 +375,7 @@
         self.startPoints = self.newPoints;
 
         $.each(instance.slides, function (index, slide) {
-          var slidePos, stagePos;
+          let slidePos, stagePos;
 
           $.fancybox.stop(slide.$slide);
 
@@ -445,7 +445,7 @@
     self.requestId = requestAFrame(function () {
       if (self.sliderLastPos) {
         $.each(self.instance.slides, function (index, slide) {
-          var pos = slide.pos - self.instance.currPos;
+          let pos = slide.pos - self.instance.currPos;
 
           $.fancybox.setTranslate(slide.$slide, {
             top: self.sliderLastPos.top,
@@ -459,7 +459,7 @@
   };
 
   Guestures.prototype.onPan = function () {
-    var self = this;
+    let self = this;
 
     // Prevent accidental movement (sometimes, when tapping casually, finger can move a bit)
     if (distance(self.newPoints[0], self.realPoints[0]) < ($.fancybox.isMobile ? 10 : 5)) {
@@ -482,23 +482,23 @@
 
   // Make panning sticky to the edges
   Guestures.prototype.limitMovement = function () {
-    var self = this;
+    let self = this;
 
-    var canvasWidth = self.canvasWidth;
-    var canvasHeight = self.canvasHeight;
+    let canvasWidth = self.canvasWidth;
+    let canvasHeight = self.canvasHeight;
 
-    var distanceX = self.distanceX;
-    var distanceY = self.distanceY;
+    let distanceX = self.distanceX;
+    let distanceY = self.distanceY;
 
-    var contentStartPos = self.contentStartPos;
+    let contentStartPos = self.contentStartPos;
 
-    var currentOffsetX = contentStartPos.left;
-    var currentOffsetY = contentStartPos.top;
+    let currentOffsetX = contentStartPos.left;
+    let currentOffsetY = contentStartPos.top;
 
-    var currentWidth = contentStartPos.width;
-    var currentHeight = contentStartPos.height;
+    let currentWidth = contentStartPos.width;
+    let currentHeight = contentStartPos.height;
 
-    var minTranslateX, minTranslateY, maxTranslateX, maxTranslateY, newOffsetX, newOffsetY;
+    let minTranslateX, minTranslateY, maxTranslateX, maxTranslateY, newOffsetX, newOffsetY;
 
     if (currentWidth > canvasWidth) {
       newOffsetX = currentOffsetX + distanceX;
@@ -542,10 +542,10 @@
   };
 
   Guestures.prototype.limitPosition = function (newOffsetX, newOffsetY, newWidth, newHeight) {
-    var self = this;
+    let self = this;
 
-    var canvasWidth = self.canvasWidth;
-    var canvasHeight = self.canvasHeight;
+    let canvasWidth = self.canvasWidth;
+    let canvasHeight = self.canvasHeight;
 
     if (newWidth > canvasWidth) {
       newOffsetX = newOffsetX > 0 ? 0 : newOffsetX;
@@ -570,42 +570,42 @@
   };
 
   Guestures.prototype.onZoom = function () {
-    var self = this;
+    let self = this;
 
     // Calculate current distance between points to get pinch ratio and new width and height
-    var contentStartPos = self.contentStartPos;
+    let contentStartPos = self.contentStartPos;
 
-    var currentWidth = contentStartPos.width;
-    var currentHeight = contentStartPos.height;
+    let currentWidth = contentStartPos.width;
+    let currentHeight = contentStartPos.height;
 
-    var currentOffsetX = contentStartPos.left;
-    var currentOffsetY = contentStartPos.top;
+    let currentOffsetX = contentStartPos.left;
+    let currentOffsetY = contentStartPos.top;
 
-    var endDistanceBetweenFingers = distance(self.newPoints[0], self.newPoints[1]);
+    let endDistanceBetweenFingers = distance(self.newPoints[0], self.newPoints[1]);
 
-    var pinchRatio = endDistanceBetweenFingers / self.startDistanceBetweenFingers;
+    let pinchRatio = endDistanceBetweenFingers / self.startDistanceBetweenFingers;
 
-    var newWidth = Math.floor(currentWidth * pinchRatio);
-    var newHeight = Math.floor(currentHeight * pinchRatio);
+    let newWidth = Math.floor(currentWidth * pinchRatio);
+    let newHeight = Math.floor(currentHeight * pinchRatio);
 
     // This is the translation due to pinch-zooming
-    var translateFromZoomingX = (currentWidth - newWidth) * self.percentageOfImageAtPinchPointX;
-    var translateFromZoomingY = (currentHeight - newHeight) * self.percentageOfImageAtPinchPointY;
+    let translateFromZoomingX = (currentWidth - newWidth) * self.percentageOfImageAtPinchPointX;
+    let translateFromZoomingY = (currentHeight - newHeight) * self.percentageOfImageAtPinchPointY;
 
     // Point between the two touches
-    var centerPointEndX = (self.newPoints[0].x + self.newPoints[1].x) / 2 - $(window).scrollLeft();
-    var centerPointEndY = (self.newPoints[0].y + self.newPoints[1].y) / 2 - $(window).scrollTop();
+    let centerPointEndX = (self.newPoints[0].x + self.newPoints[1].x) / 2 - $(window).scrollLeft();
+    let centerPointEndY = (self.newPoints[0].y + self.newPoints[1].y) / 2 - $(window).scrollTop();
 
     // And this is the translation due to translation of the centerpoint
     // between the two fingers
-    var translateFromTranslatingX = centerPointEndX - self.centerPointStartX;
-    var translateFromTranslatingY = centerPointEndY - self.centerPointStartY;
+    let translateFromTranslatingX = centerPointEndX - self.centerPointStartX;
+    let translateFromTranslatingY = centerPointEndY - self.centerPointStartY;
 
     // The new offset is the old/current one plus the total translation
-    var newOffsetX = currentOffsetX + (translateFromZoomingX + translateFromTranslatingX);
-    var newOffsetY = currentOffsetY + (translateFromZoomingY + translateFromTranslatingY);
+    let newOffsetX = currentOffsetX + (translateFromZoomingX + translateFromTranslatingX);
+    let newOffsetY = currentOffsetY + (translateFromZoomingY + translateFromTranslatingY);
 
-    var newPos = {
+    let newPos = {
       top: newOffsetY,
       left: newOffsetX,
       scaleX: pinchRatio,
@@ -629,12 +629,12 @@
   };
 
   Guestures.prototype.ontouchend = function (e) {
-    var self = this;
+    let self = this;
 
-    var swiping = self.isSwiping;
-    var panning = self.isPanning;
-    var zooming = self.isZooming;
-    var scrolling = self.isScrolling;
+    let swiping = self.isSwiping;
+    let panning = self.isPanning;
+    let zooming = self.isZooming;
+    let scrolling = self.isScrolling;
 
     self.endPoints = getPointerXY(e);
     self.dMs = Math.max(new Date().getTime() - self.startTime, 1);
@@ -680,7 +680,7 @@
   };
 
   Guestures.prototype.endSwiping = function (swiping, scrolling) {
-    var self = this,
+    let self = this,
       ret = false,
       len = self.instance.group.length,
       distanceX = Math.abs(self.distanceX),
@@ -716,7 +716,7 @@
   // Limit panning from edges
   // ========================
   Guestures.prototype.endPanning = function () {
-    var self = this,
+    let self = this,
       newOffsetX,
       newOffsetY,
       newPos;
@@ -743,14 +743,14 @@
   };
 
   Guestures.prototype.endZooming = function () {
-    var self = this;
+    let self = this;
 
-    var current = self.instance.current;
+    let current = self.instance.current;
 
-    var newOffsetX, newOffsetY, newPos, reset;
+    let newOffsetX, newOffsetY, newPos, reset;
 
-    var newWidth = self.newWidth;
-    var newHeight = self.newHeight;
+    let newWidth = self.newWidth;
+    let newHeight = self.newHeight;
 
     if (!self.contentLastPos) {
       return;
@@ -783,21 +783,21 @@
   };
 
   Guestures.prototype.onTap = function (e) {
-    var self = this;
-    var $target = $(e.target);
+    let self = this;
+    let $target = $(e.target);
 
-    var instance = self.instance;
-    var current = instance.current;
+    let instance = self.instance;
+    let current = instance.current;
 
-    var endPoints = (e && getPointerXY(e)) || self.startPoints;
+    let endPoints = (e && getPointerXY(e)) || self.startPoints;
 
-    var tapX = endPoints[0] ? endPoints[0].x - $(window).scrollLeft() - self.stagePos.left : 0;
-    var tapY = endPoints[0] ? endPoints[0].y - $(window).scrollTop() - self.stagePos.top : 0;
+    let tapX = endPoints[0] ? endPoints[0].x - $(window).scrollLeft() - self.stagePos.left : 0;
+    let tapY = endPoints[0] ? endPoints[0].y - $(window).scrollTop() - self.stagePos.top : 0;
 
-    var where;
+    let where;
 
-    var process = function (prefix) {
-      var action = current.opts[prefix];
+    let process = function (prefix) {
+      let action = current.opts[prefix];
 
       if ($.isFunction(action)) {
         action = action.apply(instance, [current, e]);

@@ -8,8 +8,8 @@
   "use strict";
 
   // Collection of methods supported by user browser
-  var fn = (function () {
-    var fnMap = [
+  let fn = (function () {
+    let fnMap = [
       ["requestFullscreen", "exitFullscreen", "fullscreenElement", "fullscreenEnabled", "fullscreenchange", "fullscreenerror"],
       // new WebKit
       [
@@ -40,13 +40,13 @@
       ["msRequestFullscreen", "msExitFullscreen", "msFullscreenElement", "msFullscreenEnabled", "MSFullscreenChange", "MSFullscreenError"]
     ];
 
-    var ret = {};
+    let ret = {};
 
-    for (var i = 0; i < fnMap.length; i++) {
-      var val = fnMap[i];
+    for (let i = 0; i < fnMap.length; i++) {
+      let val = fnMap[i];
 
       if (val && val[1] in document) {
-        for (var j = 0; j < val.length; j++) {
+        for (let j = 0; j < val.length; j++) {
           ret[fnMap[0][j]] = val[j];
         }
 
@@ -58,7 +58,7 @@
   })();
 
   if (fn) {
-    var FullScreen = {
+    let FullScreen = {
       request: function (elem) {
         elem = elem || document.documentElement;
 
@@ -97,7 +97,7 @@
     });
 
     $(document).on(fn.fullscreenchange, function () {
-      var isFullscreen = FullScreen.isFullscreen(),
+      let isFullscreen = FullScreen.isFullscreen(),
         instance = $.fancybox.getInstance();
 
       if (instance) {
@@ -126,7 +126,7 @@
 
   $(document).on({
     "onInit.fb": function (e, instance) {
-      var $container;
+      let $container;
 
       if (!fn) {
         instance.$refs.toolbar.find("[data-fancybox-fullscreen]").remove();

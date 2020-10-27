@@ -15,6 +15,8 @@
 */
 
 /* global define */
+let gliderTimeout = [];
+let gliderInterval;
 
 (function (factory) {
     typeof define === 'function' && define.amd
@@ -26,10 +28,10 @@
     ('use strict') // eslint-disable-line no-unused-expressions
 
     /* globals window:true */
-    var _window = typeof window !== 'undefined' ? window : this
+    let _window = typeof window !== 'undefined' ? window : this
 
-    var Glider = (_window.Glider = function (element, settings) {
-        var _ = this
+    let Glider = (_window.Glider = function (element, settings) {
+        let _ = this
 
         if (element._glider) return element._glider
 
@@ -46,7 +48,7 @@
                 slidesToScroll: 1,
                 slidesToShow: 1,
                 resizeLock: true,
-                duration: 0.5,
+                duration: 1,
                 // easeInQuad
                 easing: function (x, t, b, c, d) {
                     return c * (t /= d) * t + b
@@ -90,13 +92,13 @@
         })
     })
 
-    var gliderPrototype = Glider.prototype
+    let gliderPrototype = Glider.prototype
     gliderPrototype.init = function (refresh, paging) {
-        var _ = this
+        let _ = this
 
-        var width = 0
+        let width = 0
 
-        var height = 0
+        let height = 0
 
         _.slides = _.track.children;
 
@@ -107,14 +109,14 @@
 
         _.containerWidth = _.ele.clientWidth
 
-        var breakpointChanged = _.settingsBreakpoint()
+        let breakpointChanged = _.settingsBreakpoint()
         if (!paging) paging = breakpointChanged
 
         if (
             _.opt.slidesToShow === 'auto' ||
             typeof _.opt._autoSlide !== 'undefined'
         ) {
-            var slideCount = _.containerWidth / _.opt.itemWidth
+            let slideCount = _.containerWidth / _.opt.itemWidth
 
             _.opt._autoSlide = _.opt.slidesToShow = _.opt.exactWidth
                 ? slideCount
@@ -155,10 +157,10 @@
     }
 
     gliderPrototype.bindDrag = function () {
-        var _ = this
+        let _ = this
         _.mouse = _.mouse || _.handleMouse.bind(_)
 
-        var mouseup = function () {
+        let mouseup = function () {
             _.mouseDown = undefined
             _.ele.classList.remove('fnv-drag')
             if (_.isDrag) {
@@ -167,7 +169,7 @@
             _.isDrag = false
         }
 
-        var events = {
+        let events = {
             mouseup: mouseup,
             mouseleave: mouseup,
             mousedown: function (e) {
@@ -192,7 +194,8 @@
     }
 
     gliderPrototype.buildDots = function () {
-        var _ = this
+        let _ = this
+        let gliderTrigger = new Event('gliderTrigger');
 
         if (!_.opt.dots) {
             if (_.dots) _.dots.innerHTML = ''
@@ -207,29 +210,39 @@
         _.dots.innerHTML = ''
         _.dots.classList.add('fnv-glider-dots')
 
-        for (var i = 0; i < Math.ceil(_.slides.length / _.opt.slidesToShow); ++i) {
-            var dot = document.createElement('button')
+        for (let i = 0; i < Math.ceil(_.slides.length / _.opt.slidesToShow); ++i) {
+            let dot = document.createElement('button')
             dot.dataset.index = i
             dot.setAttribute('aria-label', 'Page ' + (i + 1))
             dot.className = 'fnv-glider-dot ' + (i ? '' : 'active')
             _.event(dot, 'add', {
-                click: _.scrollItem.bind(_, i, true)
+                click: _.scrollItem.bind(_, i, true),
+                gliderTrigger: _.scrollItem.bind(_, i, true)
             })
             _.dots.appendChild(dot)
+
+            gliderTimeout.push(setTimeout((e) => dot.dispatchEvent(gliderTrigger), i * 5000));
         }
+
+        gliderInterval = setInterval((e) => {
+            for (let i = 0; i < Math.ceil(_.slides.length / _.opt.slidesToShow); ++i) {
+                let dot = document.querySelector('button');
+                gliderTimeout.push(setTimeout((e) => dot.dispatchEvent(gliderTrigger), i * 5000));
+            }
+        }, Math.ceil(_.slides.length / _.opt.slidesToShow) * 5000);
     }
 
     gliderPrototype.bindArrows = function () {
-        var _ = this
+        let _ = this
         if (!_.opt.arrows) {
             Object.keys(_.arrows).forEach(function (direction) {
-                var element = _.arrows[direction]
+                let element = _.arrows[direction]
                 _.event(element, 'remove', { click: element._func })
             })
             return
         }
         ['prev', 'next'].forEach(function (direction) {
-            var arrow = _.opt.arrows[direction]
+            let arrow = _.opt.arrows[direction]
             if (arrow) {
                 if (typeof arrow === 'string') arrow = document.querySelector(arrow)
                 arrow._func = arrow._func || _.scrollItem.bind(_, direction)
@@ -245,13 +258,13 @@
     }
 
     gliderPrototype.updateControls = function (event) {
-        var _ = this
+        let _ = this
 
         if (event && !_.opt.scrollPropagate) {
             event.stopPropagation()
         }
 
-        var disableArrows = _.containerWidth >= _.trackWidth
+        let disableArrows = _.containerWidth >= _.trackWidth
 
         if (!_.opt.rewind) {
             if (_.arrows.prev) {
@@ -272,9 +285,9 @@
         _.slide = Math.round(_.ele.scrollLeft / _.itemWidth)
         _.page = Math.round(_.ele.scrollLeft / _.containerWidth)
 
-        var middle = _.slide + Math.floor(Math.floor(_.opt.slidesToShow) / 2)
+        let middle = _.slide + Math.floor(Math.floor(_.opt.slidesToShow) / 2)
 
-        var extraMiddle = Math.floor(_.opt.slidesToShow) % 2 ? 0 : middle + 1
+        let extraMiddle = Math.floor(_.opt.slidesToShow) % 2 ? 0 : middle + 1
         if (Math.floor(_.opt.slidesToShow) === 1) {
             extraMiddle = 0
         }
@@ -286,17 +299,17 @@
         }
 
         [].forEach.call(_.slides, function (slide, index) {
-            var slideClasses = slide.classList
+            let slideClasses = slide.classList
 
-            var wasVisible = slideClasses.contains('visible')
+            let wasVisible = slideClasses.contains('visible')
 
-            var start = _.ele.scrollLeft
+            let start = _.ele.scrollLeft
 
-            var end = _.ele.scrollLeft + _.containerWidth
+            let end = _.ele.scrollLeft + _.containerWidth
 
-            var itemStart = _.itemWidth * index
+            let itemStart = _.itemWidth * index
 
-            var itemEnd = itemStart + _.itemWidth;
+            let itemEnd = itemStart + _.itemWidth;
 
             [].forEach.call(slideClasses, function (className) {
                 /^left|right/.test(className) && slideClasses.remove(className)
@@ -314,7 +327,7 @@
                 )
             }
 
-            var isVisible =
+            let isVisible =
                 Math.ceil(itemStart) >= start && Math.floor(itemEnd) <= end
             slideClasses.toggle('fnv-visible', isVisible)
             if (isVisible !== wasVisible) {
@@ -347,16 +360,16 @@
     }
 
     gliderPrototype.getCurrentSlide = function () {
-        var _ = this
+        let _ = this
         return _.round(_.ele.scrollLeft / _.itemWidth)
     }
 
     gliderPrototype.scrollItem = function (slide, dot, e) {
         if (e) e.preventDefault()
 
-        var _ = this
+        let _ = this
 
-        var originalSlide = slide
+        let originalSlide = slide
         ++_.animate_id
 
         if (dot === true) {
@@ -364,7 +377,7 @@
             slide = Math.round(slide / _.itemWidth) * _.itemWidth
         } else {
             if (typeof slide === 'string') {
-                var backwards = slide === 'prev'
+                let backwards = slide === 'prev'
 
                 // use precise location if fractional slides are on
                 if (_.opt.slidesToScroll % 1 || _.opt.slidesToShow % 1) {
@@ -377,7 +390,7 @@
                 else slide += _.opt.slidesToScroll
 
                 if (_.opt.rewind) {
-                    var scrollLeft = _.ele.scrollLeft
+                    let scrollLeft = _.ele.scrollLeft
                     slide =
                         backwards && !scrollLeft
                             ? _.slides.length
@@ -411,9 +424,9 @@
     }
 
     gliderPrototype.settingsBreakpoint = function () {
-        var _ = this
+        let _ = this
 
-        var resp = _._opt.responsive
+        let resp = _._opt.responsive
 
         if (resp) {
             // Sort the breakpoints in mobile first order
@@ -421,8 +434,8 @@
                 return b.breakpoint - a.breakpoint
             })
 
-            for (var i = 0; i < resp.length; ++i) {
-                var size = resp[i]
+            for (let i = 0; i < resp.length; ++i) {
+                let size = resp[i]
                 if (_window.innerWidth >= size.breakpoint) {
                     if (_.breakpoint !== size.breakpoint) {
                         _.opt = Object.assign({}, _._opt, size.settings)
@@ -434,21 +447,21 @@
             }
         }
         // set back to defaults in case they were overriden
-        var breakpointChanged = _.breakpoint !== 0
+        let breakpointChanged = _.breakpoint !== 0
         _.opt = Object.assign({}, _._opt)
         _.breakpoint = 0
         return breakpointChanged
     }
 
     gliderPrototype.scrollTo = function (scrollTarget, scrollDuration, callback) {
-        var _ = this
+        let _ = this
 
-        var start = new Date().getTime()
+        let start = new Date().getTime()
 
-        var animateIndex = _.animate_id
+        let animateIndex = _.animate_id
 
-        var animate = function () {
-            var now = new Date().getTime() - start
+        let animate = function () {
+            let now = new Date().getTime() - start
             _.ele.scrollLeft =
                 _.ele.scrollLeft +
                 (scrollTarget - _.ele.scrollLeft) *
@@ -465,7 +478,7 @@
     }
 
     gliderPrototype.removeItem = function (index) {
-        var _ = this
+        let _ = this
 
         if (_.slides.length) {
             _.track.removeChild(_.slides[index])
@@ -475,7 +488,7 @@
     }
 
     gliderPrototype.addItem = function (ele) {
-        var _ = this
+        let _ = this
 
         _.track.appendChild(ele)
         _.refresh(true)
@@ -483,7 +496,7 @@
     }
 
     gliderPrototype.handleMouse = function (e) {
-        var _ = this
+        let _ = this
         if (_.mouseDown) {
             _.isDrag = true
             _.ele.scrollLeft +=
@@ -494,19 +507,19 @@
 
     // used to round to the nearest 0.XX fraction
     gliderPrototype.round = function (double) {
-        var _ = this
-        var step = _.opt.slidesToScroll % 1 || 1
-        var inv = 1.0 / step
+        let _ = this
+        let step = _.opt.slidesToScroll % 1 || 1
+        let inv = 1.0 / step
         return Math.round(double * inv) / inv
     }
 
     gliderPrototype.refresh = function (paging) {
-        var _ = this
+        let _ = this
         _.init(true, paging)
     }
 
     gliderPrototype.setOption = function (opt, global) {
-        var _ = this
+        let _ = this
 
         if (_.breakpoint && !global) {
             _._opt.responsive.forEach(function (v) {
@@ -523,11 +536,11 @@
     }
 
     gliderPrototype.destroy = function () {
-        var _ = this
+        let _ = this
 
-        var replace = _.ele.cloneNode(true)
+        let replace = _.ele.cloneNode(true)
 
-        var clear = function (ele) {
+        let clear = function (ele) {
             ele.removeAttribute('style');
             [].forEach.call(ele.classList, function (className) {
                 /^glider/.test(className) && ele.classList.remove(className)
@@ -545,9 +558,9 @@
     }
 
     gliderPrototype.emit = function (name, arg) {
-        var _ = this
+        let _ = this
 
-        var e = new _window.CustomEvent('glider-' + name, {
+        let e = new _window.CustomEvent('glider-' + name, {
             bubbles: !_.opt.eventPropagate,
             detail: arg
         })
@@ -555,7 +568,7 @@
     }
 
     gliderPrototype.event = function (ele, type, args) {
-        var eventHandler = ele[type + 'EventListener'].bind(ele)
+        let eventHandler = ele[type + 'EventListener'].bind(ele)
         Object.keys(args).forEach(function (k) {
             eventHandler(k, args[k])
         })

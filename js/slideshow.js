@@ -24,7 +24,7 @@
     }
   });
 
-  var SlideShow = function (instance) {
+  let SlideShow = function (instance) {
     this.instance = instance;
     this.init();
   };
@@ -35,7 +35,7 @@
     $button: null,
 
     init: function () {
-      var self = this,
+      let self = this,
         instance = self.instance,
         opts = instance.group[instance.currIndex].opts.slideShow;
 
@@ -51,7 +51,7 @@
     },
 
     set: function (force) {
-      var self = this,
+      let self = this,
         instance = self.instance,
         current = instance.current;
 
@@ -80,7 +80,7 @@
     },
 
     clear: function () {
-      var self = this;
+      let self = this;
 
       clearTimeout(self.timer);
 
@@ -92,7 +92,7 @@
     },
 
     start: function () {
-      var self = this,
+      let self = this,
         current = self.instance.current;
 
       if (current) {
@@ -112,7 +112,7 @@
     },
 
     stop: function () {
-      var self = this,
+      let self = this,
         current = self.instance.current;
 
       self.clear();
@@ -132,7 +132,7 @@
     },
 
     toggle: function () {
-      var self = this;
+      let self = this;
 
       if (self.isActive) {
         self.stop();
@@ -150,7 +150,7 @@
     },
 
     "beforeShow.fb": function (e, instance, current, firstRun) {
-      var SlideShow = instance && instance.SlideShow;
+      let SlideShow = instance && instance.SlideShow;
 
       if (firstRun) {
         if (SlideShow && current.opts.slideShow.autoStart) {
@@ -162,7 +162,7 @@
     },
 
     "afterShow.fb": function (e, instance, current) {
-      var SlideShow = instance && instance.SlideShow;
+      let SlideShow = instance && instance.SlideShow;
 
       if (SlideShow && SlideShow.isActive) {
         SlideShow.set();
@@ -170,7 +170,7 @@
     },
 
     "afterKeydown.fb": function (e, instance, current, keypress, keycode) {
-      var SlideShow = instance && instance.SlideShow;
+      let SlideShow = instance && instance.SlideShow;
 
       // "P" or Spacebar
       if (SlideShow && current.opts.slideShow && (keycode === 80 || keycode === 32) && !$(document.activeElement).is("button,a,input")) {
@@ -181,7 +181,7 @@
     },
 
     "beforeClose.fb onDeactivate.fb": function (e, instance) {
-      var SlideShow = instance && instance.SlideShow;
+      let SlideShow = instance && instance.SlideShow;
 
       if (SlideShow) {
         SlideShow.stop();
@@ -191,7 +191,7 @@
 
   // Page Visibility API to pause slideshow when window is not active
   $(document).on("visibilitychange", function () {
-    var instance = $.fancybox.getInstance(),
+    let instance = $.fancybox.getInstance(),
       SlideShow = instance && instance.SlideShow;
 
     if (SlideShow && SlideShow.isActive) {

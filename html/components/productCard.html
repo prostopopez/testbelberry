@@ -24,8 +24,11 @@
   </div>
 
   <div class="productCardSlider">
-    {% include 'glider.html' with { 'elementClassName': elementClassName,
-    'gliderTitle': gliderTitle, 'elements': block('cards') } %}
+    {% include 'glider.html' with {
+      'elementClassName': elementClassName,
+      'gliderTitle': gliderTitle,
+      'elements': block('cards')
+    } %}
   </div>
 
   <button class="button f5 productCardButton">

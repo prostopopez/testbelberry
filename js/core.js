@@ -24,7 +24,7 @@
   // Private default settings
   // ========================
 
-  var defaults = {
+  let defaults = {
     // Close existing modals
     // Set this to false if you do not need to stack multiple instances
     closeExisting: false,
@@ -390,23 +390,23 @@
     }
   };
 
-  // Few useful variables and methods
+  // Few useful letiables and methods
   // ================================
 
-  var $W = $(window);
-  var $D = $(document);
+  let $W = $(window);
+  let $D = $(document);
 
-  var called = 0;
+  let called = 0;
 
   // Check if an object is a jQuery object and not a native JavaScript object
   // ========================================================================
-  var isQuery = function (obj) {
+  let isQuery = function (obj) {
     return obj && obj.hasOwnProperty && obj instanceof $;
   };
 
   // Handle multiple browsers for "requestAnimationFrame" and "cancelAnimationFrame"
   // ===============================================================================
-  var requestAFrame = (function () {
+  let requestAFrame = (function () {
     return (
       window.requestAnimationFrame ||
       window.webkitRequestAnimationFrame ||
@@ -419,7 +419,7 @@
     );
   })();
 
-  var cancelAFrame = (function () {
+  let cancelAFrame = (function () {
     return (
       window.cancelAnimationFrame ||
       window.webkitCancelAnimationFrame ||
@@ -433,11 +433,11 @@
 
   // Detect the supported transition-end event property name
   // =======================================================
-  var transitionEnd = (function () {
-    var el = document.createElement("fakeelement"),
+  let transitionEnd = (function () {
+    let el = document.createElement("fakeelement"),
       t;
 
-    var transitions = {
+    let transitions = {
       transition: "transitionend",
       OTransition: "oTransitionEnd",
       MozTransition: "transitionend",
@@ -456,14 +456,14 @@
   // Force redraw on an element.
   // This helps in cases where the browser doesn't redraw an updated element properly
   // ================================================================================
-  var forceRedraw = function ($el) {
+  let forceRedraw = function ($el) {
     return $el && $el.length && $el[0].offsetHeight;
   };
 
   // Exclude array (`buttons`) options from deep merging
   // ===================================================
-  var mergeOpts = function (opts1, opts2) {
-    var rez = $.extend(true, {}, opts1, opts2);
+  let mergeOpts = function (opts1, opts2) {
+    let rez = $.extend(true, {}, opts1, opts2);
 
     $.each(opts2, function (key, value) {
       if ($.isArray(value)) {
@@ -477,8 +477,8 @@
   // How much of an element is visible in viewport
   // =============================================
 
-  var inViewport = function (elem) {
-    var elemCenter, rez;
+  let inViewport = function (elem) {
+    let elemCenter, rez;
 
     if (!elem || elem.ownerDocument !== document) {
       return false;
@@ -501,8 +501,8 @@
   // Class definition
   // ================
 
-  var FancyBox = function (content, opts, index) {
-    var self = this;
+  let FancyBox = function (content, opts, index) {
+    let self = this;
 
     self.opts = mergeOpts({
       index: index
@@ -547,7 +547,7 @@
     // ====================
 
     init: function () {
-      var self = this,
+      let self = this,
         firstItem = self.group[self.currIndex],
         firstItemOpts = firstItem.opts,
         $container,
@@ -625,7 +625,7 @@
     // ============================================================
 
     translate: function (obj, str) {
-      var arr = obj.opts.i18n[obj.opts.lang] || obj.opts.i18n.en;
+      let arr = obj.opts.i18n[obj.opts.lang] || obj.opts.i18n.en;
 
       return str.replace(/\{\{(\w+)\}\}/g, function (match, n) {
         return arr[n] === undefined ? match : arr[n];
@@ -637,12 +637,12 @@
     // ===============================================
 
     addContent: function (content) {
-      var self = this,
+      let self = this,
         items = $.makeArray(content),
         thumbs;
 
       $.each(items, function (i, item) {
-        var obj = {},
+        let obj = {},
           opts = {},
           $item,
           type,
@@ -858,7 +858,7 @@
     // ======================================
 
     addEvents: function () {
-      var self = this;
+      let self = this;
 
       self.removeEvents();
 
@@ -918,7 +918,7 @@
       });
 
       $D.on("keydown.fb", function (e) {
-        var instance = $.fancybox ? $.fancybox.getInstance() : null,
+        let instance = $.fancybox ? $.fancybox.getInstance() : null,
           current = instance.current,
           keycode = e.keyCode || e.which;
 
@@ -1004,7 +1004,7 @@
     // ===============================
 
     removeEvents: function () {
-      var self = this;
+      let self = this;
 
       $W.off("orientationchange.fb resize.fb");
       $D.off("keydown.fb .fb-idle");
@@ -1036,7 +1036,7 @@
     // ===============================
 
     jumpTo: function (pos, duration) {
-      var self = this,
+      let self = this,
         groupLen = self.group.length,
         firstRun,
         isMoved,
@@ -1150,7 +1150,7 @@
 
           // Make sure that each slide is in equal distance
           // This is mostly needed for freshly added slides, because they are not yet positioned
-          var leftPos = slide.pos * slidePos.width + slide.pos * slide.opts.gutter;
+          let leftPos = slide.pos * slidePos.width + slide.pos * slide.opts.gutter;
 
           $.fancybox.setTranslate(slide.$slide, {
             top: 0,
@@ -1216,7 +1216,7 @@
     // =======================================================
 
     createSlide: function (pos) {
-      var self = this,
+      let self = this,
         $slide,
         index;
 
@@ -1243,7 +1243,7 @@
     // ==============================================
 
     scaleToActual: function (x, y, duration) {
-      var self = this,
+      let self = this,
         current = self.current,
         $content = current.$content,
         canvasWidth = $.fancybox.getTranslate(current.$slide).width,
@@ -1329,7 +1329,7 @@
     // ========================================
 
     scaleToFit: function (duration) {
-      var self = this,
+      let self = this,
         current = self.current,
         $content = current.$content,
         end;
@@ -1364,7 +1364,7 @@
     // ===========================================
 
     getFitPos: function (slide) {
-      var self = this,
+      let self = this,
         $content = slide.$content,
         $slide = slide.$slide,
         width = slide.width || slide.opts.width,
@@ -1438,7 +1438,7 @@
     // ==============================================
 
     update: function (e) {
-      var self = this;
+      let self = this;
 
       $.each(self.slides, function (key, slide) {
         self.updateSlide(slide, e);
@@ -1449,7 +1449,7 @@
     // ======================================
 
     updateSlide: function (slide, e) {
-      var self = this,
+      let self = this,
         $content = slide && slide.$content,
         width = slide.width || slide.opts.width,
         height = slide.height || slide.opts.height,
@@ -1491,7 +1491,7 @@
     // =========================
 
     centerSlide: function (duration) {
-      var self = this,
+      let self = this,
         current = self.current,
         $slide = current.$slide;
 
@@ -1535,7 +1535,7 @@
     // ========================================
 
     isMoved: function (slide) {
-      var current = slide || this.current,
+      let current = slide || this.current,
         slidePos,
         stagePos;
 
@@ -1556,7 +1556,7 @@
     // ======================================================
 
     updateCursor: function (nextWidth, nextHeight) {
-      var self = this,
+      let self = this,
         current = self.current,
         $container = self.$refs.container,
         canPan,
@@ -1592,7 +1592,7 @@
     // ==================================
 
     isZoomable: function () {
-      var self = this,
+      let self = this,
         current = self.current,
         fitPos;
 
@@ -1618,7 +1618,7 @@
     // =========================================================
 
     isScaledDown: function (nextWidth, nextHeight) {
-      var self = this,
+      let self = this,
         rez = false,
         current = self.current,
         $content = current.$content;
@@ -1637,7 +1637,7 @@
     // ===============================================
 
     canPan: function (nextWidth, nextHeight) {
-      var self = this,
+      let self = this,
         current = self.current,
         pos = null,
         rez = false;
@@ -1666,7 +1666,7 @@
     // ===========================
 
     loadSlide: function (slide) {
-      var self = this,
+      let self = this,
         type,
         $slide,
         ajaxLoad;
@@ -1766,12 +1766,12 @@
     // ================================
 
     setImage: function (slide) {
-      var self = this,
+      let self = this,
         ghost;
 
       // Check if need to show loading icon
       setTimeout(function () {
-        var $img = slide.$image;
+        let $img = slide.$image;
 
         if (!self.isClosing && slide.isLoading && (!$img || !$img.length || !$img[0].complete) && !slide.hasError) {
           self.showLoading(slide);
@@ -1817,7 +1817,7 @@
     // Check if image has srcset and get the source
     // ============================================
     checkSrcset: function (slide) {
-      var srcset = slide.opts.srcset || slide.opts.image.srcset,
+      let srcset = slide.opts.srcset || slide.opts.image.srcset,
         found,
         temp,
         pxRatio,
@@ -1831,12 +1831,12 @@
         windowWidth = window.innerWidth * pxRatio;
 
         temp = srcset.split(",").map(function (el) {
-          var ret = {};
+          let ret = {};
 
           el.trim()
             .split(/\s+/)
             .forEach(function (el, i) {
-              var value = parseInt(el.substring(0, el.length - 1), 10);
+              let value = parseInt(el.substring(0, el.length - 1), 10);
 
               if (i === 0) {
                 return (ret.url = el);
@@ -1857,8 +1857,8 @@
         });
 
         // Ok, now we have an array of all srcset values
-        for (var j = 0; j < temp.length; j++) {
-          var el = temp[j];
+        for (let j = 0; j < temp.length; j++) {
+          let el = temp[j];
 
           if ((el.postfix === "w" && el.value >= windowWidth) || (el.postfix === "x" && el.value >= pxRatio)) {
             found = el;
@@ -1889,7 +1889,7 @@
     // ======================
 
     setBigImage: function (slide) {
-      var self = this,
+      let self = this,
         img = document.createElement("img"),
         $img = $(img);
 
@@ -1898,7 +1898,7 @@
           self.setError(slide);
         })
         .one("load", function () {
-          var sizes;
+          let sizes;
 
           if (!slide.$ghost) {
             self.resolveImageSlideSize(slide, this.naturalWidth, this.naturalHeight);
@@ -1948,7 +1948,7 @@
     // ==============================================================
 
     resolveImageSlideSize: function (slide, imgWidth, imgHeight) {
-      var maxWidth = parseInt(slide.opts.width, 10),
+      let maxWidth = parseInt(slide.opts.width, 10),
         maxHeight = parseInt(slide.opts.height, 10);
 
       // Sets the default values from the image
@@ -1970,7 +1970,7 @@
     // ==========================================
 
     setIframe: function (slide) {
-      var self = this,
+      let self = this,
         opts = slide.opts.iframe,
         $slide = slide.$slide,
         $iframe;
@@ -2003,7 +2003,7 @@
         // ===============================
 
         $slide.on("refresh.fb", function () {
-          var $content = slide.$content,
+          let $content = slide.$content,
             frameWidth = opts.css.width,
             frameHeight = opts.css.height,
             $contents,
@@ -2076,7 +2076,7 @@
     // ======================================
 
     setContent: function (slide, content) {
-      var self = this;
+      let self = this;
 
       if (self.isClosing) {
         return;
@@ -2171,7 +2171,7 @@
       slide.$content.siblings().hide();
 
       // Re-check if there is a valid content
-      // (in some cases, ajax response can contain various elements or plain text)
+      // (in some cases, ajax response can contain letious elements or plain text)
       if (!slide.$content.length) {
         slide.$content = slide.$slide
           .wrapInner("<div></div>")
@@ -2210,7 +2210,7 @@
     // ==================================
 
     showLoading: function (slide) {
-      var self = this;
+      let self = this;
 
       slide = slide || self.current;
 
@@ -2226,7 +2226,7 @@
     // ==================================
 
     hideLoading: function (slide) {
-      var self = this;
+      let self = this;
 
       slide = slide || self.current;
 
@@ -2241,7 +2241,7 @@
     // ===============================================
 
     afterLoad: function (slide) {
-      var self = this;
+      let self = this;
 
       if (self.isClosing) {
         return;
@@ -2292,7 +2292,7 @@
     // =====================================
 
     adjustCaption: function (slide) {
-      var self = this,
+      let self = this,
         current = slide || self.current,
         caption = current.opts.caption,
         preventOverlap = current.opts.preventCaptionOverlap,
@@ -2328,7 +2328,7 @@
     // ====================================================================================
 
     adjustLayout: function (slide) {
-      var self = this,
+      let self = this,
         current = slide || self.current,
         scrollHeight,
         marginBottom,
@@ -2367,7 +2367,7 @@
     // ============================================================
 
     revealContent: function (slide) {
-      var self = this,
+      let self = this,
         $slide = slide.$slide,
         end = false,
         start = false,
@@ -2491,7 +2491,7 @@
     //================================================
 
     getThumbPos: function (slide) {
-      var rez = false,
+      let rez = false,
         $thumb = slide.$thumb,
         thumbPos,
         btw,
@@ -2527,7 +2527,7 @@
     // ==================================================================
 
     complete: function () {
-      var self = this,
+      let self = this,
         current = self.current,
         slides = {},
         $el;
@@ -2605,7 +2605,7 @@
     // ================================
 
     preload: function (type) {
-      var self = this,
+      let self = this,
         prev,
         next;
 
@@ -2629,7 +2629,7 @@
     // ====================================================
 
     focus: function (e, firstRun) {
-      var self = this,
+      let self = this,
         focusableStr = [
           "a[href]",
           "area[href]",
@@ -2694,11 +2694,11 @@
     // =================================================================================
 
     activate: function () {
-      var self = this;
+      let self = this;
 
       // Deactivate all instances
       $(".fancybox-container").each(function () {
-        var instance = $(this).data("FancyBox");
+        let instance = $(this).data("FancyBox");
 
         // Skip self and closing instances
         if (instance && instance.id !== self.id && !instance.isClosing) {
@@ -2728,7 +2728,7 @@
     // =================================================================================
 
     close: function (e, d) {
-      var self = this,
+      let self = this,
         current = self.current,
         effect,
         duration,
@@ -2738,7 +2738,7 @@
         start,
         end;
 
-      var done = function () {
+      let done = function () {
         self.cleanUp(e);
       };
 
@@ -2861,7 +2861,7 @@
     // =============================================
 
     cleanUp: function (e) {
-      var self = this,
+      let self = this,
         instance,
         $focus = self.current.opts.$orig,
         x,
@@ -2909,7 +2909,7 @@
     // ==================================
 
     trigger: function (name, slide) {
-      var args = Array.prototype.slice.call(arguments, 1),
+      let args = Array.prototype.slice.call(arguments, 1),
         self = this,
         obj = slide && slide.opts ? slide : self.current,
         rez;
@@ -2941,7 +2941,7 @@
     // ==================================================================
 
     updateControls: function () {
-      var self = this,
+      let self = this,
         current = self.current,
         index = current.index,
         $container = self.$refs.container,
@@ -2997,7 +2997,7 @@
     // ========================
 
     hideControls: function (andCaption) {
-      var self = this,
+      let self = this,
         arr = ["infobar", "toolbar", "nav"];
 
       if (andCaption || !self.current.opts.preventCaptionOverlap) {
@@ -3016,7 +3016,7 @@
     },
 
     showControls: function () {
-      var self = this,
+      let self = this,
         opts = self.current ? self.current.opts : self.opts,
         $container = self.$refs.container;
 
@@ -3060,7 +3060,7 @@
     // ======================================================
 
     getInstance: function (command) {
-      var instance = $('.fancybox-container:not(".fancybox-is-closing"):last').data("FancyBox"),
+      let instance = $('.fancybox-container:not(".fancybox-is-closing"):last').data("FancyBox"),
         args = Array.prototype.slice.call(arguments, 1);
 
       if (instance instanceof FancyBox) {
@@ -3087,7 +3087,7 @@
     // ==============================
 
     close: function (all) {
-      var instance = this.getInstance();
+      let instance = this.getInstance();
 
       if (instance) {
         instance.close();
@@ -3117,7 +3117,7 @@
     // ============================================
 
     use3d: (function () {
-      var div = document.createElement("div");
+      let div = document.createElement("div");
 
       return (
         window.getComputedStyle &&
@@ -3132,7 +3132,7 @@
     // =====================================================================
 
     getTranslate: function ($el) {
-      var domRect;
+      let domRect;
 
       if (!$el || !$el.length) {
         return false;
@@ -3154,7 +3154,7 @@
     // ========================================================
 
     setTranslate: function ($el, props) {
-      var str = "",
+      let str = "",
         css = {};
 
       if (!$el || !props) {
@@ -3204,7 +3204,7 @@
     // =============================
 
     animate: function ($el, to, duration, callback, leaveAnimationName) {
-      var self = this,
+      let self = this,
         from;
 
       if ($.isFunction(duration)) {
@@ -3296,7 +3296,7 @@
   // ============================================
 
   function _run(e, opts) {
-    var items = [],
+    let items = [],
       index = 0,
       $target,
       value,
@@ -3353,7 +3353,7 @@
   // ======================
 
   $.fn.fancybox = function (options) {
-    var selector;
+    let selector;
 
     options = options || {};
     selector = options.selector || false;
@@ -3397,7 +3397,7 @@
   // Track focus event for better accessibility styling
   // ==================================================
   (function () {
-    var buttonStr = ".fancybox-button",
+    let buttonStr = ".fancybox-button",
       focusStr = "fancybox-focus",
       $pressed = null;
 

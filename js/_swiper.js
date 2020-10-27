@@ -54,7 +54,7 @@ const BtnGroup = class BtnGroup {
     }
 
     dragAction(e) {
-        console.log('inProcess');
+        // console.log('inProcess');
     }
 
     dragEnd(e, buttons) {
@@ -103,7 +103,7 @@ const BtnGroup = class BtnGroup {
     }
 
     initButtons() {
-        for (var i = 0; i < this.buttons.length; i++) {
+        for (let i = 0; i < this.buttons.length; i++) {
             const center = this.center(i);
             const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
             let pathStr = '';

@@ -7,7 +7,7 @@
 (function (document, $) {
   "use strict";
 
-  var CLASS = "fancybox-thumbs",
+  let CLASS = "fancybox-thumbs",
     CLASS_ACTIVE = CLASS + "-active";
 
   // Make sure there are default values
@@ -28,7 +28,7 @@
     $.fancybox.defaults
   );
 
-  var FancyThumbs = function (instance) {
+  let FancyThumbs = function (instance) {
     this.init(instance);
   };
 
@@ -40,7 +40,7 @@
     isActive: false,
 
     init: function (instance) {
-      var self = this,
+      let self = this,
         group = instance.group,
         enabled = 0;
 
@@ -52,7 +52,7 @@
       self.$button = instance.$refs.toolbar.find("[data-fancybox-thumbs]");
 
       // Enable thumbs if at least two group items have thumbnails
-      for (var i = 0, len = group.length; i < len; i++) {
+      for (let i = 0, len = group.length; i < len; i++) {
         if (group[i].thumb) {
           enabled++;
         }
@@ -74,7 +74,7 @@
     },
 
     create: function () {
-      var self = this,
+      let self = this,
         instance = self.instance,
         parentEl = self.opts.parentEl,
         list = [],
@@ -132,7 +132,7 @@
     },
 
     focus: function (duration) {
-      var self = this,
+      let self = this,
         $list = self.$list,
         $grid = self.$grid,
         thumb,
@@ -173,7 +173,7 @@
     },
 
     update: function () {
-      var that = this;
+      let that = this;
       that.instance.$refs.container.toggleClass("fancybox-show-thumbs", this.isVisible);
 
       if (that.isVisible) {
@@ -210,7 +210,7 @@
 
   $(document).on({
     "onInit.fb": function (e, instance) {
-      var Thumbs;
+      let Thumbs;
 
       if (instance && !instance.Thumbs) {
         Thumbs = new FancyThumbs(instance);
@@ -222,7 +222,7 @@
     },
 
     "beforeShow.fb": function (e, instance, item, firstRun) {
-      var Thumbs = instance && instance.Thumbs;
+      let Thumbs = instance && instance.Thumbs;
 
       if (Thumbs && Thumbs.isVisible) {
         Thumbs.focus(firstRun ? 0 : 250);
@@ -230,7 +230,7 @@
     },
 
     "afterKeydown.fb": function (e, instance, current, keypress, keycode) {
-      var Thumbs = instance && instance.Thumbs;
+      let Thumbs = instance && instance.Thumbs;
 
       // "G"
       if (Thumbs && Thumbs.isActive && keycode === 71) {
@@ -241,7 +241,7 @@
     },
 
     "beforeClose.fb": function (e, instance) {
-      var Thumbs = instance && instance.Thumbs;
+      let Thumbs = instance && instance.Thumbs;
 
       if (Thumbs && Thumbs.isVisible && Thumbs.opts.hideOnClose !== false) {
         Thumbs.$grid.hide();

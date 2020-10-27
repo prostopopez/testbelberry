@@ -8,7 +8,7 @@
   "use strict";
 
   // Object containing properties for each media type
-  var defaults = {
+  let defaults = {
     youtube: {
       matcher: /(youtube\.com|youtu\.be|youtube\-nocookie\.com)\/(watch\?(.*&)?v=|v\/|u\/|embed\/?)?(videoseries\?list=(.*)|[\w-]{11}|\?listType=(.*)&list=(.*))(.*)/i,
       params: {
@@ -82,7 +82,7 @@
   };
 
   // Formats matching url to final form
-  var format = function (url, rez, params) {
+  let format = function (url, rez, params) {
     if (!url) {
       return;
     }
@@ -105,7 +105,7 @@
   };
 
   $(document).on("objectNeedsType.fb", function (e, instance, item) {
-    var url = item.src || "",
+    let url = item.src || "",
       type = false,
       media,
       thumb,
@@ -138,8 +138,8 @@
 
         urlParams = urlParams.split("&");
 
-        for (var m = 0; m < urlParams.length; ++m) {
-          var p = urlParams[m].split("=", 2);
+        for (let m = 0; m < urlParams.length; ++m) {
+          let p = urlParams[m].split("=", 2);
 
           if (p.length == 2) {
             paramObj[p[0]] = decodeURIComponent(p[1].replace(/\+/g, " "));
@@ -197,7 +197,7 @@
   });
 
   // Load YouTube/Video API on request to detect when video finished playing
-  var VideoAPILoader = {
+  let VideoAPILoader = {
     youtube: {
       src: "https://www.youtube.com/iframe_api",
       class: "YT",
@@ -213,7 +213,7 @@
     },
 
     load: function (vendor) {
-      var _this = this,
+      let _this = this,
         script;
 
       if (this[vendor].loaded) {
@@ -248,7 +248,7 @@
       document.body.appendChild(script);
     },
     done: function (vendor) {
-      var instance, $el, player;
+      let instance, $el, player;
 
       if (vendor === "youtube") {
         delete window.onYouTubeIframeAPIReady;

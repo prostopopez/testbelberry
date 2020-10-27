@@ -10,8 +10,8 @@
   // Simple $.escapeSelector polyfill (for jQuery prior v3)
   if (!$.escapeSelector) {
     $.escapeSelector = function (sel) {
-      var rcssescape = /([\0-\x1f\x7f]|^-?\d)|^-$|[^\x80-\uFFFF\w-]/g;
-      var fcssescape = function (ch, asCodePoint) {
+      let rcssescape = /([\0-\x1f\x7f]|^-?\d)|^-$|[^\x80-\uFFFF\w-]/g;
+      let fcssescape = function (ch, asCodePoint) {
         if (asCodePoint) {
           // U+0000 NULL becomes U+FFFD REPLACEMENT CHARACTER
           if (ch === "\0") {
@@ -32,7 +32,7 @@
 
   // Get info about gallery name and current index from url
   function parseUrl() {
-    var hash = window.location.hash.substr(1),
+    let hash = window.location.hash.substr(1),
       rez = hash.split("-"),
       index = rez.length > 1 && /^\+?\d+$/.test(rez[rez.length - 1]) ? parseInt(rez.pop(-1), 10) || 1 : 1,
       gallery = rez.join("-");
@@ -59,7 +59,7 @@
 
   // Get gallery name from current instance
   function getGalleryID(instance) {
-    var opts, ret;
+    let opts, ret;
 
     if (!instance) {
       return false;
@@ -81,7 +81,7 @@
     // Update hash when opening/closing fancyBox
     $(document).on({
       "onInit.fb": function (e, instance) {
-        var url, gallery;
+        let url, gallery;
 
         if (instance.group[instance.currIndex].opts.hash === false) {
           return;
@@ -97,7 +97,7 @@
       },
 
       "beforeShow.fb": function (e, instance, current, firstRun) {
-        var gallery;
+        let gallery;
 
         if (!current || current.opts.hash === false) {
           return;
@@ -110,7 +110,7 @@
           return;
         }
 
-        // Variable containing last hash value set by fancyBox
+        // letiable containing last hash value set by fancyBox
         // It will be used to determine if fancyBox needs to close after hash change is detected
         instance.currentHash = gallery + (instance.group.length > 1 ? "-" + (current.index + 1) : "");
 
@@ -170,7 +170,7 @@
 
     // Check if need to start/close after url has changed
     $(window).on("hashchange.fb", function () {
-      var url = parseUrl(),
+      let url = parseUrl(),
         fb = null;
 
       // Find last fancyBox instance that has "hash"
@@ -179,7 +179,7 @@
         .get()
         .reverse(),
         function (index, value) {
-          var tmp = $(value).data("FancyBox");
+          let tmp = $(value).data("FancyBox");
 
           if (tmp && tmp.currentHash) {
             fb = tmp;

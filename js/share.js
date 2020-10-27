@@ -41,7 +41,7 @@
   });
 
   function escapeHtml(string) {
-    var entityMap = {
+    let entityMap = {
       "&": "&amp;",
       "<": "&lt;",
       ">": "&gt;",
@@ -58,7 +58,7 @@
   }
 
   $(document).on("click", "[data-fancybox-share]", function () {
-    var instance = $.fancybox.getInstance(),
+    let instance = $.fancybox.getInstance(),
       current = instance.current || null,
       url,
       tpl;
