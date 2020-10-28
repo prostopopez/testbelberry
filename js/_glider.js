@@ -28,6 +28,7 @@
     let gliderTimeout = [];
     let gliderInterval;
     let gliderTrigger = new Event('gliderTrigger');
+    let intervalSet = false;
     let _window = typeof window !== 'undefined' ? window : this;
 
     let Glider = (_window.Glider = function (element, settings) {
@@ -229,16 +230,18 @@
     gliderPrototype.startRepeat = function () {
         let dotsNow = document.querySelectorAll(`.fnv-glider-dot`);
 
-        gliderInterval = setInterval((e) => {
-            for (let i = 0; i < dotsNow.length; ++i) {
-                gliderTimeout.push(setTimeout((e) => dotsNow[i].dispatchEvent(gliderTrigger), i * 5000));
-            }
-        }, dotsNow.length * 5000);
+        if (intervalSet === false) {
+            gliderInterval = setInterval((e) => {
+                for (let i = 0; i < dotsNow.length; ++i) {
+                    gliderTimeout.push(setTimeout((e) => dotsNow[i].dispatchEvent(gliderTrigger), i * 5000));
+                }
+            }, dotsNow.length * 5000);
+            intervalSet = true;
+        }
     };
 
     gliderPrototype.stopRepeat = function () {
         clearInterval(gliderInterval);
-
         for (let i = 0; i < gliderTimeout.length; i++) {
             clearTimeout(gliderTimeout[i]);
         }
@@ -521,6 +524,7 @@
             _.ele.scrollLeft +=
                 (_.mouseDown - e.clientX) * (_.opt.dragVelocity || 3.3);
             _.mouseDown = e.clientX;
+            _.stopRepeat();
         }
     };
 
