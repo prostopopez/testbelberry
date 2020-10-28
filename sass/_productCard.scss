@@ -108,6 +108,11 @@
 
     .productCardButton {
         display: none;
+
+        .textBlock {
+            color: white;
+        }
+
         @include mediaQuery(mobile) {
             display: flex;
             width: 192px;
