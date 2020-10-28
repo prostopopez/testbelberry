@@ -15,9 +15,6 @@
 */
 
 /* global define */
-let gliderTimeout = [];
-let gliderInterval;
-
 (function (factory) {
     typeof define === 'function' && define.amd
         ? define(factory)
@@ -28,6 +25,9 @@ let gliderInterval;
     ('use strict'); // eslint-disable-line no-unused-expressions
 
     /* globals window:true */
+    let gliderTimeout = [];
+    let gliderInterval;
+    let gliderTrigger = new Event('gliderTrigger');
     let _window = typeof window !== 'undefined' ? window : this;
 
     let Glider = (_window.Glider = function (element, settings) {
@@ -81,6 +81,8 @@ let gliderInterval;
 
         // start glider
         _.init();
+        //repeat
+        _.startRepeat();
 
         // set events
         _.resize = _.init.bind(_, true);
@@ -195,7 +197,6 @@ let gliderInterval;
 
     gliderPrototype.buildDots = function () {
         let _ = this;
-        let gliderTrigger = new Event('gliderTrigger');
 
         if (!_.opt.dots) {
             if (_.dots) _.dots.innerHTML = '';
@@ -221,16 +222,29 @@ let gliderInterval;
             });
             _.dots.appendChild(dot);
 
-            gliderTimeout.push(setTimeout(() => dot.dispatchEvent(gliderTrigger), i * 5000));
+            gliderTimeout.push(setTimeout((e) => dot.dispatchEvent(gliderTrigger), i * 5000));
         }
+    };
 
-        let dotsNow = _.dots.querySelectorAll(`.fnv-glider-dot`);
+    gliderPrototype.startRepeat = function () {
+        let dotsNow = document.querySelectorAll(`.fnv-glider-dot`);
 
         gliderInterval = setInterval((e) => {
             for (let i = 0; i < dotsNow.length; ++i) {
                 gliderTimeout.push(setTimeout((e) => dotsNow[i].dispatchEvent(gliderTrigger), i * 5000));
             }
         }, dotsNow.length * 5000);
+    };
+
+    gliderPrototype.stopRepeat = function () {
+        clearInterval(gliderInterval);
+
+        for (let i = 0; i < gliderTimeout.length; i++) {
+            clearTimeout(gliderTimeout[i]);
+        }
+
+        gliderInterval = 0;
+        gliderTimeout = [];
     };
 
     gliderPrototype.bindArrows = function () {
@@ -366,13 +380,6 @@ let gliderInterval;
     };
 
     gliderPrototype.scrollItem = function (slide, dot, e) {
-        if(e.type == 'click') {
-            clearInterval(gliderInterval);
-            for (let i = 0; i < gliderTimeout.length; i++) {
-                clearTimeout(gliderTimeout[i]);
-            }
-        }
-
         if (e) e.preventDefault();
 
         let _ = this;
@@ -427,6 +434,10 @@ let gliderInterval;
                 });
             }
         );
+
+        if (e.type == 'click') {
+            _.stopRepeat();
+        }
 
         return false;
     };

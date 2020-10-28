@@ -84,7 +84,6 @@ const BtnGroup = class BtnGroup {
 
         for (let i = 0; i < buttons.length; i++) {
             buttons[i].addEventListener('sliderTrigger', e => this.onClick(e));
-
             sliderTimeout.push(setTimeout((e) => buttons[i].dispatchEvent(sliderTrigger), i * 5000));
         }
 
@@ -97,9 +96,13 @@ const BtnGroup = class BtnGroup {
 
     stopRepeat() {
         clearInterval(sliderInterval);
+
         for (let i = 0; i < sliderTimeout.length; i++) {
             clearTimeout(sliderTimeout[i]);
         }
+
+        sliderInterval = 0;
+        sliderTimeout = [];
     }
 
     initButtons() {
