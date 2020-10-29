@@ -255,7 +255,7 @@
         if (!_.opt.arrows) {
             Object.keys(_.arrows).forEach(function (direction) {
                 let element = _.arrows[direction];
-                _.event(element, 'remove', {click: element._func});
+                _.event(element, 'remove', { click: element._func });
             });
             return;
         }

@@ -4,6 +4,7 @@ window.onload = function () {
 
     window.onresize = function () {
         cardAdjust();
+        _.stopRepeat();
     }
 };
 
