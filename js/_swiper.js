@@ -4,6 +4,7 @@ let sliderInterval;
 let rect;
 let posX1 = 0;
 let posX2 = 0;
+let direction;
 
 const BtnGroup = class BtnGroup {
     constructor(group) {
@@ -35,48 +36,33 @@ const BtnGroup = class BtnGroup {
         }
 
         for (let i = 0; i < this.bipolarSlideItems.length; i++) {
-            // Mouse events
-            this.bipolarSlideItems[i].addEventListener('mousedown', e => this.dragStart(e, this.bipolarSlideItems[i]));
-            this.bipolarSlideItems[i].addEventListener('mousemove', e => this.dragAction(e));
-            this.bipolarSlideItems[i].addEventListener('mouseup', e => this.dragEnd(e, this.buttons));
-            // Touch events
-            this.bipolarSlideItems[i].addEventListener('touchstart', e => this.dragStart(e, this.bipolarSlideItems[i]));
-            this.bipolarSlideItems[i].addEventListener('touchmove', e => this.dragAction(e));
-            this.bipolarSlideItems[i].addEventListener('touchend', e => this.dragEnd(e, this.buttons));
+            let bipolarItemTouch = new Hammer(this.bipolarSlideItems[i]);
+            bipolarItemTouch.on('panleft panright panend', e => this.mobileSwap(e, this.buttons));
         }
     }
 
-    dragStart(e, bipolarSliderItem) {
+    mobileSwap(e, buttons) {
         this.stopRepeat();
-        bipolarSliderItem.style.userSelect = 'none';
-        rect = bipolarSliderItem.getBoundingClientRect();
-        posX1 = e.clientX - rect.left;
-    }
-
-    dragAction(e) {
-        // console.log('inProcess');
-    }
-
-    dragEnd(e, buttons) {
-        posX2 = e.clientX - rect.left;
-        let swipeTrigger = new Event('swipeTrigger');
+        let swipeTriggerMobile = new Event('swipeTriggerMobile');
+        if (e.type === 'panleft') {
+            direction = 'left';
+        } else if (e.type === 'panright') {
+            direction = 'right';
+        }
 
         for (let i = 0; i < buttons.length; i++) {
             if (buttons[i].classList.contains(`fnv-active`)) {
-                if (posX1 - posX2 > 0 && i + 1 < buttons.length) {
-                    buttons[i + 1].addEventListener('swipeTrigger', e => this.onClick(e));
-                    buttons[i + 1].dispatchEvent(swipeTrigger);
+                if (e.type == 'panend' && direction == 'left' && i + 1 < buttons.length) {
+                    buttons[i + 1].addEventListener('swipeTriggerMobile', e => this.onClick(e));
+                    buttons[i + 1].dispatchEvent(swipeTriggerMobile);
                     break;
-                } else if (posX1 - posX2 < 0 && i - 1 >= 0) {
-                    buttons[i - 1].addEventListener('swipeTrigger', e => this.onClick(e));
-                    buttons[i - 1].dispatchEvent(swipeTrigger);
+                } else if (e.type == 'panend' && direction == 'right' && i - 1 >= 0) {
+                    buttons[i - 1].addEventListener('swipeTriggerMobile', e => this.onClick(e));
+                    buttons[i - 1].dispatchEvent(swipeTriggerMobile);
                     break;
                 }
             }
         }
-
-        document.onmouseup = null;
-        document.onmousemove = null;
     }
 
     startRepeat(buttons) {
