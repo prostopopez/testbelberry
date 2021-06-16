@@ -1,98 +1,26 @@
 .button {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 48px;
-        padding: 5px 50px;
-    border-radius: 4px;
-    background-color: $mainColor;
-    color: #ffffff;
-    line-height: initial;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  padding: 5px 50px;
+  border-radius: 4px;
+  background-color: $mainColor;
+  color: #ffffff;
+  line-height: initial;
 
-    &:hover {
-        background-color: $lightColor;
-    }
+  &:hover {
+    background-color: $lightColor;
+  }
 
-    &:active {
-        background-color: $darkColor;
-    }
+  &:active {
+    background-color: $darkColor;
+  }
 
-    &.iconButton {
-        .iconBlock {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            content: '';
-            position: absolute;
-            left: 5px;
-            width: 38px;
-            height: 38px;
-            background: $tonedColor;
-            background-size: cover;
-            border: 1px solid $lightTonedColor;
-            border-radius: 2px;
-
-            svg {
-                fill: white;
-                width: 20px;
-                height: 17px;
-            }
-        }
-
-        .textBlock {
-            padding-left: 43px;
-        }
-    }
-
-    &.iconEqual {
-        align-items: center;
-        width: 72px;
-        height: 42px;
-        padding: 4px 0;
-        border-radius: 2px;
-        border: 1px solid $tonedColor;
-        background-color: darken($lightColor, 3%);
-
-        .iconBlock,
-        .textBlock {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 50%;
-            height: 100%;
-            padding: 5px 0;
-        }
-
-        .iconBlock {
-            border-right: 1px solid $lightTonedColor;
-        }
-
-        .textBlock {
-            font-size: 18px;
-        }
-
-        .iconBlock {
-            svg {
-                fill: white;
-                width: 20px;
-                height: 20px;
-            }
-        }
-
-        &:hover {
-            background-color: $ultraLightColor;
-        }
-
-        &:active {
-            background-color: $darkColor;
-        }
-    }
-
-    @include mediaQuery(mobile) {
-        width: 100%;
-        height: 44px;
-        font-size: 15px;
-    }
+  @include mediaQuery(mobile) {
+    width: 100%;
+    height: 44px;
+    font-size: 15px;
+  }
 }
