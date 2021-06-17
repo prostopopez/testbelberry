@@ -1,4 +1,9 @@
-$mainColor: #CD3767;
+$mainBgColor: #111111;
+$mainTextColor: white;
+$mainActiveColor: #FF8800;
+$mainSvgColor: #707070;
+
+$mainColor: #111111;
 $lightColor: lighten(#D0567A, 3%);
 $ultraLightColor: #e589a5;
 $purple: #FCF5FF;
@@ -11,7 +16,6 @@ $mainBlue: #233568;
 $tonedColor: rgba(255, 255, 255, 0.1);
 $lightTonedColor: rgba(255, 255, 255, 0.2);
 $tonedBlackColor: #373737;
-$mainBgColor: #F6F6F6;
 
 $deskWindowMaxWidth: 1000px !default;
 $mobileWindowMaxWidth: 630px !default;

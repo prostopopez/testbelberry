@@ -6,69 +6,6 @@
     font-weight: normal;
 }
 
-h1,
-.f1 {
-    font-size: 90px;
-    line-height: 90px;
-
-    @include mediaQuery(tablet) {
-        font-size: 60px;
-        line-height: 60px;
-    }
-}
-
-h2,
-.f2 {
-    font-size: 50px;
-    line-height: 60px;
-
-    @include mediaQuery(tablet) {
-        font-size: 40px;
-        line-height: 40px;
-    }
-}
-
-.f3 {
-    font-size: 30px;
-    line-height: 30px;
-
-    @include mediaQuery(tablet) {
-        font-size: 24px;
-        line-height: 24px;
-    }
-}
-
-.f4 {
-    font-weight: bold;
-    font-size: 24px;
-    color: $mainColor;
-
-    @include mediaQuery(tablet) {
-        font-size: 24px;
-    }
-}
-
-.f5 {
-    font-size: 18px;
-
-    @include mediaQuery(tablet) {
-        font-size: 18px;
-    }
-
-    @include mediaQuery(mobile) {
-        font-size: 16px;
-    }
-}
-
-.f6 {
-    font-size: 16px;
-
-    @include mediaQuery(tablet) {
-        font-size: 16px;
-    }
-}
-
-
 a.active.focus,
 a.active:focus,
 a.focus,
@@ -108,7 +45,7 @@ a,
 button,
 input,
 textarea {
-    transition: all .3s linear;
+    transition: all 0.3s linear;
     outline: none;
 }
 
@@ -136,39 +73,32 @@ ol {
     }
 }
 
-body.noScroll {
-    height: 100vh;
-    width: 100%;
-    position: fixed;
-    overflow-y: scroll;
+body {
+    background-color: #111111;
+
+    &.noScroll {
+        height: 100vh;
+        width: 100%;
+        position: fixed;
+        overflow-y: scroll;
+    }
 }
 
 a {
     font-weight: 300;
-    font-size: 25px;
     border-bottom: 1px solid transparent;
-    transition: all .3s linear;
+    transition: all 0.3s linear;
     text-decoration: none !important;
-    color: $mainColor;
+    color: $mainTextColor;
 
-    &.icon:hover {
-        svg {
-            transition: all .3s linear;
-        }
-    }
-
-    @include mediaQuery(mobile) {
-        font-size: 13px;
+    &:hover {
+        color: $mainActiveColor;
     }
 }
 
 svg {
     fill: transparent;
-    transition: all .3s linear;
-
-    &:hover {
-        fill: $mainColor;
-    }
+    transition: all 0.3s linear;
 }
 
 .icon {

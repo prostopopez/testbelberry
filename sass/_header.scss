@@ -3,9 +3,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 0;
+    padding: 32px 0;
     background-color: $mainColor;
-    color: white !important;
 
     .cont {
         display: flex;
@@ -14,12 +13,16 @@
         margin: auto;
     }
 
+    svg {
+        fill: $mainSvgColor;
+    }
+
     .logoBlock {
         display: flex;
         flex-direction: column;
-        margin-right: 54px;
+        margin-right: 20px;
 
-        span {
+        a {
             font-size: 50px;
         }
     }
@@ -32,117 +35,86 @@
             justify-content: space-between;
 
             li {
-                margin-right: 26px;
+                margin-right: 80px;
+
+                &:last-of-type {
+                    margin-right: 20px;
+                }
             }
 
             a {
-                color: white;
-                font-size: 16px;
+                font-size: 20px;
             }
         }
     }
 
-    .mobileNav {
-        display: none;
+    .rightHeaderPart {
+        display: flex;
+        justify-content: center;
     }
 
-    .headerSearch,
-    .iconEqual {
-        margin-right: 20px;
-        color: #fff;
+    .headerSearch, .headerBasket {
+        margin-right: 50px;
+
+        svg {
+            width: 36px;
+            height: 36px;
+
+            &:hover {
+                fill: $mainActiveColor;
+            }
+        }
+    }
+
+    .headerMapMarker {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        span {
+            font-size: 14px;
+            color: $mainSvgColor;
+        }
+    }
+
+    @media only screen and (max-width: 1700px) {
+        .mainMenu ul li {
+            margin-right: 60px;
+        }
+
+        .headerSearch, .headerBasket {
+            margin-right: 40px;
+        }
     }
 
     @media only screen and (max-width: 1500px) {
-        .logoBlock {
-            margin-right: 25px;
+        .mainMenu ul li {
+            margin-right: 40px;
         }
 
-        .mainMenu ul li {
-            margin-right: 14px;
+        .headerSearch, .headerBasket {
+            margin-right: 30px;
         }
     }
 
     @media only screen and (max-width: 1280px) {
         .logoBlock {
-            order: 1;
-            width: 100px;
+            a {
+                font-size: 40px;
+            }
+        }
+
+        .mainMenu ul li {
             margin-right: 20px;
-
-            .logo img {
-                width: 100px;
-            }
         }
 
-        .mainMenu {
-            order: 2;
-        }
-
-        .headerSearch,
-        .iconEqual {
-            margin-right: 10px;
-        }
-
-        .headerSearch {
-            order: 4;
-
-            &.inactive {
-                .searchBlock .search {
-                    width: 42px;
-                    padding: 13px;
-                    color: transparent;
-
-                    &::placeholder {
-                        color: transparent;
-                    }
-                }
-
-                svg {
-                    right: 13px;
-                }
-            }
-        }
-
-        .iconEqual {
-            order: 5;
-        }
-
-        .userDropdown {
-            order: 6;
-        }
-    }
-
-    @include mediaQuery(tablet) {
-        .mainMenu,
-        .headerSearch {
-            display: none;
-        }
-
-        .mobileNav {
-            order: 7;
-            display: flex;
-
-            svg {
-                width: 24px;
-                height: 24px;
-                fill: white;
-            }
-        }
-    }
-
-    @include mediaQuery(mobile) {
-        .logoBlock {
-            span {
-                font-size: 10px;
-            }
-        }
-
-        .iconEqual,
-        .userDropdown {
-            display: none;
-        }
-
-        .tabletMenuToggle {
-            margin: 0 10px;
+        .headerSearch, .headerBasket {
+            margin-right: 20px;
         }
     }
 }
