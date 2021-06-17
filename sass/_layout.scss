@@ -70,10 +70,6 @@ ol {
     @include mediaQuery(tablet) {
         max-width: 720px;
     }
-
-    @include mediaQuery(mobile) {
-        width: 97%;
-    }
 }
 
 body {
@@ -110,34 +106,11 @@ svg {
         fill: $mainColor;
         width: $iconSize;
         height: $iconSize;
-
-        @include mediaQuery(mobile) {
-            width: 26px;
-            height: 26px;
-        }
     }
 }
 
 .pageStyle {
-    margin-bottom: 40px;
-
-    @include mediaQuery(mobile) {
-        margin-bottom: 35px;
-    }
-}
-
-.doNotUseMobile {
-    @include mediaQuery(mobile) {
-        display: none !important;
-    }
-}
-
-.useOnlyMobile {
-    display: none;
-
-    @include mediaQuery(mobile) {
-        display: block !important;
-    }
+    margin-bottom: 100px;
 }
 
 .modalAnimation {
@@ -210,11 +183,6 @@ svg {
 
         @include mediaQuery(tablet) {
             width: 36px;
-        }
-
-        @include mediaQuery(mobile) {
-            height: 46px;
-            line-height: 46px;
         }
     }
 }
