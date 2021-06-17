@@ -3,10 +3,6 @@
     padding: 70px 0;
     margin-bottom: 0;
 
-    @include mediaQuery(tablet) {
-        padding: 30px 0;
-    }
-
     .f2 {
         span {
             font-size: 32px;
@@ -17,10 +13,6 @@
     .basketWrapper {
         margin: 40px 0;
         width: 100%;
-
-        @include mediaQuery(mobile) {
-            padding: 0 10px;
-        }
     }
 
     .basketItem {
@@ -43,21 +35,6 @@
             height: 100%;
             max-width: 110px;
             min-width: 110px;
-
-            @include mediaQuery(tablet) {
-                max-width: 90px;
-                min-width: 90px;
-            }
-
-            @include mediaQuery(mobile) {
-                max-width: 110px;
-                min-width: 110px;
-            }
-        }
-
-        @include mediaQuery(mobile) {
-            flex-direction: column;
-            padding: 0 20px;
         }
     }
 
@@ -75,25 +52,11 @@
         h3 {
             color: $tonedBlackColor;
             margin-bottom: 20px;
-
-            @include mediaQuery(tablet) {
-                font-size: 24px;
-                margin-bottom: 10px;
-            }
-
-            @include mediaQuery(mobile) {
-                text-align: center;
-                margin-bottom: 30px;
-            }
         }
 
         tr {
             margin: 10px 0;
             display: block;
-
-            @include mediaQuery(tablet) {
-                margin: 4px 0;
-            }
         }
 
         td:nth-child(1) {
@@ -103,30 +66,6 @@
 
         td:nth-child(2) {
             color: $tonedBlackColor;
-        }
-
-        @include mediaQuery(tablet) {
-            display: flex;
-            align-items: flex-start;
-            padding: 0 15px;
-
-            .basketItemDesc {
-                padding: 10px 0;
-            }
-        }
-
-        @include mediaQuery(mobile) {
-            align-items: center;
-            flex-direction: column;
-            border: none;
-            padding: 0;
-
-            .basketItemDesc {
-                display: flex;
-                justify-content: center;
-                flex-direction: column;
-                align-items: center;
-            }
         }
     }
 
@@ -151,48 +90,11 @@
                 vertical-align: middle;
             }
         }
-
-        @include mediaQuery(tablet) {
-            width: auto;
-            min-height: 160px;
-            height: 100%;
-            position: relative;
-            flex-direction: column-reverse;
-            border-left: 2px solid rgba(25, 23, 25, 0.12);
-            margin-left: 20px;
-            justify-content: center;
-            padding-left: 15px;
-
-            p {
-                margin: 0;
-                font-size: 30px;
-            }
-        }
-
-        @include mediaQuery(mobile) {
-            flex-direction: row;
-            margin: 20px 0;
-            border: none;
-            padding: 0;
-            width: 100%;
-            min-height: 100%;
-            justify-content: space-around;
-
-            p {
-                font-size: 26px;
-            }
-        }
     }
 
     .inputCounter {
         min-width: 160px;
         max-width: 160px;
-
-        @include mediaQuery(mobile) {
-            min-width: 130px;
-            max-width: 130px;
-            height: 48px;
-        }
     }
 
     .basketDeleteButton {
@@ -202,29 +104,12 @@
             width: 13px;
             height: 13px;
             fill: #CCCCCC;
-
-            @include mediaQuery(mobile) {
-                width: 18px;
-                height: 18px;
-                stroke: #CCCCCC;
-                stroke-width: 2;
-            }
         }
 
         &:hover {
             svg {
                 fill: $mainColor;
-
-                @include mediaQuery(mobile) {
-                    stroke: $mainColor;
-                }
             }
-        }
-
-        @include mediaQuery(mobile) {
-            position: absolute;
-            right: 2px;
-            top: 5px;
         }
     }
 }
@@ -295,10 +180,6 @@
                     color: #3D3D3D;
                     margin-bottom: 12px;
                     font-size: 26px;
-
-                    @include mediaQuery(tablet) {
-                        font-size: 22px;
-                    }
                 }
 
                 p {
@@ -319,14 +200,6 @@
                 white-space: nowrap;
                 font-weight: bold;
                 font-size: 40px;
-
-                @include mediaQuery(tablet) {
-                    margin-left: 20px;
-                }
-
-                @include mediaQuery(mobile) {
-                    font-size: 20px;
-                }
             }
 
             svg {
@@ -338,15 +211,6 @@
                 max-width: 16px;
                 min-width: 16px;
             }
-
-            @include mediaQuery(mobile) {
-                padding: 20px 10px;
-            }
-        }
-
-        @include mediaQuery(mobile) {
-            padding: 5px;
-            border-radius: 8px;
         }
     }
 }
@@ -364,10 +228,6 @@
 
     h3 {
         margin-bottom: 40px;
-
-        @include mediaQuery(tablet) {
-            margin-bottom: 30px;
-        }
     }
 
     .textareaBlock {
@@ -391,14 +251,6 @@
             color: $mainColor;
             font-size: 40px;
             margin-left: 10px;
-        }
-    }
-
-    @include mediaQuery(mobile) {
-        flex-direction: column;
-
-        button {
-            width: 220px;
         }
     }
 }

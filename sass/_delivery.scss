@@ -10,23 +10,6 @@
             @media only screen and (max-width: 1500px) {
                 background: linear-gradient(to right, #F4F6F8 0%, #F4F6F8 50%, transparent 60%)
             }
-
-            @include mediaQuery(tablet) {
-                background: linear-gradient(to right, #F4F6F8 0%, #F4F6F8 50%, transparent 70%)
-            }
-
-            @include mediaQuery(mobile) {
-                background: #F4F6F8;
-                box-shadow: 100px 50px 50px #F4F6F8;
-            }
-        }
-
-        @include mediaQuery(mobile) {
-            max-height: initial;
-
-            .bannerImg {
-                background: linear-gradient(to right, #F4F6F8 5%, transparent);
-            }
         }
     }
 
@@ -34,15 +17,6 @@
         margin-bottom: 50px;
         font-size: 50px;
         font-weight: 500;
-
-        @include mediaQuery(tablet) {
-            margin-bottom: 30px;
-        }
-
-        @include mediaQuery(mobile) {
-            font-size: 36px;
-            margin-bottom: 30px;
-        }
     }
 
     .deliveryCards {
@@ -51,10 +25,6 @@
         .deliveryCardTitle {
             font-size: 30px;
             margin-bottom: 12px;
-
-            @include mediaQuery(mobile) {
-                font-size: 24px;
-            }
         }
 
         .deliveryCardSubtitle {
@@ -62,12 +32,6 @@
             font-size: 18px;
             margin-bottom: 36px;
             line-height: 24px;
-
-            @include mediaQuery(tablet) {
-                br {
-                    display: none;
-                }
-            }
         }
 
         .priceContainer {
@@ -75,11 +39,6 @@
             justify-content: flex-start;
             flex-wrap: wrap;
             width: 100%;
-
-            @include mediaQuery(mobile) {
-                justify-content: center;
-                margin-bottom: 50px;
-            }
         }
     }
 
@@ -93,10 +52,6 @@
         font-size: 24px;
         color: $mainColor;
         line-height: 24px;
-
-        @include mediaQuery(tablet) {
-            white-space: normal;
-        }
     }
 
     .deliveryCardsPurple {
@@ -104,23 +59,10 @@
         margin-left: 0;
         padding-top: 80px;
         margin-right: 0;
-
-        @include mediaQuery(tablet) {
-            background: linear-gradient(to bottom, $purple 90%, #ffffff 10%);
-            padding: 30px 24px 0 24px;
-        }
-
-        @include mediaQuery(mobile) {
-            padding: 30px 12px 0 12px;
-        }
     }
 
     .deliveryCardTitleBold {
         margin-top: 70px;
-
-        @include mediaQuery(mobile) {
-            margin-top: 40px;
-        }
     }
 
     .deliveryTimeBlocks {
@@ -132,18 +74,6 @@
         padding: 32px 20px;
         box-shadow: 0 4px 50px #F5EBF9;
         border-radius: 8px;
-
-        @include mediaQuery(tablet) {
-            flex-wrap: wrap;
-        }
-
-        @include mediaQuery(mobile) {
-            justify-content: center;
-        }
-
-        @include mediaQuery(mobile) {
-            padding: 4px 10px;
-        }
     }
 
     .deliveryTimeBlock {
@@ -164,44 +94,12 @@
             padding-right: 20px;
             border-right: none;
         }
-
-        @include mediaQuery(tablet) {
-            flex: 1 0 20%;
-            padding: 0 24px;
-        }
-
-        @include mediaQuery(mobile) {
-            border-right: none;
-            max-height: 270px;
-            flex: 1 0 100%;
-            margin-right: 0;
-            padding: 20px 0;
-            border-bottom: 2px solid $purple;
-
-            &:last-child {
-                border-bottom: none;
-            }
-        }
-
-        @include mediaQuery(mobile) {
-            padding: 20px 14px;
-        }
     }
 
     .bonusBlock {
         display: flex;
         justify-content: space-between;
         margin-bottom: 90px;
-
-        @include mediaQuery(tablet) {
-            margin-bottom: 40px;
-        }
-
-        @include mediaQuery(mobile) {
-            flex-wrap: wrap;
-            margin-bottom: 40px;
-            justify-content: center;
-        }
     }
 
     .bonusItem {
@@ -225,13 +123,6 @@
             margin-right: 0;
         }
 
-        @include mediaQuery(mobile) {
-            margin-bottom: 20px;
-            margin-right: 0;
-            flex: 0 1 100%;
-            max-width: 100%;
-        }
-
         @media (max-width: 576px) {
             min-height: 168px;
         }
@@ -242,12 +133,6 @@
         font-size: 29px;
         line-height: 40px;
         max-width: 230px;
-
-        @include mediaQuery(mobile) {
-            font-size: 24px;
-            line-height: 30px;
-            z-index: 1;
-        }
     }
 
     .bonusIgmContainer {
@@ -273,46 +158,6 @@
             width: 70%;
             right: 5%;
             bottom: -1%;
-        }
-
-        @include mediaQuery(mobile) {
-            &First {
-                width: 45%;
-                right: 0;
-                bottom: -1%;
-            }
-
-            &Second {
-                width: 30%;
-                right: 10%;
-                bottom: -1%;
-            }
-
-            &Third {
-                width: 60%;
-                right: 5%;
-                bottom: -1%;
-            }
-
-            @media (max-width: 576px) {
-                &First {
-                    width: 35%;
-                    right: 0;
-                    bottom: -1%;
-                }
-
-                &Second {
-                    width: 21%;
-                    right: 10%;
-                    bottom: -1%;
-                }
-
-                &Third {
-                    width: 40%;
-                    right: 5%;
-                    bottom: -1%;
-                }
-            }
         }
     }
 }

@@ -13,18 +13,8 @@
             padding: 3rem 0 7rem 0;
         }
 
-        @include mediaQuery(tablet) {
-            margin-bottom: 100px;
-            padding: 3rem 0 5rem 0;
-        }
-
         @media only screen and (max-width: 690px) {
             padding: 0 0 5rem 0;
-        }
-
-        @include mediaQuery(mobile) {
-            margin-bottom: 115px;
-            padding: 2rem 0 4rem 0;
         }
     }
 
@@ -33,10 +23,6 @@
         flex-direction: column;
         justify-content: flex-start;
         width: 55%;
-
-        @include mediaQuery(mobile) {
-            width: 100%;
-        }
     }
 
     .myProfileColumn:nth-child(2) {
@@ -55,11 +41,6 @@
             width: 40%;
             padding-left: 0;
         }
-
-        @include mediaQuery(mobile) {
-            width: 100%;
-            padding-left: 0;
-        }
     }
 
     .profileOrderHeader {
@@ -69,16 +50,6 @@
 
         h2 {
             margin-right: 2rem;
-        }
-
-        .profileButton {
-            @include mediaQuery(mobile) {
-                display: none;
-            }
-        }
-
-        @include mediaQuery(tablet) {
-            justify-content: space-between;
         }
     }
 
@@ -95,11 +66,6 @@
         flex-direction: row;
         margin-top: 2rem;
 
-        @include mediaQuery(mobile) {
-            margin-top: 0.5rem;
-            flex-wrap: wrap;
-        }
-
         .profileField {
             display: flex;
             flex-direction: row;
@@ -107,10 +73,6 @@
             flex-wrap: wrap;
             align-items: center;
             margin: 1rem 0;
-
-            @include mediaQuery(mobile) {
-                margin: 0.5rem 0;
-            }
         }
 
         .profileFieldContent {
@@ -149,19 +111,10 @@
             display: block;
             background: $mainBgColor;
             border: none;
-
-            @include mediaQuery(mobile) {
-                font-size: 18px;
-                line-height: 18px;
-            }
         }
 
         input[type="password"] {
             font-size: 50px;
-
-            @include mediaQuery(tablet) {
-                font-size: 40px;
-            }
         }
 
         svg {
@@ -193,16 +146,6 @@
             margin-left: 1rem;
             padding: 1.5rem 0;
             font-weight: bold;
-
-            @include mediaQuery(tablet) {
-                padding: 1rem 0;
-            }
-
-            @include mediaQuery(mobile) {
-                margin-left: 0;
-                padding: 0;
-                font-size: 30px;
-            }
         }
 
         @media only screen and (max-width: 1280px) {
@@ -211,19 +154,6 @@
 
         @media only screen and (max-width: 800px) {
             width: 60%;
-        }
-
-        @include mediaQuery(tablet) {
-            bottom: -6.8rem;
-        }
-
-        @include mediaQuery(mobile) {
-            bottom: -7rem;
-            padding: 20px 28px;
-            flex-direction: column;
-            width: 100%;
-            font-size: 24px;
-            line-height: 30px;
         }
 
         @media only screen and (max-width: 380px) {

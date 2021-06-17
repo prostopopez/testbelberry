@@ -67,8 +67,8 @@ ol {
         max-width: 2000px;
     }
 
-    @include mediaQuery(tablet) {
-        max-width: 720px;
+    @media only screen and (max-width: 1700px) {
+        max-width: 1500px;
     }
 }
 
@@ -99,14 +99,6 @@ a {
 svg {
     fill: transparent;
     transition: all 0.3s linear;
-}
-
-.icon {
-    svg {
-        fill: $mainColor;
-        width: $iconSize;
-        height: $iconSize;
-    }
 }
 
 .pageStyle {
@@ -180,10 +172,6 @@ svg {
         font-weight: bold;
         font-size: 36px;
         color: $mainColor;
-
-        @include mediaQuery(tablet) {
-            width: 36px;
-        }
     }
 }
 

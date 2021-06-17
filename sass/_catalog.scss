@@ -11,10 +11,6 @@
         .catalogBlock {
             height: 120px;
         }
-
-        @include mediaQuery(tablet) {
-            display: none;
-        }
     }
 
     .catalogSmallColumn {
@@ -24,34 +20,9 @@
         background: #ffffff;
         box-shadow: 0 4px 10px rgba(95, 91, 97, 0.1);
         border-radius: 8px;
-
-        @include mediaQuery(tablet) {
-            box-shadow: none;
-        }
     }
 
     .catalogModalWindow {
-        @include mediaQuery(tablet) {
-            display: flex;
-            flex-direction: column;
-            position: fixed;
-            width: 96%;
-            height: 96%;
-            overflow: auto;
-            left: 2%;
-            top: 2%;
-            padding: 20px;
-            background: #fff;
-            border-radius: 4px;
-            z-index: 2;
-            opacity: 1;
-        }
-
-        @include mediaQuery(mobile) {
-            width: 92%;
-            left: 4%;
-        }
-
         .close {
             position: fixed;
             top: 40px;
@@ -97,17 +68,6 @@
         p {
             margin: 0 0 0 5px;
         }
-
-        @include mediaQuery(tablet) {
-            display: flex;
-            align-items: center;
-            font-size: 24px;
-            color: $mainColor;
-        }
-
-        @include mediaQuery(mobile) {
-            font-size: 14px;
-        }
     }
 
     .catalogListContainer {
@@ -115,15 +75,6 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-
-        @include mediaQuery(tablet) {
-            flex-direction: row;
-            border-bottom: 1px solid #cfcfcf;
-        }
-
-        @include mediaQuery(mobile) {
-            display: block;
-        }
     }
 
     .catalogList {
@@ -184,9 +135,6 @@
             font-size: 15px;
             padding: 1rem 2rem;
 
-            @include mediaQuery(mobile) {
-                width: 100%;
-            }
         }
 
         .buttonClean {
@@ -197,20 +145,12 @@
         @media only screen and (max-width: 1390px) {
             flex-wrap: wrap;
         }
-
-        @include mediaQuery(mobile) {
-            width: 100%;
-        }
     }
 
     .catalogBigColumn {
         display: flex;
         flex-direction: column;
         width: 80%;
-
-        @include mediaQuery(tablet) {
-            width: 100%;
-        }
     }
 
     .catalogHeader {
@@ -235,18 +175,10 @@
                 padding-left: 1rem;
             }
 
-            @include mediaQuery(tablet) {
-                display: flex;
-            }
-
             @media only screen and (max-width: 685px) {
                 width: 100%;
                 margin: 1rem 0;
             }
-        }
-
-        @include mediaQuery(mobile) {
-            margin: 1rem;
         }
     }
 
@@ -257,19 +189,8 @@
         grid-row-gap: 1rem;
         margin-left: 1rem;
 
-        @include mediaQuery(tablet) {
-            margin-left: 0;
-        }
-
         @media only screen and (max-width: 810px) {
             grid-template-columns: repeat(2, 1fr);
-        }
-
-        @include mediaQuery(mobile) {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
         }
     }
 
@@ -325,25 +246,6 @@
                     font-weight: bold;
                 }
             }
-
-            @include mediaQuery(mobile) {
-                margin: 0 0.5rem;
-                width: 150px;
-            }
         }
-    }
-}
-
-@include mediaQuery(tablet) {
-    .catalogShadow:before {
-        content: "";
-        background: #000;
-        position: fixed;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        opacity: 0.8;
-        z-index: 1;
     }
 }

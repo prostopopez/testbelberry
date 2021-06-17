@@ -9,24 +9,11 @@
         box-shadow: 0 6px 81px rgba(95, 91, 97, 0.12);
         border-radius: 4px;
         float: left;
-
-        @include mediaQuery(tablet) {
-            width: 49%;
-        }
-
-        @include mediaQuery(mobile) {
-            width: 98%;
-            order: 2;
-        }
     }
 
     .productImgSlider {
         display: flex;
         justify-content: space-between;
-
-        @include mediaQuery(tablet) {
-            flex-direction: column-reverse;
-        }
     }
 
     .productImgSliderPreviewWrapper {
@@ -57,20 +44,6 @@
                 width: auto;
                 height: 90%;
             }
-
-            @include mediaQuery(tablet) {
-                min-width: 75px;
-                max-width: 75px;
-                height: 70px;
-                margin: 0 8px;
-            }
-        }
-
-        @include mediaQuery(tablet) {
-            height: 70px;
-            flex-direction: row;
-            align-items: center;
-            margin-top: 25px;
         }
     }
 
@@ -85,14 +58,6 @@
             width: 98%;
             max-width: 320px;
         }
-
-        @include mediaQuery(tablet) {
-            padding: 0;
-
-            img {
-                width: 70%;
-            }
-        }
     }
 
     .productDesc {
@@ -103,18 +68,6 @@
             font-weight: 500;
             font-size: 22px;
             color: $mainColor;
-        }
-
-        @include mediaQuery(mobile) {
-            width: 100%;
-            order: 3;
-        }
-    }
-
-    .productDescTitle {
-        @include mediaQuery(mobile) {
-            order: 1;
-            margin-bottom: 20px;
         }
     }
 
@@ -138,36 +91,10 @@
             margin-right: 30px;
             display: block;
         }
-
-        @include mediaQuery(tablet) {
-            flex-direction: column;
-
-            table {
-                margin: 0;
-                width: 100%;
-                display: flex;
-            }
-
-            td:first-child {
-                width: 140px;
-                margin: 0;
-            }
-        }
-
-        @include mediaQuery(mobile) {
-            border-top: none;
-            padding-top: 50px;
-        }
     }
 
     .productCostList {
         margin: 26px 0;
-
-        @include mediaQuery(mobile) {
-            border-bottom: 2px solid #E4E4E4;
-            padding-bottom: 16px;
-            margin-bottom: 10px;
-        }
     }
 
     .productCost {
@@ -189,11 +116,6 @@
                 height: 12px;
                 fill: #C7C7C7;
                 margin-right: 16px;
-            }
-
-            @include mediaQuery(tablet) {
-                font-size: 18px;
-                line-height: 24px;
             }
         }
 
@@ -223,15 +145,6 @@
                     left: 0;
                     width: 100%;
                     height: 40%;
-                }
-            }
-
-            @include mediaQuery(tablet) {
-                font-size: 22px;
-                line-height: 22px;
-
-                span:first-of-type {
-                    margin-right: 21px;
                 }
             }
         }
@@ -269,24 +182,6 @@
             margin: 16px 0;
         }
 
-        @include mediaQuery(tablet) {
-            width: 100%;
-            border-top: 1px solid #DEDEDE;
-            padding-top: 24px;
-        }
-
-        @include mediaQuery(mobile) {
-            order: 3;
-            align-items: center;
-            padding-top: 0;
-            border: none;
-
-            a {
-                font-size: 21px;
-                line-height: 26px;
-            }
-        }
-
         @media only screen and (max-width: 1100px) {
             width: 100%;
         }
@@ -318,32 +213,6 @@
             justify-content: space-between;
             align-items: center;
         }
-
-        @include mediaQuery(mobile) {
-            width: 100%;
-            flex-direction: column;
-
-            p {
-                font-size: 32px;
-                line-height: 32px;
-            }
-
-            .inputCounter {
-                width: 40%;
-                height: 42px;
-            }
-
-            .costAndInputCounter {
-                margin: 16px 0;
-                justify-content: center;
-            }
-        }
-    }
-
-    @include mediaQuery(mobile) {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
     }
 }
 
@@ -360,11 +229,6 @@
         font-size: 18px;
         line-height: 30px;
         color: #585858;
-    }
-
-    @include mediaQuery(tablet) {
-        width: 100%;
-        margin-top: 60px;
     }
 }
 

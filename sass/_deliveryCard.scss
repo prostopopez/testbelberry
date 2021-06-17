@@ -21,20 +21,6 @@
         max-width: 300px;
     }
 
-    @include mediaQuery(tablet) {
-        min-height: 122px;
-        min-width: 45%;
-        max-width: 226px;
-        padding: 16px 24px;
-    }
-
-    @include mediaQuery(mobile) {
-        min-width: 100%;
-        margin-right: 0;
-        min-height: initial;
-    }
-
-
     .sumDeliveryItem {
         color: $mainColor;
         font-size: 40px;
@@ -52,9 +38,5 @@
         font-weight: 400;
         color: $mainGrayColor;
         width: 100%;
-
-        @include mediaQuery(mobile) {
-            font-size: 16px;
-        }
     }
 }

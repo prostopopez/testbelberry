@@ -14,12 +14,6 @@
     font-size: 24px;
     color: #272727;
     cursor: pointer;
-
-    @include mediaQuery(mobile) {
-      width: 100%;
-      height: 44px;
-      font-size: 15px;
-    }
   }
 
   label::before {
@@ -34,13 +28,6 @@
     border: 2px solid #DFDFDF;
     box-sizing: border-box;
     margin-top: -3px;
-
-    @include mediaQuery(mobile) {
-      width: 15px;
-      height: 15px;
-      margin-right: 15px;
-      border: 1px solid #DFDFDF;
-    }
   }
 
   input[type="checkbox"]:checked + label::before {

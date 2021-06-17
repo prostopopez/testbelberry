@@ -12,29 +12,10 @@
             @media only screen and (max-width: 1500px) {
                 background: linear-gradient(to right, #f3f8fd 0%, #f3f8fd 50%, transparent 60%)
             }
-
-            @include mediaQuery(tablet) {
-                background: linear-gradient(to right, #f3f8fd 0%, #f3f8fd 50%, transparent 70%)
-            }
-
-            @include mediaQuery(mobile) {
-                background: #F3F8FD;
-                box-shadow: 35px 50px 50px #F3F8FD;
-            }
-        }
-
-        @include mediaQuery(mobile) {
-            .bannerImg {
-                background: linear-gradient(to right, #F3F8FD 5%, transparent);
-            }
         }
 
         button {
             width: 220px;
-
-            @include mediaQuery(mobile) {
-                width: 100%;
-            }
         }
     }
 
@@ -43,21 +24,12 @@
 
         .mainTextHead {
             margin-bottom: 1rem;
-
-            @include mediaQuery(tablet) {
-                margin-bottom: 0.5rem;
-            }
         }
 
         .mainTextParagraph {
             color: $lightGrayColor;
             font-weight: normal;
             padding-bottom: 2rem;
-
-            @include mediaQuery(tablet) {
-                padding-bottom: 1rem;
-                line-height: 24px;
-            }
         }
     }
 
@@ -95,28 +67,6 @@
                 display: flex;
                 align-items: flex-start;
             }
-
-            @include mediaQuery(tablet) {
-                max-width: 350px;
-                min-width: 320px;
-                display: flex;
-                align-items: flex-start;
-
-                svg {
-                    height: 40px;
-                    width: 60px;
-                    margin-right: 10px;
-                }
-            }
-
-            @include mediaQuery(mobile) {
-                max-width: 100%;
-                min-width: 100%;
-            }
-        }
-
-        @include mediaQuery(mobile) {
-            margin: 0;
         }
     }
 

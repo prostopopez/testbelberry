@@ -22,28 +22,11 @@
         }
     }
 
-    @include mediaQuery(tablet) {
-        min-width: 227px;
-        max-width: 100%;
-        padding: 12px 15px;
-        margin: 0.4rem;
-    }
-
-    @include mediaQuery(mobile) {
-        min-width: 300px;
-        padding: 20px 23px;
-    }
-
     .catalogCardName {
         font-size: 28px;
         line-height: 28px;
         text-align: center;
         margin: 1rem 0;
-
-        @include mediaQuery(tablet) {
-            font-size: 24px;
-            line-height: 24px;
-        }
     }
 
     .catalogCardPrice {

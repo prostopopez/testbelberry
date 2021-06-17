@@ -37,10 +37,6 @@
         line-height: 30px;
         color: #656565;
         margin: 1rem 0;
-
-        @include mediaQuery(mobile) {
-            font-size: 18px;
-        }
     }
 
     .cardAdditionalText {
@@ -54,9 +50,5 @@
 
     .greenColor {
         color: #32AD54;
-    }
-
-    @include mediaQuery(tablet) {
-        width: 100%;
     }
 }
