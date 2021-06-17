@@ -6,6 +6,10 @@
     font-weight: normal;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 a.active.focus,
 a.active:focus,
 a.focus,
