@@ -26,3 +26,19 @@ function showSlides(n) {
 
     slides[slideIndex - 1].style.display = "block";
 }
+
+// stock slider
+let slider = tns({
+    container: '.fnv-stockSlider',
+    loop: true,
+    controls: false,
+    autoplayButtonOutput: false,
+    nav: false,
+    items: 3,
+    slideBy: 'page',
+    gutter: 30,
+    speed: 1500,
+    autoplay: true,
+    autoplayTimeout: 5000,
+    swipeAngle: false
+});
