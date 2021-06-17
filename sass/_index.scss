@@ -92,12 +92,13 @@
         grid-gap: 90px 30px;
     }
 
-    .cardCategory {
+    .cardCategory,
+    .cardPeriphery {
         cursor: pointer;
         position: relative;
         overflow: hidden;
         border: 0;
-        background-color: white;
+        transition: all 0.5s ease-in-out;
 
         img {
             width: 100%;
@@ -107,17 +108,35 @@
         }
 
         span {
-            position: absolute;
-            bottom: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             width: 100%;
             height: 70px;
             background-color: $lighterGrayColor;
-            font-size: 30px;
             font-weight: bold;
             transition: all 0.5s ease-in-out;
+        }
+
+        &:hover {
+            background-color: white;
+
+            img {
+                filter: opacity(90%);
+            }
+
+            span {
+                background-color: $mainActiveColor;
+                color: $lighterGrayColor;
+            }
+        }
+    }
+
+    .cardCategory {
+        span {
+            position: absolute;
+            bottom: 0;
+            font-size: 30px;
 
             @media only screen and (max-width: 1500px) {
                 font-size: 24px;
@@ -127,12 +146,52 @@
         &:hover {
             img {
                 transform: scale(1.2);
-                filter: opacity(90%);
             }
+        }
+    }
 
-            span {
-                background-color: $mainActiveColor;
-                color: $lighterGrayColor;
+    #periphery {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        & > div {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-gap: 30px;
+        }
+
+        .hrAndAll {
+            margin-bottom: 40px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-self: flex-start;
+        }
+
+        hr {
+            margin-bottom: 0;
+        }
+
+        .showAll {
+            color: $showAllColor;
+
+            &:hover {
+                color: $mainTextColor;
+            }
+        }
+    }
+
+    .cardPeriphery {
+        display: flex;
+        flex-direction: column;
+
+        span {
+            font-size: 20px;
+
+            @media only screen and (max-width: 1500px) {
+                font-size: 16px;
+                height: 60px;
             }
         }
     }
