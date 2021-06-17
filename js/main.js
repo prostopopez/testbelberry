@@ -42,3 +42,32 @@ let slider = tns({
     autoplayTimeout: 5000,
     swipeAngle: false
 });
+
+let slider2 = tns({
+    container: '.fnv-gallerySlider1',
+    axis: "vertical",
+    loop: true,
+    controls: false,
+    autoplayButtonOutput: false,
+    nav: false,
+    items: 1,
+    gutter: 30,
+    speed: 2000,
+    autoplay: true,
+    autoplayTimeout: 3500,
+    swipeAngle: false
+});
+
+let slider3 = tns({
+    container: '.fnv-gallerySlider2',
+    loop: true,
+    controls: false,
+    autoplayButtonOutput: false,
+    nav: false,
+    items: 1,
+    gutter: 30,
+    speed: 2000,
+    autoplay: true,
+    autoplayTimeout: 3500,
+    swipeAngle: false
+});

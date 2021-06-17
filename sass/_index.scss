@@ -198,10 +198,43 @@
     }
 
     .stockSlider {
+        height: 168px;
+
         img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+    }
+
+    .gallery {
+        overflow: hidden;
+    }
+
+    .gallery > div {
+        position: relative;
+        height: 628px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 30px;
+    }
+
+    .gallerySlider1,
+    .gallerySlider2 {
+        position: relative;
+        border: 0;
+        height: 628px;
+        transition: all 0.5s ease-in-out;
+
+        > div {
+            height: 100%;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s ease-in-out;
         }
     }
 }
