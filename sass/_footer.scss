@@ -1,208 +1,129 @@
 .footer {
-    background-color: $mainDarkGrayColor;
+    padding: 30px 0;
+    background-color: $footerBg;
 
     .cont {
-        overflow: hidden;
-    }
-
-    a {
-        color: #fff;
-        font-style: normal;
-
-        &:hover {
-            border-color: #fff;
-        }
-    }
-
-    .topFooter {
-        border-bottom: 1px solid $lightTonedColor;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 30px 0;
+        overflow: hidden;
+    }
 
-        .footerLogo {
-            font-size: 14px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border: none !important;
-
-            img {
-                margin-right: 30px;
-            }
-
-            span {
-                margin-right: 30px;
-            }
-
-            @include mediaQuery(tablet) {
-                display: block;
-
-                span {
-                    display: none;
-                }
-
-                img {
-                    margin-bottom: 20px;
-                }
-            }
-        }
-
-        .footerLeft {
+    .menuFooter {
+        nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
 
-            @include mediaQuery(tablet) {
-                margin-right: 10px;
-
-                input {
-                    max-width: 230px;
-                    width: 100%;
-                }
-            }
-
-            @include mediaQuery(mobile) {
-                display: block;
-                width: 100%;
-                margin-bottom: 24px;
-
-                input {
-                    max-width: 100%;
-                }
-            }
-        }
-
-        .phoneNumbers {
-            display: flex;
-            justify-content: space-between;
-            color: #fff;
-            max-width: 270px;
-            width: 100%;
-
-            .phoneNumber {
+            > a {
+                margin-right: 80px;
+                font-size: 60px;
                 font-weight: bold;
-
-                b {
-                    font-size: 10px;
-                }
-
-                span {
-                    font-size: 13px;
-                    font-weight: normal;
-                }
+                text-transform: uppercase;
             }
 
-            @include mediaQuery(mobile) {
-                flex-direction: column;
+            ul {
+                margin-bottom: 0;
+                display: flex;
+                list-style: none;
+                justify-content: space-between;
 
-                .phoneNumber {
-                    margin-bottom: 20px;
+                li {
+                    margin-right: 80px;
+
+                    &:last-of-type {
+                        margin-right: 20px;
+                    }
+                }
+
+                a {
+                    font-size: 20px;
                 }
             }
         }
 
-        @include mediaQuery(mobile) {
-            display: block;
-            border: none;
-            padding-bottom: 0;
+        .copy {
+            margin-bottom: 30px;
+        }
+
+        .copy,
+        .privacy {
+            font-size: 16px;
         }
     }
 
-    .footerMenu {
+    .contactsFooter {
         display: flex;
-        justify-content: space-between;
-        margin: 40px 0;
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
-        ul, li {
-            list-style: none;
-            color: #fff;
-            font-style: normal;
+    .telBlock {
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+
+        svg {
+            margin-right: 20px;
+            width: 30px;
+            height: 30px;
         }
 
-        .outerHead {
-            margin-bottom: 24px;
-            display: block;
-            font-size: 24px;
+        p {
+            margin-bottom: 0;
+            font-family: Consolas, sans-serif;
+            font-size: 26px;
         }
+    }
 
-        .insideElements li {
-            margin-bottom: 16px;
-            font-size: 18px;
+    .socials {
+        a {
+            margin-right: 34px;
 
-            a {
-                font-size: 18px;
+            &:last-of-type {
+                margin-right: 0;
             }
         }
 
-        .withoutHead {
-            padding-top: 62px;
-        }
+        svg {
+            width: 30px;
+            height: 25px;
+            fill: $mainActiveColor;
 
-        @include mediaQuery(tablet) {
-            flex-wrap: wrap;
-            justify-content: flex-start;
 
-            .outerElement {
-                margin: 20px 0;
-
-                &:nth-of-type(3n+1) {
-                    margin-right: 12%;
-                    width: 25%;
-                }
-
-                &:nth-of-type(3n+2) {
-                    margin-right: 14%;
-                    width: 30%;
-                }
-
-                &:nth-of-type(3n+3) {
-                    width: 19%;
-                }
+            &:hover {
+                fill: $mainTextColor;
             }
         }
+    }
 
-        @media only screen and (max-width: 720px) {
-            .outerElement {
-                &:nth-of-type(3n+1) {
-                    margin-right: 6%;
-                    width: 30%;
-                }
+    @media only screen and (max-width: 1700px) {
+        .menuFooter nav > a,
+        .menuFooter nav ul li {
+            margin-right: 60px;
+        }
+    }
 
-                &:nth-of-type(3n+2) {
-                    margin-right: 7%;
-                    width: 35%;
-                }
+    @media only screen and (max-width: 1500px) {
+        .menuFooter nav > a,
+        .menuFooter nav ul li {
+            margin-right: 40px;
+        }
+    }
 
-                &:nth-of-type(3n+3) {
-                    width: 22%;
-                }
-            }
+    @media only screen and (max-width: 1280px) {
+        .menuFooter nav > a {
+            font-size: 40px;
         }
 
-        @include mediaQuery(mobile) {
-            flex-direction: column;
-            margin-top: 0;
+        .menuFooter nav > a,
+        .menuFooter nav ul li {
+            margin-right: 20px;
+        }
 
-            .withoutHead {
-                padding-top: 0;
-            }
-
-            .outerElement {
-                width: 100% !important;
-
-                &:nth-child(1) {
-                    margin-bottom: 0;
-                }
-
-                &:nth-child(2) {
-                    margin-top: 0;
-                }
-
-                p.outerHead {
-                    display: none;
-                }
+        .telBlock {
+            p {
+                font-size: 20px;
             }
         }
     }
