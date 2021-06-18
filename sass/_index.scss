@@ -273,6 +273,10 @@
             font-size: 20px;
             line-height: 24px;
             color: $whiteColor;
+
+            @media only screen and (max-width: 1500px) {
+                font-size: 18px;
+            }
         }
 
         .leftAbout {
@@ -288,12 +292,17 @@
             }
 
             svg {
-                max-width: 43px;
+                min-width: 43px;
                 height: 43px;
             }
 
             p {
                 margin-left: 38px;
+            }
+            
+            @media only screen and (max-width: 1500px) {
+                margin-right: 80px;
+                grid-gap: 80px 60px;
             }
         }
 
