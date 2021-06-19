@@ -26,6 +26,24 @@
             height: 100%;
             object-fit: cover;
         }
+
+        > div {
+            position: absolute;
+            top: 160px;
+            width: 100%;
+        }
+
+        h4 {
+            font-size: 60px;
+            font-weight: bold;
+            color: $whiteColor;
+        }
+
+        p {
+            font-size: 40px;
+            font-weight: 700;
+            color: $mainGreen;
+        }
     }
 
     .sliderNav {
@@ -139,6 +157,8 @@
     }
 
     .cardCategory {
+        height: 470px;
+
         span {
             position: absolute;
             bottom: 0;
@@ -153,6 +173,10 @@
             img {
                 transform: scale(1.2);
             }
+        }
+
+        @media only screen and (max-width: 1500px) {
+            height: 380px;
         }
     }
 
@@ -253,13 +277,37 @@
     }
 
     #news > div {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-gap: 50px 30px;
+        display: flex;
+        flex-direction: column;
+
+        .news1,
+        .news2 {
+            display: flex;
+            justify-content: space-between;
+
+            img,
+            div {
+                width: 50%;
+            }
+        }
+
+        .news1 {
+            margin-bottom: 50px;
+        }
+
+        h4 {
+            margin-bottom: 40px;
+            font-size: 30px;
+        }
+
+        p {
+            font-size: 20px;
+            line-height: 24px;
+        }
 
         img {
+            margin-right: 50px;
             height: 222px;
-            width: 100%;
             object-fit: cover;
         }
     }
@@ -299,7 +347,7 @@
             p {
                 margin-left: 38px;
             }
-            
+
             @media only screen and (max-width: 1500px) {
                 margin-right: 80px;
                 grid-gap: 80px 60px;
