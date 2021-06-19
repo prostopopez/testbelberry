@@ -85,6 +85,10 @@
             object-fit: contain;
         }
 
+        &:nth-of-type(2) img {
+            filter: drop-shadow(0 0 35px rgb(220, 118, 255));
+        }
+
         &:nth-of-type(3) img {
             filter: drop-shadow(0 0 35px rgb(0, 64, 255));
         }
