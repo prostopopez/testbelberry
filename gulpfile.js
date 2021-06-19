@@ -35,7 +35,7 @@ gulp.task(`html`, gulp.series(function () {
 
 gulp.task(`img`, gulp.series(function () {
     return gulp
-        .src(`./img/[^(svg)]**/*`, { base: `.` })
+        .src(`./img/**/*`, { base: `.` })
         .pipe(getPublicFolderPath());
 }));
 

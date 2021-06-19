@@ -74,16 +74,127 @@
         }
 
         .cont {
+            position: relative;
             padding-top: 45px;
             padding-bottom: 80px;
+            min-height: 685px;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
+            align-items: center;
+
+            > div:first-of-type {
+                margin-right: 100px;
+                width: 45%;
+                height: 100%;
+            }
+
+            > div:last-of-type {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                margin-right: 0;
+                width: 55%;
+                height: 100%;
+            }
         }
 
         img {
             width: 100%;
-            height: 396px;
-            object-fit: cover;
+            height: 500px;
+            object-fit: contain;
+        }
+
+        h4 {
+            font-size: 46px;
+            font-weight: bold;
+        }
+
+        .pricePC {
+            margin-bottom: 95px;
+            font-size: 36px;
+            font-family: Consolas, sans-serif;
+        }
+
+        .detailsPC {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 60px 70px;
+
+            .nameOfDetail {
+                font-size: 20px;
+                text-transform: uppercase;
+                color: $mainSvgColor;
+            }
+
+            .aboutDetail {
+                margin: 0;
+                font-size: 20px;
+                color: $whiteColor;
+            }
+
+            @media only screen and (max-width: 1280px) {
+                grid-gap: 30px 10px;
+            }
+        }
+
+        .detailPC {
+            max-width: 360px;
+            display: flex;
+
+            svg {
+                margin-top: 10px;
+                margin-right: 20px;
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+
+        a {
+            border: 1px solid transparent;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 55px;
+            font-size: 20px;
+
+            @media only screen and (max-width: 1280px) {
+                font-size: 18px;
+            }
+        }
+
+        a:first-of-type {
+            background-color: $mainActiveColor;
+            color: $lighterGrayColor;
+
+            svg {
+                width: 28px;
+                height: 28px;
+                margin-right: 12px;
+                fill: $lighterGrayColor;
+            }
+        }
+
+        a:first-of-type:hover {
+            border: 1px solid $mainActiveColor;
+            background-color: transparent;
+            color: $whiteColor;
+
+            svg {
+                fill: $whiteColor;
+            }
+        }
+
+        a:last-of-type {
+            border: 1px solid $mainActiveColor;
+            color: $whiteColor;
+
+            &:hover {
+                border: 1px solid transparent;
+                background-color: $mainActiveColor;
+                color: $lighterGrayColor;
+            }
         }
     }
 }
