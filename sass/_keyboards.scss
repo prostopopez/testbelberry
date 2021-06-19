@@ -1,8 +1,9 @@
 .keyboardsPage {
     .bannerAbout {
         margin-bottom: 100px;
+        border-bottom: 2px solid $borderPC;
         height: 951px;
-        background: no-repeat url("/img/keyboards/bgBanner.png") 40% 100%;
+        background: no-repeat url("/img/keyboards/bgBanner.png") 40% 50%;
         background-color: $mainBgColor;
         background-size: cover;
 
@@ -39,6 +40,100 @@
                     font-size: 24px;
                     line-height: 28px;
                 }
+            }
+        }
+    }
+
+    .keyboardGrid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 180px 30px;
+
+        @media only screen and (max-width: 1500px) {
+            grid-gap: 100px 30px;
+        }
+    }
+
+    .singleKeyboard {
+        transition: all 0.5s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        img,
+        h4,
+        a,
+        p {
+            padding: 0 18px;
+        }
+
+        img {
+            align-self: center;
+            transition: all 0.5s ease-in-out;
+            margin: 30px 0;
+            width: 80%;
+            height: 230px;
+            object-fit: contain;
+        }
+
+        h4 {
+            margin-bottom: 15px;
+            font-size: 26px;
+            font-weight: 700;
+            color: $whiteColor;
+        }
+
+        .priceKeyb {
+            margin-bottom: 40px;
+            font-size: 24px;
+            font-family: Consolas, sans-serif;
+            color: $whiteColor;
+        }
+
+        .aboutKeyb {
+            margin-bottom: 40px;
+            font-size: 15px;
+            line-height: 18px;
+        }
+
+        a {
+            border: 1px solid transparent;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $mainActiveColor;
+            color: $lighterGrayColor;
+            height: 55px;
+            font-size: 20px;
+
+            svg {
+                width: 28px;
+                height: 28px;
+                margin-right: 12px;
+                fill: $lighterGrayColor;
+            }
+
+            &:hover {
+                border: 1px solid $mainActiveColor;
+                background-color: transparent;
+                color: $whiteColor;
+
+                svg {
+                    fill: $whiteColor;
+                }
+            }
+
+            @media only screen and (max-width: 1280px) {
+                font-size: 18px;
+            }
+        }
+
+        &:hover {
+            background-color: #090909;
+
+            img {
+                transform: scale(1.3);
             }
         }
     }

@@ -1,8 +1,9 @@
 .gamingPCPage {
     .bannerAbout {
         margin-bottom: 100px;
+        border-bottom: 2px solid $borderPC;
         height: 951px;
-        background: no-repeat url("/img/gamingPC/bgBanner.png") 40% 100%;
+        background: no-repeat url("/img/gamingPC/bgBanner.png") 40% 50%;
         background-color: $pcBg;
         background-size: cover;
 
