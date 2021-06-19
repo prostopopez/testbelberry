@@ -66,6 +66,8 @@
                 margin-right: 100px;
                 width: 45%;
                 height: 100%;
+                display: flex;
+                justify-content: center;
             }
 
             > div:last-of-type {
@@ -79,9 +81,28 @@
         }
 
         img {
-            width: 100%;
             height: 500px;
             object-fit: contain;
+        }
+
+        &:nth-of-type(3) img {
+            filter: drop-shadow(0 0 35px rgb(0, 64, 255));
+        }
+
+        &:nth-of-type(4) img {
+            filter: drop-shadow(0 0 35px rgb(255, 140, 0));
+        }
+
+        &:nth-of-type(5) img {
+            filter: drop-shadow(0 0 35px rgb(98, 0, 255));
+        }
+
+        &:nth-of-type(6) img {
+            filter: drop-shadow(0 0 35px rgb(255, 72, 0));
+        }
+
+        &:nth-of-type(7) img {
+            filter: drop-shadow(0 0 35px rgb(0, 255, 144));
         }
 
         h4 {
