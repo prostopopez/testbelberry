@@ -62,6 +62,24 @@
         flex-direction: column;
         justify-content: center;
 
+        a.keyboardLink {
+            position: relative;
+            display: flex;
+            height: 100%;
+            width: 100%;
+            background: none;
+            border: none;
+
+            &:hover {
+                position: relative;
+                display: flex;
+                height: 100%;
+                width: 100%;
+                background: none;
+                border: none;
+            }
+        }
+        
         img,
         h4,
         a,
