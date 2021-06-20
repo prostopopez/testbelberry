@@ -113,7 +113,8 @@
     #models > div {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        grid-gap: 90px 30px;
+        grid-row-gap: 90px;
+        grid-column-gap: 30px;
     }
 
     .cardCategory,
@@ -189,7 +190,8 @@
             width: 100%;
             display: grid;
             grid-template-columns: repeat(6, 1fr);
-            grid-gap: 30px;
+            grid-row-gap: 30px;
+            grid-column-gap: 30px;
         }
 
         .hrAndAll {
@@ -246,7 +248,8 @@
         height: 628px;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        grid-gap: 30px;
+        grid-row-gap: 30px;
+        grid-column-gap: 30px;
 
         @media only screen and (max-width: 1700px) {
             height: 450px;
@@ -331,7 +334,8 @@
             margin-right: 160px;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            grid-gap: 170px 60px;
+            grid-row-gap: 170px;
+            grid-column-gap: 60px;
 
             div {
                 display: flex;
@@ -350,7 +354,8 @@
 
             @media only screen and (max-width: 1500px) {
                 margin-right: 80px;
-                grid-gap: 80px 60px;
+                grid-row-gap: 80px;
+                grid-column-gap: 60px;
             }
         }
 

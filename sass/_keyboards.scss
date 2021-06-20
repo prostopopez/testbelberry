@@ -47,14 +47,16 @@
     .keyboardGrid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        grid-gap: 180px 30px;
+        grid-row-gap: 180px;
+        grid-column-gap: 30px;
 
         @media only screen and (max-width: 1500px) {
-            grid-gap: 100px 30px;
+            grid-row-gap: 100px;
         }
     }
 
     .singleKeyboard {
+        cursor: pointer;
         transition: all 0.5s ease-in-out;
         display: flex;
         flex-direction: column;
