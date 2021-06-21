@@ -176,5 +176,14 @@
                 transform: rotate(180deg);
             }
         }
+
+        .motherBoard,
+        .cooler {
+            .upDown,
+            .plusMinus {
+                opacity: 0;
+                pointer-events: none;
+            }
+        }
     }
 }
