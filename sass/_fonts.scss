@@ -1,6 +1,13 @@
 @font-face{
-  font-family: 'Raleway';
-  src: local('Raleway'),
-  url('../fonts/Raleway-VariableFont_wght.ttf');
+  font-family: 'RobotoCondensed';
+  src: local('RobotoCondensed'),
+  url('../fonts/RobotoCondensed-Regular.ttf');
   font-weight: 400;
+}
+
+@font-face{
+  font-family: 'RobotoCondensed';
+  src: local('RobotoCondensed'),
+  url('../fonts/RobotoCondensed-Bold.ttf');
+  font-weight: 700;
 }
