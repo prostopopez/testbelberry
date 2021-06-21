@@ -4,7 +4,6 @@
     .cont {
         display: flex;
         justify-content: space-between;
-        flex-wrap: wrap;
     }
 
     h4 {
@@ -84,14 +83,41 @@
         }
     }
 
+    //.contentKeyb {
+    //    @media only screen and (max-width: 1700px) {
+    //        order: 1;
+    //    }
+    //}
+
     .viewKeyb {
+        margin-top: 100px;
         display: flex;
         flex-direction: column;
 
         img {
+            filter: drop-shadow(0 0 35px rgb(255, 140, 0));
             max-width: 546px;
-            height: auto;
+            height: 326px;
             object-fit: contain;
+
+            &:last-of-type {
+                margin-top: 100px;
+                transform: scaleX(-1);
+            }
         }
+
+        //@media only screen and (max-width: 1700px) {
+        //    margin-top: 0;
+        //    flex-direction: row;
+        //    order: 0;
+        //
+        //    img {
+        //        width: 50%;
+        //        height: auto;
+        //        &:last-of-type {
+        //            margin-top: 0;
+        //        }
+        //    }
+        //}
     }
 }
