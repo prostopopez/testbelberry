@@ -155,53 +155,5 @@
                 height: 30px;
             }
         }
-
-
-        a {
-            border: 1px solid transparent;
-            padding: 10px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 55px;
-            font-size: 20px;
-
-            @media only screen and (max-width: 1280px) {
-                font-size: 18px;
-            }
-        }
-
-        a:first-of-type {
-            background-color: $mainActiveColor;
-            color: $lighterGrayColor;
-
-            svg {
-                width: 28px;
-                height: 28px;
-                margin-right: 12px;
-                fill: $lighterGrayColor;
-            }
-        }
-
-        a:first-of-type:hover {
-            border: 1px solid $mainActiveColor;
-            background-color: transparent;
-            color: $whiteColor;
-
-            svg {
-                fill: $whiteColor;
-            }
-        }
-
-        a:last-of-type {
-            border: 1px solid $mainActiveColor;
-            color: $whiteColor;
-
-            &:hover {
-                border: 1px solid transparent;
-                background-color: $mainActiveColor;
-                color: $lighterGrayColor;
-            }
-        }
     }
 }

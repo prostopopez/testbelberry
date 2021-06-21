@@ -125,64 +125,56 @@ svg {
     }
 }
 
-.input,
-.textarea {
-    display: flex;
-    width: 100%;
-    border: none;
-    border-bottom: 1px solid $lightGrayColor;
-    transition: all 0.3s linear;
+button {
 
-    &::placeholder {
-        color: $mainGrayColor;
-    }
-
-    &:focus {
-        border-color: $mainColor !important;
-    }
 }
 
-.inputCounter {
+.toBasket,
+.toConfigure {
+    border: 1px solid transparent;
+    padding: 10px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    background: #FFFFFF;
-    border: 2px solid #D1D1D1;
-    box-sizing: border-box;
-    border-radius: 4px;
-    height: 56px;
+    height: 55px;
+    font-size: 20px;
 
-    input {
-        width: 50%;
-        height: 100%;
-        border: none;
-        background: #FFFFFF;
-        border-left: 2px solid #D1D1D1;
-        border-right: 2px solid #D1D1D1;
-        box-sizing: border-box;
-        text-align: center;
-        color: $tonedBlackColor;
-
-        &::-webkit-outer-spin-button,
-        &::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-        }
-    }
-
-    button {
-        width: 25%;
-        align-items: center;
-        font-weight: bold;
-        font-size: 36px;
-        color: $mainColor;
+    @media only screen and (max-width: 1280px) {
+        font-size: 18px;
     }
 }
 
-.bigNumber {
-    &.n3 {
-        &:first-letter {
-            letter-spacing: 0.5vw;
+.toBasket {
+    background-color: $mainActiveColor;
+    color: $lighterGrayColor;
+    width: 100%;
+
+    svg {
+        width: 28px;
+        height: 28px;
+        margin-right: 12px;
+        fill: $lighterGrayColor;
+    }
+
+    &:hover {
+        border: 1px solid $mainActiveColor;
+        background-color: transparent;
+        color: $whiteColor;
+
+        svg {
+            fill: $whiteColor;
         }
+    }
+
+}
+
+.toConfigure {
+    border: 1px solid $mainActiveColor;
+    color: $whiteColor;
+
+    &:hover {
+        border: 1px solid transparent;
+        background-color: $mainActiveColor;
+        color: $lighterGrayColor;
     }
 }

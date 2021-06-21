@@ -65,6 +65,8 @@
         a.keyboardLink {
             position: relative;
             display: flex;
+            justify-content: center;
+            align-items: center;
             height: 100%;
             width: 100%;
             background: none;
@@ -114,39 +116,6 @@
             margin-bottom: 40px;
             font-size: 15px;
             line-height: 18px;
-        }
-
-        a {
-            border: 1px solid transparent;
-            padding: 10px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: $mainActiveColor;
-            color: $lighterGrayColor;
-            height: 55px;
-            font-size: 20px;
-
-            svg {
-                width: 28px;
-                height: 28px;
-                margin-right: 12px;
-                fill: $lighterGrayColor;
-            }
-
-            &:hover {
-                border: 1px solid $mainActiveColor;
-                background-color: transparent;
-                color: $whiteColor;
-
-                svg {
-                    fill: $whiteColor;
-                }
-            }
-
-            @media only screen and (max-width: 1280px) {
-                font-size: 18px;
-            }
         }
 
         &:hover {
