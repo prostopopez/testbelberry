@@ -125,7 +125,7 @@
                 display: none;
                 z-index: 1;
                 min-width: 100%;
-                flex-direction: row;
+                flex-direction: column;
                 align-items: center;
                 justify-content: space-between;
 
@@ -177,9 +177,13 @@
 
                 .detailCount {
                     margin: 0 15px;
+                    border: 0;
                     font-size: 26px;
                     line-height: 31px;
                     font-family: Consolas, sans-serif;
+                    background: none;
+                    text-align: center;
+                    color: $mainTextColor;
                 }
 
                 button {
@@ -202,10 +206,19 @@
             }
         }
 
+        .cpu,
+        .motherBoard,
+        .cooler,
+        .bp {
+            .plusMinus {
+                opacity: 0;
+                pointer-events: none;
+            }
+        }
+
         .motherBoard,
         .cooler {
-            .upDown,
-            .plusMinus {
+            .upDown {
                 opacity: 0;
                 pointer-events: none;
             }
