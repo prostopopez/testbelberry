@@ -270,6 +270,7 @@
                     }
 
                     svg {
+                        transition: all 0.3s ease-in-out;
                         width: 22px;
                         height: 22px;
                     }
@@ -277,6 +278,16 @@
                     span:first-of-type,
                     svg:first-of-type {
                         display: none;
+                    }
+
+                    &:hover {
+                        svg:first-of-type {
+                            display: flex;
+                        }
+
+                        svg:last-of-type {
+                            display: none;
+                        }
                     }
 
                     &.active {
