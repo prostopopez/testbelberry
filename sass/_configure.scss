@@ -104,7 +104,7 @@
         .dropdown {
             margin-bottom: 25px;
             border-bottom: 1px solid $mainSvgColor;
-            padding: 0 10px 18px 0;
+            padding-bottom: 18px;
             display: inline-block;
             align-items: center;
             position: relative;
@@ -228,6 +228,7 @@
             margin-top: 18px;
             border: 1px solid $mainActiveColor;
             padding: 46px 25px;
+            width: 100%;
             display: flex;
 
             .imgItem {
@@ -263,7 +264,7 @@
                     align-items: center;
 
                     span {
-                        font-size: 10px;
+                        font-size: 12px;
                         font-weight: 700;
                         color: $mainSvgColor;
                     }
@@ -271,6 +272,23 @@
                     svg {
                         width: 22px;
                         height: 22px;
+                    }
+
+                    span:first-of-type,
+                    svg:first-of-type {
+                        display: none;
+                    }
+
+                    &.active {
+                        span:first-of-type,
+                        svg:first-of-type {
+                            display: flex;
+                        }
+
+                        span:last-of-type,
+                        svg:last-of-type {
+                            display: none;
+                        }
                     }
                 }
             }
