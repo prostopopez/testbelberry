@@ -1,4 +1,10 @@
-let basketArray = [];
+let basketArray;
+
+if (localStorage.getItem('basketLocal') == null) {
+    basketArray = [];
+} else {
+    basketArray = JSON.parse(localStorage.getItem('basketLocal'));
+}
 
 let gamingPCs = document.querySelectorAll('.fnv-pcBlock');
 
@@ -25,6 +31,6 @@ for (let i = 0; i < gamingPCs.length; i++) {
             finalPrice: gamingPCPrice
         });
 
-        console.log(basketArray);
+        localStorage.setItem('basketLocal', JSON.stringify(basketArray));
     });
 }

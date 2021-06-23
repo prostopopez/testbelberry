@@ -123,7 +123,13 @@ for (let i = 0; i < dropdowns.length; i++) {
 }
 
 // toBasket
-let basketArray = [];
+let basketArray;
+
+if (localStorage.getItem('basketLocal') == null) {
+    basketArray = [];
+} else {
+    basketArray = JSON.parse(localStorage.getItem('basketLocal'));
+}
 
 let configurePcName = document.querySelector('.fnv-aboutPc h4').innerHTML;
 let configureInfo = document.querySelector('.fnv-dropdowns');
@@ -142,18 +148,19 @@ configureToBasket.addEventListener('click', function () {
     basketArray.push({
         pcName: configurePcName,
         ssd: ssdChoice,
-        ssdCount,
+        ssdCount: parseInt(ssdCount),
         cpu: cpuChoice,
         gpu: gpuChoice,
-        gpuCount,
+        gpuCount: parseInt(gpuCount),
         ram: ramChoice,
-        ramCount,
+        ramCount: parseInt(ramCount),
         hdd: hddChoice,
+        hddCount: parseInt(hddCount),
         motherBoard: motherBoardChoice,
         cooler: coolerChoice,
         bp: bpChoice,
         finalPrice
     });
-});
 
-console.log(basketArray);
+    localStorage.setItem('basketLocal', JSON.stringify(basketArray));
+});
