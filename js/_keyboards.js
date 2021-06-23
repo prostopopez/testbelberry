@@ -14,10 +14,10 @@ for (let i = 0; i < keyboardBlocks.length; i++) {
     let keyboardConnect = 'Проводная';
     let keyboardLength = '1.5м';
     let keyboardMaterial = 'Пластик';
-    let keyboardPrice = keyboardBlocks[i].querySelector('.fnv-priceKeyb').innerHTML;
+    let keyboardPrice = parseInt(keyboardBlocks[i].querySelector('.fnv-priceKeyb').innerHTML);
     let keyboardImg = keyboardBlocks[i].querySelector('img').src;
 
-    let singleKeyboardToBasket = keyboardBlocks[i].querySelector('.fnv-toBasket')  ;
+    let singleKeyboardToBasket = keyboardBlocks[i].querySelector('.fnv-toBasket');
 
     singleKeyboardToBasket.addEventListener('click', function () {
         basketArray.push({
@@ -26,7 +26,7 @@ for (let i = 0; i < keyboardBlocks.length; i++) {
             keyboardConnect,
             keyboardLength,
             keyboardMaterial,
-            keyboardPrice,
+            finalPrice: keyboardPrice,
             img: keyboardImg
         });
 

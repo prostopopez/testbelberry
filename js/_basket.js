@@ -6,7 +6,7 @@ if (localStorage.getItem('basketLocal') == null) {
     basketArray = JSON.parse(localStorage.getItem('basketLocal'));
 }
 
-//
+
 function removeDuplicates(originalArray, prop) {
     let newArray = [];
     let lookupObject = {};
@@ -22,7 +22,8 @@ function removeDuplicates(originalArray, prop) {
 }
 
 let uniqueArray = removeDuplicates(basketArray, "finalPrice");
-//
+localStorage.setItem('basketLocal', JSON.stringify(uniqueArray));
+
 let basketContent = document.querySelector('.fnv-basketContent');
 
 uniqueArray.map(item => {
@@ -109,7 +110,7 @@ uniqueArray.map(item => {
             </div>
             <div class="fnv-aboutPrice">
                 <p>Стоимость:</p>
-                <p class="fnv-price">${item.finalPrice}</p>
+                <p class="fnv-price">${parseInt(item.finalPrice)} ₽</p>
                 <p>Количество:</p>
                 <label>
                     <input class="fnv-itemCount" type="text" size="1" value="1">
@@ -119,13 +120,15 @@ uniqueArray.map(item => {
                 </button>
             </div>
             <div class="fnv-forImg">
-                <img src="/img/gamingPC/pc1.png" alt="">
+                <img src="${item.img}" alt="">
             </div>
         </div>`;
-    } else if (item.hasOwnProperty('keyboardName')) {
+    }
+
+    if (item.hasOwnProperty('keyboardName')) {
         basketContent.innerHTML += `<div class="fnv-basketItem">
                 <div class="fnv-itemInfo">
-                    <h5>MSI Vigor GK20</h5>
+                    <h5>${item.keyboardName}</h5>
                     <div class="fnv-flexStats">
                         <div>
                             <span>Тип клавиатуры</span><span class="fnv-typeOfKey">${item.keyboardType}</span>
@@ -143,7 +146,7 @@ uniqueArray.map(item => {
                 </div>
                 <div class="fnv-aboutPrice">
                     <p>Стоимость:</p>
-                    <p class="fnv-price">${item.keyboardPrice}</p>
+                    <p class="fnv-price">${parseInt(item.finalPrice)} ₽</p>
                     <p>Количество:</p>
                     <label>
                         <input class="fnv-itemCount" type="text" size="1" value="1">
@@ -153,7 +156,7 @@ uniqueArray.map(item => {
                     </button>
                 </div>
                 <div class="fnv-forImg">
-                    <img src="/img/keyboards/keyb1.png" alt="">
+                    <img src="${item.img}" alt="">
                 </div>
             </div>`;
     }
@@ -172,5 +175,16 @@ for (let i = 0; i < basketItems.length; i++) {
         localPrice.innerHTML = startPrice * localCount.value + ' ₽';
     });
 
-    console.log(localPrice, localCount, startPrice);
+    let removeItem = basketItems[i].querySelector('.fnv-removeItem');
+
+    removeItem.addEventListener('click', function () {
+        for (let i = basketArray.length - 1; i >= 0; --i) {
+            if (basketArray[i].finalPrice === parseInt(localPrice.innerHTML) / localCount.value) {
+                basketArray.splice(i, 1);
+            }
+        }
+
+        localStorage.setItem('basketLocal', JSON.stringify(basketArray));
+        document.location.reload();
+    });
 }

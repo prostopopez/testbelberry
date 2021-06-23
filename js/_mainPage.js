@@ -13,7 +13,7 @@ function currentSlide(n) {
 function showSlides(n) {
     let i;
     let slides = document.querySelectorAll(".fnv-slider .fnv-slide");
-    console.log(slides);
+
     if (n > slides.length) {
         slideIndex = 1;
     }
