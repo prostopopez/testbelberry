@@ -134,6 +134,7 @@ if (localStorage.getItem('basketLocal') == null) {
 let configurePcName = document.querySelector('.fnv-aboutPc h4').innerHTML;
 let configureInfo = document.querySelector('.fnv-dropdowns');
 let configureToBasket = document.querySelector('.fnv-toBasket');
+let configureImage = document.querySelector('.fnv-aboutPc img').src;
 
 configureToBasket.addEventListener('click', function () {
     let ssdChoice = configureInfo.querySelector('.fnv-ssd .fnv-detailShort').innerHTML;
@@ -159,6 +160,7 @@ configureToBasket.addEventListener('click', function () {
         motherBoard: motherBoardChoice,
         cooler: coolerChoice,
         bp: bpChoice,
+        img: configureImage,
         finalPrice
     });
 

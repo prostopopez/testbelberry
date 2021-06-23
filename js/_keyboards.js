@@ -15,6 +15,7 @@ for (let i = 0; i < keyboardBlocks.length; i++) {
     let keyboardLength = '1.5м';
     let keyboardMaterial = 'Пластик';
     let keyboardPrice = keyboardBlocks[i].querySelector('.fnv-priceKeyb').innerHTML;
+    let keyboardImg = keyboardBlocks[i].querySelector('img').src;
 
     let singleKeyboardToBasket = keyboardBlocks[i].querySelector('.fnv-toBasket')  ;
 
@@ -25,7 +26,8 @@ for (let i = 0; i < keyboardBlocks.length; i++) {
             keyboardConnect,
             keyboardLength,
             keyboardMaterial,
-            keyboardPrice
+            keyboardPrice,
+            img: keyboardImg
         });
 
         localStorage.setItem('basketLocal', JSON.stringify(basketArray));

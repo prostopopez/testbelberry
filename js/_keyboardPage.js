@@ -14,6 +14,7 @@ let keyboardConnect = contentKeyboard.querySelector('.fnv-typeOfConnect').innerH
 let keyboardLength = contentKeyboard.querySelector('.fnv-length').innerHTML;
 let keyboardMaterial = contentKeyboard.querySelector('.fnv-material').innerHTML;
 let keyboardPrice = contentKeyboard.querySelector('.fnv-price').innerHTML;
+let keyboardImg = document.querySelector('.fnv-viewKeyb img:first-of-type').src;
 
 let keyboardToBasket = contentKeyboard.querySelector('.fnv-toBasket');
 
@@ -24,7 +25,8 @@ keyboardToBasket.addEventListener('click', function () {
         keyboardConnect,
         keyboardLength,
         keyboardMaterial,
-        keyboardPrice
+        keyboardPrice,
+        img: keyboardImg
     });
 
     localStorage.setItem('basketLocal', JSON.stringify(basketArray));
