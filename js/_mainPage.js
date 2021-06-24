@@ -21,6 +21,27 @@ function currentSlide(n) {
     showSlides(slideIndex = n);
 }
 
+//Swipe Horizontal
+let glideSlide = document.querySelector('.fnv-slider');
+let itemTouch = new Hammer(glideSlide);
+let direction;
+
+itemTouch.on('panleft panright panend', e => {
+        if (e.type === 'panleft') {
+            direction = 'left';
+        } else if (e.type === 'panright') {
+            direction = 'right';
+        }
+
+
+        if (e.type == 'panend' && direction == 'left') {
+            showSlides(slideIndex += 1);
+        } else if (e.type == 'panend' && direction == 'right') {
+            showSlides(slideIndex -= 1);
+        }
+    }
+);
+
 function showSlides(n) {
     let i;
     let slides = document.querySelectorAll(".fnv-slider .fnv-slide");
@@ -53,6 +74,11 @@ let slider = tns({
     autoplayTimeout: 5000,
     swipeAngle: false
 });
+
+let stockSliderItems = document.querySelectorAll('.fnv-stockSlider .tns-item');
+for (let i = 0; i < stockSliderItems.length; i++) {
+    stockSliderItems[i].style.height = '100%';
+}
 
 let slider2 = tns({
     container: '.fnv-gallerySlider1',
