@@ -1,6 +1,13 @@
 @font-face{
   font-family: 'RobotoCondensed';
   src: local('RobotoCondensed'),
+  url('../fonts/RobotoCondensed-Light.ttf');
+  font-weight: 100;
+}
+
+@font-face{
+  font-family: 'RobotoCondensed';
+  src: local('RobotoCondensed'),
   url('../fonts/RobotoCondensed-Regular.ttf');
   font-weight: 400;
 }
@@ -10,4 +17,11 @@
   src: local('RobotoCondensed'),
   url('../fonts/RobotoCondensed-Bold.ttf');
   font-weight: 700;
+}
+
+@font-face{
+  font-family: 'Share Tech Mono';
+  src: local('Share Tech Mono'),
+  url('../fonts/ShareTechMono-Regular.ttf');
+  font-weight: 400;
 }

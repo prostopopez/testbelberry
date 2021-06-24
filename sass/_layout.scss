@@ -161,13 +161,7 @@ button {
     }
 
     &:hover {
-        border: 1px solid $mainActiveColor;
-        background-color: transparent;
-        color: $whiteColor;
-
-        svg {
-            fill: $whiteColor;
-        }
+        background-color: $basketActiveColor;
     }
 
 }
