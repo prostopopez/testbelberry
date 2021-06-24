@@ -150,31 +150,31 @@
         }
 
         img[src*="pc1"] {
-            filter: drop-shadow(0 0 35px rgb(220, 118, 255));
+            filter: drop-shadow(1px 1px 35px rgba(220, 118, 255, 0.5));
         }
 
         img[src*="pc2"] {
-            filter: drop-shadow(0 0 35px rgb(0, 64, 255));
+            filter: drop-shadow(0 0 35px rgba(0, 64, 255, 0.5));
         }
 
         img[src*="pc3"] {
-            filter: drop-shadow(0 0 35px rgb(255, 140, 0));
+            filter: drop-shadow(0 0 35px rgba(255, 140, 0, 0.5));
         }
 
         img[src*="pc4"] {
-            filter: drop-shadow(0 0 35px rgb(98, 0, 255));
+            filter: drop-shadow(0 0 35px rgba(98, 0, 255, 0.5));
         }
 
         img[src*="pc5"] {
-            filter: drop-shadow(0 0 35px rgb(255, 72, 0));
+            filter: drop-shadow(0 0 35px rgba(255, 72, 0, 0.5));
         }
 
         img[src*="pc6"] {
-            filter: drop-shadow(0 0 35px rgb(0, 255, 144));
+            filter: drop-shadow(0 0 35px rgba(0, 255, 144, 0.5));
         }
 
         img[src*="keyb"] {
-            filter: drop-shadow(0 0 35px rgb(255, 140, 0));
+            filter: drop-shadow(0 0 35px rgba(255, 140, 0, 0.5));
         }
     }
 

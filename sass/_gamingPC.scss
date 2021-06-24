@@ -1,7 +1,7 @@
 .gamingPCPage {
     .bannerAbout {
         margin-bottom: 100px;
-        border-bottom: 2px solid $borderPC;
+        border-bottom: 2px solid $borderBottomColor;
         height: 951px;
         background: no-repeat url("/img/gamingPC/bgBanner.png") 40% 50%;
         background-color: $pcBg;
@@ -45,8 +45,8 @@
 
     .pcBlock {
         margin-bottom: 70px;
-        border-top: 2px solid $borderPC;
-        border-bottom: 2px solid $borderPC;
+        border-top: 2px solid $borderBottomColor;;
+        border-bottom: 2px solid $borderBottomColor;;
         background-color: $pcBg;
 
         &:last-of-type {
@@ -81,32 +81,34 @@
         }
 
         img {
+            cursor: pointer;
+            transition: all 0.5s ease-in-out;
             height: 500px;
             object-fit: contain;
         }
 
-        &:nth-of-type(2) img {
-            filter: drop-shadow(0 0 35px rgb(220, 118, 255));
+        &:nth-of-type(2):hover img {
+            filter: drop-shadow(1px 1px 35px rgba(220, 118, 255, 0.5));
         }
 
-        &:nth-of-type(3) img {
-            filter: drop-shadow(0 0 35px rgb(0, 64, 255));
+        &:nth-of-type(3):hover img {
+            filter: drop-shadow(0 0 35px rgba(0, 64, 255, 0.5));
         }
 
-        &:nth-of-type(4) img {
-            filter: drop-shadow(0 0 35px rgb(255, 140, 0));
+        &:nth-of-type(4):hover img {
+            filter: drop-shadow(0 0 35px rgba(255, 140, 0, 0.5));
         }
 
-        &:nth-of-type(5) img {
-            filter: drop-shadow(0 0 35px rgb(98, 0, 255));
+        &:nth-of-type(5):hover img {
+            filter: drop-shadow(0 0 35px rgba(98, 0, 255, 0.5));
         }
 
-        &:nth-of-type(6) img {
-            filter: drop-shadow(0 0 35px rgb(255, 72, 0));
+        &:nth-of-type(6):hover img {
+            filter: drop-shadow(0 0 35px rgba(255, 72, 0, 0.5));
         }
 
-        &:nth-of-type(7) img {
-            filter: drop-shadow(0 0 35px rgb(0, 255, 144));
+        &:nth-of-type(7):hover img {
+            filter: drop-shadow(0 0 35px rgba(0, 255, 144, 0.5));
         }
 
         h4 {
