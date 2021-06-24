@@ -28,7 +28,7 @@ let basketContent = document.querySelector('.fnv-basketContent');
 
 uniqueArray.map(item => {
     if (item.hasOwnProperty('pcName')) {
-        basketContent.innerHTML += `<div class="fnv-basketItem">
+        basketContent.innerHTML += `<div class="fnv-basketItem fnv-pc">
             <div class="fnv-itemInfo">
                 <h5>${item.pcName}</h5>
                 <div class="fnv-detailsPC">
@@ -126,7 +126,7 @@ uniqueArray.map(item => {
     }
 
     if (item.hasOwnProperty('keyboardName')) {
-        basketContent.innerHTML += `<div class="fnv-basketItem">
+        basketContent.innerHTML += `<div class="fnv-basketItem fnv-keyb">
                 <div class="fnv-itemInfo">
                     <h5>${item.keyboardName}</h5>
                     <div class="fnv-flexStats">

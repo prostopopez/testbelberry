@@ -17,6 +17,7 @@ window.addEventListener("resize", function (e) {
 //Mobile Main Menu
 const mobileButtons = document.querySelector('.fnv-mobileButtons');
 const mobileMainMenu = document.querySelector(`.fnv-mainMenu`);
+let links = mobileMainMenu.querySelectorAll('li');
 
 let isOpenMobileMainMenu = false;
 
@@ -37,3 +38,9 @@ function toggleMobileMainMenu(val) {
 mobileButtons.addEventListener(`click`, function () {
     toggleMobileMainMenu(!isOpenMobileMainMenu);
 });
+
+for (let i = 0; i < links.length; i++) {
+    links[i].addEventListener(`click`, function () {
+        toggleMobileMainMenu(!isOpenMobileMainMenu);
+    });
+}

@@ -31,7 +31,7 @@
         margin-bottom: 90px;
         max-width: 1000px;
 
-        p {
+        .descrP {
             margin-top: 40px;
             margin-bottom: 65px;
             font-size: 20px;
@@ -49,7 +49,7 @@
             flex-direction: column;
 
             > div {
-                border-bottom: 2px solid $showAllColor;
+                border-bottom: 2px solid $borderBottomColor;
                 margin-bottom: 30px;
                 display: flex;
                 justify-content: space-between;
@@ -83,12 +83,6 @@
         }
     }
 
-    //.contentKeyb {
-    //    @media only screen and (max-width: 1700px) {
-    //        order: 1;
-    //    }
-    //}
-
     .viewKeyb {
         margin-top: 100px;
         display: flex;
@@ -105,19 +99,88 @@
                 transform: scaleX(-1);
             }
         }
+    }
 
-        //@media only screen and (max-width: 1700px) {
-        //    margin-top: 0;
-        //    flex-direction: row;
-        //    order: 0;
-        //
-        //    img {
-        //        width: 50%;
-        //        height: auto;
-        //        &:last-of-type {
-        //            margin-top: 0;
-        //        }
-        //    }
-        //}
+    @media only screen and (max-width: 1024px) {
+        margin: 40px 0;
+
+        .cont {
+            flex-direction: column;
+        }
+
+        .viewKeyb {
+            align-items: center;
+            margin-top: 0;
+            order: 0;
+
+            img {
+                margin: 0;
+                max-width: 300px;
+                width: 100%;
+
+                &:last-of-type {
+                    display: none;
+                }
+            }
+        }
+
+        .contentKeyb {
+            order: 1;
+        }
+
+        .description {
+            h4 {
+                font-size: 30px;
+            }
+
+            hr {
+                margin: 0;
+                height: 4px;
+            }
+
+            .descrP {
+                margin: 20px 0;
+                font-size: 16px;
+
+                p {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+
+        .stats {
+            h4 {
+                font-size: 30px;
+            }
+
+            hr {
+                margin: 0;
+                height: 4px;
+            }
+
+            .flexStats {
+                max-width: 100%;
+                width: 100%;
+                margin-top: 20px;
+
+                span {
+                    font-size: 16px;
+                }
+            }
+        }
+
+        .priceBlock {
+            max-width: 300px;
+
+            .priceH,
+            .price {
+                padding: 0;
+            }
+
+            button {
+                min-width: 100%;
+                width: 100%;
+            }
+        }
     }
 }
