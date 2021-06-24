@@ -158,4 +158,74 @@
             }
         }
     }
+
+    @media only screen and (max-width: 1024px) {
+        .bannerAbout {
+            height: initial;
+            background-position: 100% 100%;
+
+            .cont {
+                padding: 50px 0;
+
+                > div {
+                    width: 100%;
+                }
+            }
+        }
+
+        .pcBlock .cont {
+            min-width: 300px;
+            flex-direction: column;
+
+            > div:first-of-type {
+                width: 100%;
+                margin-right: 0;
+            }
+
+            > div:last-of-type {
+                width: 100%;
+            }
+
+            img {
+                max-width: 400px;
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 500px) {
+        .bannerAbout {
+            margin-bottom: 40px;
+
+            .cont {
+                h2 {
+                    font-size: 30px;
+                }
+
+                p {
+                    font-size: 18px;
+                }
+            }
+        }
+
+        .pcBlock {
+            margin-bottom: 40px;
+
+            .cont {
+                h4 {
+                    font-size: 30px;
+                }
+
+                .pricePC {
+                    font-size: 24px;
+                }
+
+                .nameOfDetail,
+                .aboutDetail {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
 }
