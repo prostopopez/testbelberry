@@ -121,4 +121,23 @@
             margin-right: 20px;
         }
     }
+
+    @media only screen and (max-width: 1024px) {
+        .mainMenu {
+            display: none;
+        }
+
+        .rightHeaderPart {
+            align-items: center;
+        }
+
+        .headerSearch, .headerBasket {
+            margin-right: 10px;
+
+            svg {
+                width: 24px;
+                height: 24px;
+            }
+        }
+    }
 }

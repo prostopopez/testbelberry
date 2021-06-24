@@ -237,6 +237,7 @@
     }
 
     .stockSlider {
+        pointer-events: none;
         height: 168px;
 
         img {
@@ -265,6 +266,7 @@
 
     .gallerySlider1,
     .gallerySlider2 {
+        pointer-events: none;
         position: relative;
         border: 0;
         height: 628px;
@@ -389,13 +391,32 @@
     }
 
     @media only screen and (max-width: 1024px) {
-        .slide {
+        .slider {
+            height: 300px;
+
             h4 {
-                font-size: 40px;
+                font-size: 30px;
             }
 
             p {
-                font-size: 30px;
+                font-size: 20px;
+            }
+
+            .slide > div {
+                top: 50px;
+            }
+
+            .slide img {
+                object-position: 70% 50%;
+            }
+        }
+
+        .sliderNav {
+            top: 45%;
+
+            .cont button svg {
+                width: 14px;
+                height: 23px;
             }
         }
 
@@ -404,16 +425,15 @@
         #stock,
         .gallery,
         #news {
-            margin-top: 100px;
-            margin-bottom: 100px;
+            margin-top: 80px;
+            margin-bottom: 80px;
 
             h3 {
-                font-size: 40px;
+                font-size: 30px;
             }
         }
 
         #models > div,
-        .gallery > div,
         .aboutUs .leftAbout {
             grid-template-columns: repeat(1, 1fr);
         }
@@ -422,12 +442,24 @@
             grid-row-gap: 50px;
         }
 
+        .cardCategory {
+            height: 300px;
+        }
+
         #periphery > div {
             grid-template-columns: repeat(2, 1fr);
+            grid-row-gap: 10px;
+            grid-column-gap: 10px;
+
+            span {
+                min-height: 40px;
+                height: 40px;
+            }
         }
 
         .stockSlider {
-            height: 265px;
+            max-height: 265px;
+            height: auto;
 
             img {
                 width: 100%;
@@ -447,9 +479,34 @@
                 }
 
                 img {
+                    object-position: 70% 50%;
                     margin-right: 0;
                     margin-bottom: 20px;
                 }
+            }
+        }
+
+        .gallery {
+            > div {
+                height: 300px;
+                display: flex;
+                 grid-template-columns: none;
+                 grid-row-gap: 0;
+                 grid-column-gap: 0;
+            }
+
+            .gallerySlider1,
+            .gallerySlider2 {
+                height: 300px;
+
+                img {
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+
+            .gallerySlider2 {
+                display: none;
             }
         }
 
