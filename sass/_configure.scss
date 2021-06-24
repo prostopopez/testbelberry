@@ -326,4 +326,157 @@
             }
         }
     }
+
+    @media only screen and (max-width: 1024px) {
+        margin: 40px 0 100px 0;
+
+        .aboutPc {
+            margin-bottom: 80px;
+
+            img {
+                min-width: initial;
+                max-width: 300px;
+                width: 100%;
+            }
+        }
+
+        .config {
+            flex-direction: column;
+            align-items: center;
+
+            h4 {
+                font-size: 30px;
+            }
+
+            hr {
+                height: 4px;
+            }
+
+            > div:first-of-type {
+                margin-bottom: 40px;
+                margin-left: 0;
+                width: 100%;
+            }
+
+            .dropTrigger {
+                .leftSvgs {
+                    .upDown {
+                        margin-right: 10px;
+                        width: 16px;
+                        height: 9px;
+                    }
+
+                    .detailIcon {
+                        width: 25px;
+                        height: auto;
+                        max-height: 25px;
+                    }
+                }
+
+                .detailName,
+                .detailShort {
+                    font-size: 16px;
+                }
+
+                .plusMinus {
+                    button svg {
+                        width: 15px;
+                        height: 15px;
+                    }
+                }
+            }
+
+            .dropdowns {
+                margin-top: 30px;
+                margin-left: 0;
+                margin-bottom: 0;
+            }
+
+            .dropdownItem {
+                padding: 25px;
+                flex-direction: column;
+
+                .imgItem {
+                    margin-right: 0;
+                    display: flex;
+                    justify-content: center;
+
+                    img {
+                        margin-bottom: 25px;
+                        max-width: 300px;
+                    }
+                }
+
+                .choiceCheck {
+                    p {
+                        width: 50%;
+                        font-size: 14px;
+                    }
+                }
+
+                .aboutItem > div:not(.choiceCheck) {
+                    padding-right: 0;
+
+                    span {
+                        font-size: 14px;
+                    }
+                }
+            }
+
+            .finalPriceBlock {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 860px) {
+        .aboutPc {
+            flex-direction: column;
+
+            > div:first-of-type {
+                margin-bottom: 40px;
+            }
+
+            h4 {
+                font-size: 30px;
+            }
+
+            hr {
+                height: 4px;
+            }
+
+            p {
+                margin: 15px 0;
+                font-size: 16px;
+            }
+
+            img {
+                align-self: center;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 500px) {
+        .config {
+            .dropTrigger {
+                .detailName {
+                    display: none;
+                }
+
+                .detailShort {
+                    font-size: 12px;
+                }
+
+                .plusMinus .detailCount {
+                    font-size: 20px;
+                }
+
+                .plusMinus button svg {
+                    width: 12px;
+                    height: 12px;
+                }
+            }
+        }
+    }
 }
