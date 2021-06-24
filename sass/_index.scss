@@ -412,12 +412,7 @@
         }
 
         .sliderNav {
-            top: 45%;
-
-            .cont button svg {
-                width: 14px;
-                height: 23px;
-            }
+            display: none;
         }
 
         #models,
@@ -483,6 +478,14 @@
                     margin-right: 0;
                     margin-bottom: 20px;
                 }
+
+                h4 {
+                    font-size: 24px;
+                }
+
+                p {
+                    font-size: 18px;
+                }
             }
         }
 
@@ -490,9 +493,9 @@
             > div {
                 height: 300px;
                 display: flex;
-                 grid-template-columns: none;
-                 grid-row-gap: 0;
-                 grid-column-gap: 0;
+                grid-template-columns: none;
+                grid-row-gap: 0;
+                grid-column-gap: 0;
             }
 
             .gallerySlider1,
@@ -525,11 +528,24 @@
                 p {
                     text-align: right;
                 }
+
+                svg {
+                    min-width: 28px;
+                    height: 28px;
+                }
             }
 
             .rightAbout {
                 margin-bottom: 40px;
                 order: 0;
+
+                h3 {
+                    font-size: 30px;
+                }
+            }
+
+            p {
+                font-size: 16px;
             }
         }
     }

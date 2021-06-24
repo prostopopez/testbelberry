@@ -174,4 +174,10 @@
             }
         }
     }
+
+    @media only screen and (max-width: 500px) {
+        .menuFooter nav > a {
+            font-size: 30px;
+        }
+    }
 }

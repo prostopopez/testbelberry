@@ -13,3 +13,27 @@ window.addEventListener("resize", function (e) {
         window.location.reload();
     }
 });
+
+//Mobile Main Menu
+const mobileButtons = document.querySelector('.fnv-mobileButtons');
+const mobileMainMenu = document.querySelector(`.fnv-mainMenu`);
+
+let isOpenMobileMainMenu = false;
+
+function toggleMobileMainMenu(val) {
+    isOpenMobileMainMenu = val;
+
+    if (isOpenMobileMainMenu) {
+        mobileMainMenu.classList.add('fnv-mobile');
+        mobileButtons.classList.add(`fnv-opened`);
+        document.body.classList.add(`fnv-noScroll`);
+    } else {
+        mobileMainMenu.classList.remove('fnv-mobile');
+        mobileButtons.classList.remove(`fnv-opened`);
+        document.body.classList.remove(`fnv-noScroll`);
+    }
+}
+
+mobileButtons.addEventListener(`click`, function () {
+    toggleMobileMainMenu(!isOpenMobileMainMenu);
+});

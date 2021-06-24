@@ -86,6 +86,10 @@
         }
     }
 
+    .mobileButtons {
+        display: none;
+    }
+
     @media only screen and (max-width: 1700px) {
         .mainMenu ul li {
             margin-right: 60px;
@@ -123,6 +127,8 @@
     }
 
     @media only screen and (max-width: 1024px) {
+        padding: 10px 0;
+
         .mainMenu {
             display: none;
         }
@@ -132,12 +138,85 @@
         }
 
         .headerSearch, .headerBasket {
-            margin-right: 10px;
+            margin-right: 30px;
 
             svg {
                 width: 24px;
                 height: 24px;
             }
+        }
+
+        .headerMapMarker {
+            display: none;
+        }
+
+        .mobileButtons {
+            display: flex;
+
+            svg {
+                width: 26px;
+                height: 26px;
+                fill: $whiteColor;
+            }
+
+            svg.opened {
+                display: none;
+                z-index: 1010;
+                fill: $mainSvgColor;
+            }
+
+            svg.closed {
+                display: block;
+            }
+
+            &.opened {
+                svg.opened {
+                    display: block;
+                }
+
+                svg.closed {
+                    display: none;
+                }
+            }
+        }
+
+        .mainMenu.mobile {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            background: white;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1005;
+            
+            ul {
+                flex-direction: column;
+
+                li {
+                    margin-right: 0;
+                    margin-bottom: 35px;
+                }
+
+                li a {
+                    font-size: 24px;
+                    color: $mainSvgColor;
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: 500px) {
+        .logoBlock {
+            a {
+                font-size: 30px;
+            }
+        }
+
+        .headerSearch, .headerBasket {
+            margin-right: 10px;
         }
     }
 }
