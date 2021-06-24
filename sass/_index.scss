@@ -381,4 +381,38 @@
             }
         }
     }
+
+    @media only screen and (max-width: 1024px) {
+        #models,
+        #periphery,
+        #stock,
+        .gallery,
+        #news {
+            align-items: center;
+            margin-top: 100px;
+            margin-bottom: 100px;
+
+            h3 {
+                font-size: 40px;
+            }
+        }
+
+        #models > div,
+        .gallery > div,
+        .aboutUs .leftAbout {
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        #models > div {
+            grid-row-gap: 50px;
+        }
+
+        #periphery > div {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        //.stockSlider {
+        //    min-height: 168px;
+        //}
+    }
 }

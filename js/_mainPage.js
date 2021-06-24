@@ -1,3 +1,14 @@
+function getWidth() {
+    return Math.max(
+        document.body.scrollWidth,
+        document.documentElement.scrollWidth,
+        document.body.offsetWidth,
+        document.documentElement.offsetWidth,
+        document.documentElement.clientWidth
+    );
+}
+
+//
 let slideIndex = 1;
 
 showSlides(slideIndex);
@@ -34,7 +45,7 @@ let slider = tns({
     controls: false,
     autoplayButtonOutput: false,
     nav: false,
-    items: 3,
+    items: getWidth() > 1024 ? 3 : 1,
     slideBy: 'page',
     gutter: 30,
     speed: 1500,
