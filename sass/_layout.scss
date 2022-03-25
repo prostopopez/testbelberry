@@ -68,6 +68,16 @@ ul {
     margin: 0;
 }
 
+h2 {
+    font-size: 36px;
+    font-family: MuseoSansCyrl, sans-serif;
+    font-weight: 600;
+
+    @media only screen and (max-width: 1024px){
+        font-size: 28px;
+    }
+}
+
 .wrapper {
     margin: 0 auto;
     width: 90%;

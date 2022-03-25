@@ -1,0 +1,21 @@
+<div class="breadcrumbs">
+    <div class="wrapper">
+        <div class="pageInfo">
+            <div>
+                <button class="goBack">
+                    {% include '../../img/svg/arrowLeft.svg' with {'class': 'arrowLeftIcon'} %}
+                </button>
+                <ul>
+                    <li><a href="/">Главная</a></li>
+                    <li>
+                        {% include '../../img/svg/circle.svg' with {'class': 'circleIcon'} %}
+                    </li>
+                    <li class="active"><a href="#">{{pageName}}</a></li>
+                </ul>
+            </div>
+            <h2>{{pagePseudonym}}</h2>
+            <p>{{pageDescription}}</p>
+        </div>
+        <img src="../../img/main/rectangles.png" alt="">
+    </div>
+</div>

@@ -20,7 +20,7 @@ gulp.task(`html`, gulp.series(function () {
     return gulp.src(`./html/pages/**/*.html`)
         .pipe(twig({
             data: {
-                title: `Main`
+                title: `Главная`,
             }
         }))
         .pipe(getPublicFolderPath())
