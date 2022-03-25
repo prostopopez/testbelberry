@@ -289,6 +289,7 @@
         }
 
         &.mobile {
+            overflow-y: scroll;
             justify-content: center;
             align-items: flex-start;
             position: absolute;
@@ -301,7 +302,6 @@
             .wrapper {
                 flex-direction: column;
                 padding: 0;
-                height: 100%;
             }
 
             .headerTop {
@@ -341,6 +341,7 @@
             .headerBottom {
                 order: 0;
                 flex-direction: column;
+                margin-bottom: 50px;
 
                 .forMenu {
                     flex-direction: column;
