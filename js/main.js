@@ -33,11 +33,12 @@ function toggleMobileMainMenu(val) {
 }
 
 mobileButtons.addEventListener(`click`, function () {
-    toggleMobileMainMenu(!isOpenMobileMainMenu);
+    if (window.screen.width < 1025) {
+        toggleMobileMainMenu(!isOpenMobileMainMenu);
+    }
 });
 
 // Слайдер
-//
 let slideIndex = 1;
 
 showSlides(slideIndex);
