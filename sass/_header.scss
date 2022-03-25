@@ -4,6 +4,7 @@
     align-items: center;
     width: 100%;
     background-color: $mainBg;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.05);
 
     .wrapper {
         display: flex;
@@ -117,12 +118,24 @@
         padding: 17px 0;
 
         .forMenu {
+            margin-right: 10px;
             display: flex;
             justify-content: space-between;
             align-items: center;
 
             .toHome {
                 margin-right: 40px;
+
+                .homeIcon {
+                    opacity: 0.16;
+                    fill: $colorDark;
+                }
+
+                &:hover {
+                    .homeIcon {
+                        opacity: 1;
+                    }
+                }
             }
         }
 
@@ -144,17 +157,15 @@
         }
 
         li {
-            padding: 0 31px;
-
-            &:first-of-type {
-                padding-left: 0;
-            }
+            margin-right: 30px;
+            padding-right: 30px;
 
             &:not(:last-of-type) {
                 border-right: 1px solid $colorBorder;
             }
 
             &:last-of-type {
+                margin-right: 0;
                 padding-right: 0;
             }
         }
@@ -171,7 +182,12 @@
         display: flex;
         align-items: center;
 
+        .search {
+            margin-right: 40px;
+        }
+
         .callBack {
+            box-shadow: 0 4px 16px rgba(255, 140, 105, 0.29);
             font-size: 16px;
         }
     }

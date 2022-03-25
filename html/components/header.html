@@ -53,9 +53,12 @@
                 </nav>
             </div>
             <div class="interactive">
-                <button>
-                    {% include '../../img/svg/search.svg' with {'class': 'searchIcon'} %}
-                </button>
+                <div class="search inactive">
+                    <label class="searchBlock" for="topSearch">
+                        <input class="inputField" type="text" placeholder="Поиск" id="topSearch">
+                        {% include '../../img/svg/search.svg' with {'class': 'searchIcon'} %}
+                    </label>
+                </div>
                 <button class="button orange callBack">Обратный звонок</button>
             </div>
         </div>

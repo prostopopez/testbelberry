@@ -1,20 +1,18 @@
-function getWidth() {
-    return Math.max(
-        document.body.scrollWidth,
-        document.documentElement.scrollWidth,
-        document.body.offsetWidth,
-        document.documentElement.offsetWidth,
-        document.documentElement.clientWidth
-    );
-}
+// Поиск
+const search = document.querySelector(`.search`);
+const searchToggle = document.querySelector(`.search .inputField`);
 
-window.addEventListener("resize", function (e) {
-    if (getWidth() < 1044 && getWidth() > 1004) {
-        window.location.reload();
-    }
-});
+searchToggle.onfocus = function () {
+    search.classList.remove('inactive');
+    search.classList.remove(`modalAnimation`);
+};
 
-//Mobile Main Menu
+searchToggle.onblur = function () {
+    search.classList.add('inactive');
+    search.classList.add(`modalAnimation`);
+};
+
+// Мобильное меню
 const mobileButtons = document.querySelector('.mobileButtons');
 const mobileMainMenu = document.querySelector(`.mainMenu`);
 let links = mobileMainMenu.querySelectorAll('li');
