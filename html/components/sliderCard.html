@@ -1,8 +1,16 @@
 <div class="slide fade">
-    <div>
-        <div class="cont">
-            <h4>NVIDIA GEFORCE 3080 TI</h4>
-            <p>ВЫСШИЙ УРОВЕНЬ ИГРЫ</p>
+    <div class="slideContent">
+        <div class="discTyoe">{{type}}</div>
+        <h4 class="dicName">{{name}}</h4>
+        <div>
+            <p class="discOldPrice">{{oldPrice}}</p>
+            <div class="discCount">-{{discount}}</div>
+        </div>
+        <p class="discNewPrice">{{newPrice}}</p>
+        <span class="discUpTo">Акция действует до {{upTo}}</span>
+        <div>
+            <button class="button orange">Записаться</button>
+            <button class="button turquoise">Подробнее</button>
         </div>
     </div>
     <img src="{{image}}" alt=""/>

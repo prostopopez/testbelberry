@@ -51,7 +51,7 @@ function currentSlide(n) {
     showSlides(slideIndex = n);
 }
 
-//Swipe Horizontal
+// Swipe Horizontal
 let glideSlide = document.querySelector('.slider');
 let itemTouch = new Hammer(glideSlide);
 let direction;
@@ -62,7 +62,6 @@ itemTouch.on('panleft panright panend', e => {
         } else if (e.type === 'panright') {
             direction = 'right';
         }
-
 
         if (e.type == 'panend' && direction == 'left') {
             showSlides(slideIndex += 1);

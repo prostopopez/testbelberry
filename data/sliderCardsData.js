@@ -10,20 +10,38 @@ module.exports = [
     },
     {
         type: 'Акция',
-        name: 'Он-лайн консультация любого врача-терапевта',
-        oldPrice: '1 700 руб.',
+        name: 'Расшифровка анализов у любого доктораа',
+        oldPrice: '800 руб.',
         discount: '30%',
-        newPrice: '1 190 руб.',
+        newPrice: '500 руб.',
         upTo: '30.09.2021 г.',
         img: '../img/discount/doctorFemale.png'
     },
     {
         type: 'Акция',
-        name: 'Он-лайн консультация любого врача-терапевта',
+        name: 'ЭКГ + Эхо-кг',
+        oldPrice: '4 150 руб.',
+        discount: '30%',
+        newPrice: '2 900 руб.',
+        upTo: '30.09.2021 г.',
+        img: '../img/discount/medDevice.png'
+    },
+    {
+        type: 'Акция',
+        name: 'УЗИ',
         oldPrice: '1 700 руб.',
         discount: '30%',
         newPrice: '1 190 руб.',
         upTo: '30.09.2021 г.',
-        img: '../img/discount/doctorFemale.png'
+        img: '../img/discount/behindMachine.png'
+    },
+    {
+        type: 'Акция',
+        name: 'Прием любого врача',
+        oldPrice: '1 700 руб.',
+        discount: '30%',
+        newPrice: '1 190 руб.',
+        upTo: '30.09.2021 г.',
+        img: '../img/discount/doctorSmile.png'
     }
 ];
