@@ -2,8 +2,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'RobotoCondensed', sans-serif;
-    font-weight: normal;
+    font-family: 'Proxima Nova', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    transition: all 0.3s linear;
 }
 
 html {
@@ -14,6 +16,10 @@ label {
     margin: 0;
 }
 
+a,
+button,
+input,
+textarea,
 a.active.focus,
 a.active:focus,
 a.focus,
@@ -49,14 +55,6 @@ button::-moz-focus-inner {
     border: 0;
 }
 
-a,
-button,
-input,
-textarea {
-    transition: all 0.3s linear;
-    outline: none;
-}
-
 ul {
     list-style-type: none;
 }
@@ -65,28 +63,28 @@ ol {
     list-style-position: inside;
 }
 
-.cont {
+p,
+ul {
+    margin: 0;
+}
+
+.wrapper {
     margin: 0 auto;
-    width: 98%;
-    max-width: 1700px;
+    width: 90%;
+    max-width: 1312px;
 
     @media only screen and (min-width: 2500px) {
-        width: 100%;
         max-width: 2000px;
     }
 
-    @media only screen and (max-width: 1700px) {
-        max-width: 1500px;
-    }
-
     @media only screen and (max-width: 1024px) {
-        max-width: 87%;
+        max-width: 768px;
     }
 }
 
 body {
-    background-color: #111111;
-    color: $mainTextColor;
+    background-color: $mainBg;
+    color: $mainText;
 
     &.noScroll {
         height: 100vh;
@@ -97,24 +95,30 @@ body {
 }
 
 a {
-    font-weight: 300;
-    border-bottom: 1px solid transparent;
-    transition: all 0.3s linear;
     text-decoration: none !important;
-    color: $mainTextColor;
+    color: $colorDark;
 
-    &:hover {
-        color: $mainActiveColor;
+    &:hover,
+    &.active {
+        color: $mainActive;
     }
 }
 
-svg {
-    fill: transparent;
-    transition: all 0.3s linear;
-}
+.button {
+    display: flex;
+    border-radius: 40px;
+    padding: 12px 32px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #FFFFFF;
 
-.pageStyle {
-    margin-bottom: 100px;
+    &.orange {
+        background-color: $btn;
+
+        &:hover {
+            background-color: $btnActive;
+        }
+    }
 }
 
 .modalAnimation {
@@ -130,58 +134,5 @@ svg {
     to {
         transform: scale(1);
         opacity: 1
-    }
-}
-
-button {
-
-}
-
-.toBasket,
-.toConfigure {
-    border: 1px solid transparent;
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    height: 55px;
-    font-size: 20px;
-
-    @media only screen and (max-width: 1280px) {
-        font-size: 18px;
-    }
-
-    @media only screen and (max-width: 1280px) {
-        font-size: 16px;
-    }
-}
-
-.toBasket {
-    background-color: $mainActiveColor;
-    color: $lighterGrayColor;
-    width: 100%;
-
-    svg {
-        width: 28px;
-        height: 28px;
-        margin-right: 12px;
-        fill: $lighterGrayColor;
-    }
-
-    &:hover {
-        background-color: $basketActiveColor;
-    }
-
-}
-
-.toConfigure {
-    border: 1px solid $mainActiveColor;
-    color: $whiteColor;
-
-    &:hover {
-        border: 1px solid transparent;
-        background-color: $mainActiveColor;
-        color: $lighterGrayColor;
     }
 }

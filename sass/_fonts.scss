@@ -1,27 +1,41 @@
 @font-face{
-  font-family: 'RobotoCondensed';
-  src: local('RobotoCondensed'),
-  url('../fonts/RobotoCondensed-Light.ttf');
-  font-weight: 100;
+    font-family: 'MuseoSansCyrl';
+    src: local('MuseoSansCyrl'),
+    url('../fonts/MuseoSansCyrl-500.ttf');
+    font-weight: 400;
 }
 
 @font-face{
-  font-family: 'RobotoCondensed';
-  src: local('RobotoCondensed'),
-  url('../fonts/RobotoCondensed-Regular.ttf');
-  font-weight: 400;
+    font-family: 'MuseoSansCyrl';
+    src: local('MuseoSansCyrl'),
+    url('../fonts/MuseoSansCyrl-700.ttf');
+    font-weight: 600;
 }
 
 @font-face{
-  font-family: 'RobotoCondensed';
-  src: local('RobotoCondensed'),
-  url('../fonts/RobotoCondensed-Bold.ttf');
-  font-weight: 700;
+    font-family: 'Proxima Nova';
+    src: local('Proxima Nova'),
+    url('../fonts/proximanova_regular.ttf');
+    font-weight: 400;
 }
 
 @font-face{
-  font-family: 'Share Tech Mono';
-  src: local('Share Tech Mono'),
-  url('../fonts/ShareTechMono-Regular.ttf');
-  font-weight: 400;
+    font-family: 'Proxima Nova';
+    src: local('Proxima Nova'),
+    url('../fonts/proximanova_semibold.ttf');
+    font-weight: 600;
+}
+
+@font-face{
+    font-family: 'Proxima Nova';
+    src: local('Proxima Nova'),
+    url('../fonts/proximanova_bold.otf');
+    font-weight: 700;
+}
+
+@font-face{
+    font-family: 'Proxima Nova';
+    src: local('Proxima Nova'),
+    url('../fonts/proximanova_extrabold.otf');
+    font-weight: 800;
 }

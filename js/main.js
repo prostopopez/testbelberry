@@ -15,8 +15,8 @@ window.addEventListener("resize", function (e) {
 });
 
 //Mobile Main Menu
-const mobileButtons = document.querySelector('.fnv-mobileButtons');
-const mobileMainMenu = document.querySelector(`.fnv-mainMenu`);
+const mobileButtons = document.querySelector('.mobileButtons');
+const mobileMainMenu = document.querySelector(`.mainMenu`);
 let links = mobileMainMenu.querySelectorAll('li');
 
 let isOpenMobileMainMenu = false;
@@ -25,13 +25,13 @@ function toggleMobileMainMenu(val) {
     isOpenMobileMainMenu = val;
 
     if (isOpenMobileMainMenu) {
-        mobileMainMenu.classList.add('fnv-mobile');
-        mobileButtons.classList.add(`fnv-opened`);
-        document.body.classList.add(`fnv-noScroll`);
+        mobileMainMenu.classList.add('mobile');
+        mobileButtons.classList.add(`opened`);
+        document.body.classList.add(`noScroll`);
     } else {
-        mobileMainMenu.classList.remove('fnv-mobile');
-        mobileButtons.classList.remove(`fnv-opened`);
-        document.body.classList.remove(`fnv-noScroll`);
+        mobileMainMenu.classList.remove('mobile');
+        mobileButtons.classList.remove(`opened`);
+        document.body.classList.remove(`noScroll`);
     }
 }
 

@@ -1,62 +1,63 @@
 <header class="header">
-    <div class="cont">
-        <div class="logoBlock">
-            <a href="/">Serious pc</a>
-        </div>
-        <div class="mainMenu">
-            <nav>
-                <ul>
-                    <li><a href="../index.html#models">Модели</a></li>
-                    <li><a href="../index.html#periphery">Периферия</a></li>
-                    <li><a href="../index.html#stock">Акции</a></li>
-                    <li><a href="../index.html#news">Новости</a></li>
-                    <li><a href="../index.html#contacts">О нас</a></li>
-                </ul>
-            </nav>
-        </div>
-        <div class="rightHeaderPart">
-            <div class="headerSearch inactive">
-                <button>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="35.997" height="36.004" viewBox="0 0 35.997 36.004">
-                        <path
-                            d="M35.508,31.127l-7.01-7.01a1.686,1.686,0,0,0-1.2-.492H26.156a14.618,14.618,0,1,0-2.531,2.531V27.3a1.686,1.686,0,0,0,.492,1.2l7.01,7.01a1.681,1.681,0,0,0,2.384,0l1.99-1.99a1.7,1.7,0,0,0,.007-2.391Zm-20.883-7.5a9,9,0,1,1,9-9A8.995,8.995,0,0,1,14.625,23.625Z" />
-                    </svg>
-                </button>
-            </div>
-            <div class="headerBasket">
-                <a href="../basket.html">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="40.5" height="36" viewBox="0 0 40.5 36">
-                        <path
-                            d="M37.133,21.186,40.457,6.561A1.688,1.688,0,0,0,38.812,4.5H11.194L10.55,1.349A1.687,1.687,0,0,0,8.9,0H1.688A1.687,1.687,0,0,0,0,1.688V2.813A1.687,1.687,0,0,0,1.688,4.5H6.6L11.54,28.648a3.938,3.938,0,1,0,4.714.6H31a3.936,3.936,0,1,0,4.472-.732l.388-1.707a1.688,1.688,0,0,0-1.646-2.061H15.336l-.46-2.25H35.488A1.687,1.687,0,0,0,37.133,21.186Z" />
-                    </svg>
+    <div class="wrapper">
+        <div class="headerTop">
+            <div class="forLogo">
+                <a class="logo" href="/">
+                    {% include '../../img/svg/logo.svg' with {'class': 'logoIcon'} %}
                 </a>
+                <div class="location">
+                    <div>
+                        {% include '../../img/svg/location.svg' with {'class': 'locationIcon'} %}
+                        <span>Москва</span>
+                    </div>
+                    <p class="clinicsNearby"><span>7 клиник</span> рядом с Вами!</p>
+                </div>
             </div>
-            <div class="headerMapMarker">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16.278" height="21.704" viewBox="0 0 16.278 21.704">
-                    <path
-                        d="M7.3,21.266C1.143,12.337,0,11.42,0,8.139a8.139,8.139,0,0,1,16.278,0c0,3.282-1.143,4.2-7.3,13.127a1.018,1.018,0,0,1-1.673,0Zm.836-9.736A3.391,3.391,0,1,0,4.748,8.139,3.391,3.391,0,0,0,8.139,11.53Z" />
-                </svg>
-                <span>Санкт-Петербург</span>
+            <div class="contacts">
+                <p class="hospitalAppointment">Запись на приём</p>
+                <div class="socialsTel">
+                    <div>
+                        <a class="socialLink" href="https://www.whatsapp.com">
+                            {% include '../../img/svg/viber.svg' with {'class': 'viberIcon'} %}
+                        </a>
+                        <a class="socialLink" href="https://web.telegram.org">
+                            {% include '../../img/svg/telegram.svg' with {'class': 'telegramIcon'} %}
+                        </a>
+                        <a class="socialLink" href="https://www.viber.com">
+                            {% include '../../img/svg/whatsapp.svg' with {'class': 'whatsappIcon'} %}
+                        </a>
+                    </div>
+                    <p>8 (495) 540-48-03</p>
+                </div>
+                <p class="mainEmail">medgorod@bk.ru</p>
             </div>
         </div>
-        <button class="mobileButtons">
-            <svg class="closed" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14.7 12.2" id="hamburger">
-                <path d="M13.8,1.9H0.9C0.4,1.9,0,1.5,0,0.9v0C0,0.4,0.4,0,0.9,0h12.8
-                    c0.5,0,0.9,0.4,0.9,0.9v0C14.7,1.5,14.3,1.9,13.8,1.9z" />
-                <path d="M13.8,12.2H0.9c-0.5,0-0.9-0.4-0.9-0.9v0c0-0.5,0.4-0.9,0.9-0.9
-                    h12.8c0.5,0,0.9,0.4,0.9,0.9v0C14.7,11.7,14.3,12.2,13.8,12.2z" />
-                <path d="M13.8,7H0.9C0.4,7,0,6.5,0,6v0c0-0.5,0.4-0.9,0.9-0.9h12.8
-                    c0.5,0,0.9,0.4,0.9,0.9v0C14.7,6.5,14.3,7,13.8,7z" />
-            </svg>
-            <svg class="opened" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 510 510" id="close">
-                <path d="M300.188,246L484.14,62.04c5.06-5.064,7.852-11.82,7.86-19.024c0-7.208-2.792-13.972-7.86-19.028L468.02,7.872
-			c-5.068-5.076-11.824-7.856-19.036-7.856c-7.2,0-13.956,2.78-19.024,7.856L246.008,191.82L62.048,7.872
-			c-5.06-5.076-11.82-7.856-19.028-7.856c-7.2,0-13.96,2.78-19.02,7.856L7.872,23.988c-10.496,10.496-10.496,27.568,0,38.052
-			L191.828,246L7.872,429.952c-5.064,5.072-7.852,11.828-7.852,19.032c0,7.204,2.788,13.96,7.852,19.028l16.124,16.116
-			c5.06,5.072,11.824,7.856,19.02,7.856c7.208,0,13.968-2.784,19.028-7.856l183.96-183.952l183.952,183.952
-			c5.068,5.072,11.824,7.856,19.024,7.856h0.008c7.204,0,13.96-2.784,19.028-7.856l16.12-16.116
-			c5.06-5.064,7.852-11.824,7.852-19.028c0-7.204-2.792-13.96-7.852-19.028L300.188,246z" />
-            </svg>
-        </button>
+        <div class="headerBottom">
+            <div class="forMenu">
+                <a class="toHome" href="/">
+                    {% include '../../img/svg/home.svg' with {'class': 'homeIcon'} %}
+                </a>
+                <nav class="mainMenu">
+                    <button class="hamburger">
+                        {% include '../../img/svg/hamburger.svg' with {'class': 'hamburgerIcon'} %}
+                    </button>
+                    <ul>
+                        <li><a href="/">Услуги</a></li>
+                        <li><a href="/">О клинике</a></li>
+                        <li><a href="/">Врачи</a></li>
+                        <li><a href="/">Цены</a></li>
+                        <li><a href="/">Отзывы</a></li>
+                        <li><a class="active" href="/">Акции</a></li>
+                        <li><a href="/">Клиники</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="interactive">
+                <button>
+                    {% include '../../img/svg/search.svg' with {'class': 'searchIcon'} %}
+                </button>
+                <button class="button orange callBack">Обратный звонок</button>
+            </div>
+        </div>
     </div>
 </header>

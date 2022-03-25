@@ -1,226 +1,178 @@
 .header {
-    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 32px 0;
-    background-color: $mainBgColor;
+    width: 100%;
+    background-color: $mainBg;
 
-    .cont {
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .headerTop {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin: auto;
+        border-bottom: 1px solid $colorBorder;
+        padding: 14px 0;
+
+        .forLogo,
+        .contacts {
+            display: flex;
+        }
     }
 
-    svg {
-        fill: $mainSvgColor;
+    .forLogo {
+        align-items: center;
+
+        .logo {
+            padding-right: 40px;
+        }
+
+        .location {
+            border-left: 1px solid $colorBorder;
+            padding-left: 40px;
+
+            div {
+                display: flex;
+                align-items: center;
+
+                span {
+                    font-size: 20px;
+                    font-weight: 700;
+                }
+            }
+
+            .locationIcon {
+                margin-right: 9px;
+            }
+
+            .clinicsNearby {
+                font-size: 14px;
+                font-weight: 700;
+                color: $mainGrey;
+
+                span {
+                    color: $mainText;
+                    font-weight: 700;
+                }
+            }
+        }
     }
 
-    .logoBlock {
+    .contacts {
         display: flex;
         flex-direction: column;
-        margin-right: 20px;
+        align-items: flex-end;
 
-        a {
-            text-transform: uppercase;
-            font-size: 50px;
-            font-family: "Share Tech Mono", sans-serif;
-            color: $whiteColor;
+        .hospitalAppointment {
+            opacity: 0.6;
+            color: $colorDark;
+        }
+
+        .socialsTel {
+            display: flex;
+
+            div {
+                display: flex;
+            }
+
+            p {
+                margin-left: 16px;
+                font-size: 24px;
+                font-weight: 700;
+            }
+        }
+
+        .mainEmail {
+            font-weight: 600;
+        }
+
+        .socialLink {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 4px;
+            border-radius: 40px;
+            padding: 7px;
+            width: 32px;
+            height: 32px;
+            background-color: $mainText;
+
+            svg {
+                fill: #FFFFFF;
+            }
+
+            &:hover {
+                background-color: $mainActive;
+            }
+        }
+    }
+
+    .headerBottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 17px 0;
+
+        .forMenu {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .toHome {
+                margin-right: 40px;
+            }
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
         }
     }
 
     .mainMenu {
+        .hamburger {
+            margin-right: 16px;
+        }
+
         ul {
-            margin-bottom: 0;
             display: flex;
-            list-style: none;
-            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
 
-            li {
-                margin-right: 80px;
+        li {
+            padding: 0 31px;
 
-                &:last-of-type {
-                    margin-right: 20px;
-                }
+            &:first-of-type {
+                padding-left: 0;
             }
 
-            a {
-                font-size: 20px;
-                font-weight: normal;
+            &:not(:last-of-type) {
+                border-right: 1px solid $colorBorder;
             }
+
+            &:last-of-type {
+                padding-right: 0;
+            }
+        }
+
+        li a {
+            text-transform: uppercase;
+            white-space: nowrap;
+            font-size: 16px;
+            font-weight: 800;
         }
     }
 
-    .rightHeaderPart {
+    .interactive {
         display: flex;
-        justify-content: center;
-    }
-
-    .headerSearch, .headerBasket {
-        margin-right: 50px;
-
-        svg {
-            width: 36px;
-            height: 36px;
-
-            &:hover {
-                fill: $mainTextColor;
-            }
-        }
-    }
-
-    .headerMapMarker {
-        display: flex;
-        flex-direction: column;
         align-items: center;
 
-        svg {
-            width: 20px;
-            height: 20px;
-        }
-
-        span {
-            font-size: 14px;
-            color: $mainSvgColor;
-        }
-    }
-
-    .mobileButtons {
-        display: none;
-    }
-
-    @media only screen and (max-width: 1700px) {
-        .mainMenu ul li {
-            margin-right: 60px;
-        }
-
-        .headerSearch, .headerBasket {
-            margin-right: 40px;
-        }
-    }
-
-    @media only screen and (max-width: 1500px) {
-        .mainMenu ul li {
-            margin-right: 40px;
-        }
-
-        .headerSearch, .headerBasket {
-            margin-right: 30px;
-        }
-    }
-
-    @media only screen and (max-width: 1280px) {
-        .logoBlock {
-            a {
-                font-size: 40px;
-            }
-        }
-
-        .mainMenu ul li {
-            margin-right: 20px;
-        }
-
-        .headerSearch, .headerBasket {
-            margin-right: 20px;
-        }
-    }
-
-    @media only screen and (max-width: 1024px) {
-        padding: 10px 0;
-
-        .mainMenu {
-            display: none;
-        }
-
-        .rightHeaderPart {
-            align-items: center;
-        }
-
-        .headerSearch, .headerBasket {
-            margin-right: 30px;
-
-            svg {
-                width: 24px;
-                height: 24px;
-            }
-        }
-
-        .headerMapMarker {
-            display: none;
-        }
-
-        .mobileButtons {
-            display: flex;
-
-            svg {
-                width: 26px;
-                height: 26px;
-                fill: $mainSvgColor;
-            }
-
-            svg.opened {
-                display: none;
-                z-index: 1010;
-                fill: $whiteColor;
-            }
-
-            svg.closed {
-                display: block;
-            }
-
-            &.opened {
-                svg.opened {
-                    display: block;
-                }
-
-                svg.closed {
-                    display: none;
-                }
-            }
-        }
-
-        .mainMenu.mobile {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: absolute;
-            background: $mainBgColor;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1005;
-
-            ul {
-                flex-direction: column;
-
-                li {
-                    margin-right: 0;
-                    margin-bottom: 35px;
-
-                    &:hover a {
-                        color: $mainActiveColor;
-                    }
-                }
-
-                li a {
-                    font-size: 24px;
-                    color: $whiteColor;
-                }
-            }
-        }
-    }
-
-    @media only screen and (max-width: 500px) {
-        .logoBlock {
-            a {
-                font-size: 30px;
-            }
-        }
-
-        .headerSearch, .headerBasket {
-            margin-right: 10px;
+        .callBack {
+            font-size: 16px;
         }
     }
 }
