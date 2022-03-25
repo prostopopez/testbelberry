@@ -13,9 +13,8 @@ searchToggle.onblur = function () {
 };
 
 // Мобильное меню
-const mobileButtons = document.querySelector('.mobileButtons');
-const mobileMainMenu = document.querySelector(`.mainMenu`);
-let links = mobileMainMenu.querySelectorAll('li');
+const mobileButtons = document.querySelector('.hamburger');
+const mobileMainMenu = document.querySelector(`.header`);
 
 let isOpenMobileMainMenu = false;
 
@@ -36,9 +35,3 @@ function toggleMobileMainMenu(val) {
 mobileButtons.addEventListener(`click`, function () {
     toggleMobileMainMenu(!isOpenMobileMainMenu);
 });
-
-for (let i = 0; i < links.length; i++) {
-    links[i].addEventListener(`click`, function () {
-        toggleMobileMainMenu(!isOpenMobileMainMenu);
-    });
-}

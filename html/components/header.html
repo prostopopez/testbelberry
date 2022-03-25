@@ -4,6 +4,7 @@
             <div class="forLogo">
                 <a class="logo" href="/">
                     {% include '../../img/svg/logo.svg' with {'class': 'logoIcon'} %}
+                    {% include '../../img/svg/logoMini.svg' with {'class': 'logoMiniIcon'} %}
                 </a>
                 <div class="location">
                     <div>
@@ -39,7 +40,8 @@
                 </a>
                 <nav class="mainMenu">
                     <button class="hamburger">
-                        {% include '../../img/svg/hamburger.svg' with {'class': 'hamburgerIcon'} %}
+                        {% include '../../img/svg/hamburger.svg' with {'class': 'closed'} %}
+                        {% include '../../img/svg/hamburgerActive.svg' with {'class': 'opened'} %}
                     </button>
                     <ul>
                         <li><a href="/">Услуги</a></li>

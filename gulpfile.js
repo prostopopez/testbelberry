@@ -90,6 +90,7 @@ gulp.task(`build`, gulp.parallel(`styles`, `html`, `img`, `js`, `jsForPage`, `sv
 gulp.task(`sync`, gulp.parallel(`default`, function () {
     browserSync.init({
         server: `./public`,
-        notify: false
+        notify: false,
+        port: 3005
     });
 }));

@@ -7,8 +7,14 @@
     box-shadow: 0 8px 40px rgba(0, 0, 0, 0.05);
 
     .wrapper {
+        position: relative;
         display: flex;
         flex-direction: column;
+
+        @media only screen and (max-width: 1024px) {
+            flex-direction: row;
+            padding: 14px 0;
+        }
     }
 
     .headerTop {
@@ -22,6 +28,11 @@
         .contacts {
             display: flex;
         }
+
+        @media only screen and (max-width: 1024px) {
+            margin-right: 10px;
+            border: none;
+        }
     }
 
     .forLogo {
@@ -29,6 +40,44 @@
 
         .logo {
             padding-right: 40px;
+
+            svg {
+                height: auto;
+            }
+
+            .logoIcon {
+                width: 344px;
+            }
+
+            .logoMiniIcon {
+                display: none;
+            }
+
+            @media only screen and (max-width: 1200px) {
+                padding-right: 20px;
+
+                .logoIcon {
+                    width: 200px;
+                }
+            }
+
+            @media only screen and (max-width: 1024px) {
+                .logoIcon {
+                    width: 100%;
+                    max-width: 200px;
+                }
+            }
+
+            @media only screen and (max-width: 768px) {
+                .logoIcon {
+                    display: none;
+                }
+
+                .logoMiniIcon {
+                    display: block;
+                    width: 50px;
+                }
+            }
         }
 
         .location {
@@ -58,6 +107,10 @@
                     color: $mainText;
                     font-weight: 700;
                 }
+            }
+
+            @media only screen and (max-width: 1200px) {
+                padding-left: 20px;
             }
         }
     }
@@ -147,7 +200,22 @@
 
     .mainMenu {
         .hamburger {
+            display: flex;
             margin-right: 16px;
+
+            svg {
+                width: 24px;
+                fill: $colorDark;
+            }
+
+            svg.opened {
+                display: none;
+                z-index: 1010;
+            }
+
+            svg.closed {
+                display: block;
+            }
         }
 
         ul {
@@ -167,6 +235,11 @@
             &:last-of-type {
                 margin-right: 0;
                 padding-right: 0;
+            }
+
+            @media only screen and (max-width: 1200px) {
+                margin-right: 15px;
+                padding-right: 15px;
             }
         }
 
@@ -190,5 +263,142 @@
             box-shadow: 0 4px 16px rgba(255, 140, 105, 0.29);
             font-size: 16px;
         }
+    }
+
+    @media only screen and (max-width: 1024px) {
+        .headerTop .contacts,
+        .headerTop .clinicsNearby,
+        .toHome,
+        .headerBottom ul,
+        .interactive {
+            display: none;
+        }
+
+        .wrapper {
+            justify-content: space-between;
+        }
+
+        .headerTop,
+        .headerBottom {
+            padding: 0;
+        }
+
+        .mainMenu .hamburger,
+        .headerBottom .forMenu {
+            margin-right: 0;
+        }
+
+        &.mobile {
+            justify-content: center;
+            align-items: flex-start;
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 14px 0;
+            height: 100%;
+            z-index: 1005;
+
+            .wrapper {
+                flex-direction: column;
+                padding: 0;
+                height: 100%;
+            }
+
+            .headerTop {
+                order: 1;
+
+                .forLogo {
+                    display: none;
+                }
+
+                .contacts {
+                    align-items: center;
+                    width: 100%;
+
+                    > * {
+                        margin-bottom: 15px;
+                    }
+
+                    .socialsTel {
+                        flex-direction: column;
+
+                        div {
+                            justify-content: space-evenly;
+                            margin-bottom: 15px;
+
+                            .socialLink {
+                                margin-right: 0;
+                            }
+                        }
+
+                        p {
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+
+            .headerBottom {
+                order: 0;
+                flex-direction: column;
+
+                .forMenu {
+                    flex-direction: column;
+
+                    .toHome {
+                        margin-right: 0;
+                        margin-bottom: 15px;
+                    }
+                }
+            }
+
+            .headerTop .contacts,
+            .headerTop .clinicsNearby,
+            .toHome,
+            .headerBottom ul,
+            .interactive {
+                display: flex;
+            }
+
+            .mainMenu {
+                .hamburger {
+                    position: absolute;
+                    top: 13px;
+                    right: 0;
+
+                    .opened {
+                        display: flex;
+                    }
+
+                    .closed {
+                        display: none;
+                    }
+                }
+
+                ul {
+                    flex-direction: column;
+
+                    li {
+                        margin-right: 0;
+                        margin-bottom: 15px;
+                        padding-right: 0;
+                        border: none;
+                    }
+                }
+            }
+
+            .interactive {
+                flex-direction: column;
+
+                .search {
+                    margin-right: 0;
+                    margin-bottom: 15px;
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: 768px) {
+
     }
 }
