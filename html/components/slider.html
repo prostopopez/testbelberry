@@ -1,0 +1,20 @@
+<div class="slider">
+    {% for item in sliderCardsData %}
+    {% include '../components/sliderCard.html' with {'name': item.name, 'oldPrice': item.oldPrice, 'image': item.img} %}
+    {% endfor %}
+    <div class="sliderNav">
+        <div class="cont">
+            <button class="prev" onclick="plusSlides(-1)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="46" viewBox="0 0 28 46">
+                    <path d="M40,14.4,34.672,9,12,32,34.672,55,40,49.6,22.694,32Z" transform="translate(-12 -9)"/>
+                </svg>
+            </button>
+            <button class="next" onclick="plusSlides(1)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="46" viewBox="0 0 28 46">
+                    <path d="M18.213,9l-5.328,5.4L30.191,32,12.885,49.6,18.213,55,40.885,32Z"
+                          transform="translate(-12.885 -9)"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+</div>

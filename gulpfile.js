@@ -9,6 +9,7 @@ const sourcemaps = require(`gulp-sourcemaps`);
 const concat = require(`gulp-concat`);
 
 const getPublicFolderPath = (ext = ``) => gulp.dest(`./public/${ext}`);
+const sliderCardsData = require('./data/sliderCardsData');
 
 gulp.task('svgSprite', function () {
     return gulp
@@ -21,6 +22,7 @@ gulp.task(`html`, gulp.series(function () {
         .pipe(twig({
             data: {
                 title: `Главная`,
+                sliderCardsData
             }
         }))
         .pipe(getPublicFolderPath())
