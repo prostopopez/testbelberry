@@ -20,18 +20,23 @@
     top: 50%;
     width: 100%;
 
-    .cont {
+    .wrapper {
         display: flex;
         justify-content: space-between;
 
         button svg {
             width: 28px;
             height: 46px;
-            fill: black;
+            fill: none;
+            stroke: $mainGrey;
         }
 
         button:hover svg {
-            fill: black;
+            stroke: $mainActive;
+        }
+
+        button:last-of-type svg{
+            transform: rotate(180deg);
         }
     }
 }
