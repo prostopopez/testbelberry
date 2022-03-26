@@ -4,14 +4,14 @@
         <p class="discName">{{name}}</p>
         <div class="discInfo">
             <div>
-                <p class="discOldPrice">{{oldPrice}}</p>
+                <p class="discOldPrice"><span class="price">{{oldPrice}}</span><span class="rub"> руб.</span></p>
                 <div class="discCount">
                     {% include '../../img/svg/arrowTip.svg' with {'class': 'arrowTip'} %}
-                    <span>-{{discount}}</span>
+                    <span>-{{discount}}%</span>
                 </div>
             </div>
-            <p class="discNewPrice">{{newPrice}}</p>
-            <span class="discUpTo">Акция действует до {{upTo}}</span>
+            <p class="discNewPrice"><span class="price">{{newPrice}}</span><span class="rub"> руб.</span></p>
+            <span class="discUpTo">Акция действует до {{upTo}} г.</span>
         </div>
         <div class="discButtons">
             <button class="button orange">Записаться</button>

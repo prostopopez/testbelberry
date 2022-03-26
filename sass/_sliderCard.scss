@@ -32,7 +32,7 @@
     }
 
     .discName {
-        margin-top: 14px;
+        margin-top: 18px;
         margin-bottom: 28px;
         font-size: 48px;
         font-weight: 700;
@@ -46,6 +46,7 @@
         > div {
             display: flex;
             justify-content: space-between;
+            align-items: center;
         }
 
         .discCount {
@@ -69,16 +70,31 @@
         }
 
         .discOldPrice {
-            font-size: 20px;
-            font-weight: 600;
-            text-decoration-line: line-through;
+            text-decoration: line-through;
             color: #333333;
+
+            span {
+                font-size: 20px;
+                font-weight: 600;
+            }
+
+            .rub {
+                font-size: 20px;
+            }
         }
 
         .discNewPrice {
-            font-size: 46px;
-            font-weight: 800;
+            margin-bottom: 6px;
             color: $colorDark;
+
+            span {
+                font-size: 46px;
+                font-weight: 800;
+            }
+
+            .rub {
+                font-size: 34px;
+            }
         }
 
         .discUpTo {
@@ -89,6 +105,7 @@
 
     .discButtons {
         display: flex;
+        flex-wrap: wrap;
 
         .orange {
             margin-right: 20px;
