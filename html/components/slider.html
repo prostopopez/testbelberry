@@ -2,7 +2,7 @@
     {% for item in sliderCardsData %}
     {% include '../components/sliderCard.html' with
     {'type': item.type, 'name': item.name, 'oldPrice': item.oldPrice, 'newPrice': item.newPrice,
-    'upTo': item.upTo, 'image': item.img} %}
+    'discount': item.discount, 'upTo': item.upTo, 'image': item.img} %}
     {% endfor %}
     <div class="sliderNav">
         <div class="cont">

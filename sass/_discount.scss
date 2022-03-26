@@ -1,3 +1,21 @@
-.mainPage {
+.discountPage {
+    .slide:first-of-type img,
+    .slide:nth-of-type(2) img,
+    .slide:nth-of-type(5) img {
+        height: 115%;
 
+        @media only screen and (max-width: 1024px) {
+            height: 95%;
+        }
+    }
+
+    .slide:nth-of-type(2) img,
+    .slide:nth-of-type(4) img {
+        right: 10%;
+    }
+
+
+    .slide:nth-of-type(5) img {
+        right: 15%;
+    }
 }

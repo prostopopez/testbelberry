@@ -5,9 +5,15 @@
     background-image: url("../img/discount/slideBack.png");
     background-size: cover;
 
+    @media only screen and (max-width: 1024px) {
+        padding: 30px;
+    }
+
     .slideContent {
         position: relative;
         z-index: 2;
+        max-width: 670px;
+        width: 100%;
     }
 
     img {
@@ -15,23 +21,77 @@
         z-index: 1;
         right: 0;
         bottom: 0;
-        height: 115%;
+        height: 100%;
+        object-fit: contain;
+        object-position: bottom;
         pointer-events: none;
+
+        @media only screen and (max-width: 1024px) {
+            height: 95%;
+        }
     }
 
-    > div {
-        width: 100%;
-    }
-
-    h4 {
-        font-size: 60px;
-        font-weight: bold;
-        color: black;
-    }
-
-    p {
-        font-size: 40px;
+    .discName {
+        margin-top: 14px;
+        margin-bottom: 28px;
+        font-size: 48px;
         font-weight: 700;
-        color: black;
+        color: $colorDark;
+    }
+
+    .discInfo {
+        margin-bottom: 25px;
+        display: inline-block;
+
+        > div {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .discCount {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+            padding: 6px 11px;
+            background-color: $btn;
+
+            span {
+                font-weight: 700;
+                color: #FFFFFF;
+            }
+
+            svg {
+                position: absolute;
+                left: -7px;
+            }
+        }
+
+        .discOldPrice {
+            font-size: 20px;
+            font-weight: 600;
+            text-decoration-line: line-through;
+            color: #333333;
+        }
+
+        .discNewPrice {
+            font-size: 46px;
+            font-weight: 800;
+            color: $colorDark;
+        }
+
+        .discUpTo {
+            color: #333333;
+            opacity: 0.75;
+        }
+    }
+
+    .discButtons {
+        display: flex;
+
+        .orange {
+            margin-right: 20px;
+        }
     }
 }
