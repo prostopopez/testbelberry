@@ -1,5 +1,7 @@
-<div class="discountPage pageStyle">
+<div class="discountPage page">
     <div class="wrapper">
-        {% include 'components/slider.html' %}
+        {% include 'components/slider.html' with
+        {'class': 'discountSlider', 'data': sliderCardsData}
+        %}
     </div>
 </div>

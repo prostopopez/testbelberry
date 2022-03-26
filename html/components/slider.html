@@ -1,17 +1,9 @@
-<div class="slider">
-    {% for item in sliderCardsData %}
-    {% include '../components/sliderCard.html' with
-    {'type': item.type, 'name': item.name, 'oldPrice': item.oldPrice, 'newPrice': item.newPrice,
-    'discount': item.discount, 'upTo': item.upTo, 'image': item.img} %}
-    {% endfor %}
-    <div class="sliderNav">
-        <div class="wrapper">
-            <button class="prev" onclick="plusSlides(-1)">
-                {% include '../../img/svg/arrowLeft.svg' with {'class': 'arrowLeft'} %}
-            </button>
-            <button class="next" onclick="plusSlides(1)">
-                {% include '../../img/svg/arrowLeft.svg' with {'class': 'arrowLeft'} %}
-            </button>
-        </div>
+<div class="swiper {{class}}">
+    <div class="swiper-wrapper">
+        {% for item in data %}-->
+        {% include '../components/sliderCard.html' with
+        {'type': item.type, 'name': item.name, 'additional': item.additional, 'oldPrice': item.oldPrice, 'newPrice': item.newPrice,
+        'discount': item.discount, 'upTo': item.upTo, 'image': item.img} %}
+        {% endfor %}
     </div>
 </div>

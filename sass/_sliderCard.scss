@@ -1,17 +1,17 @@
-.slide {
+.swiper-slide {
+    display: flex;
+    align-items: center;
     cursor: grab;
-    padding: 66px;
-    height: 100%;
+    border-radius: 20px;
+    min-height: 500px;
     background-image: url("../img/discount/slideBack.png");
     background-size: cover;
-
-    @media only screen and (max-width: 1024px) {
-        padding: 30px;
-    }
+    color: $colorDark;
 
     .slideContent {
         position: relative;
         z-index: 2;
+        padding: 66px;
         max-width: 670px;
         width: 100%;
     }
@@ -29,6 +29,12 @@
         @media only screen and (max-width: 1024px) {
             height: 95%;
         }
+
+        @media only screen and (max-width: 768px) {
+            right: 0 !important;
+            height: 100%;
+            object-position: 100px 0;
+        }
     }
 
     .discName {
@@ -36,11 +42,14 @@
         margin-bottom: 28px;
         font-size: 48px;
         font-weight: 700;
-        color: $colorDark;
+    }
+
+    .additional {
+        font-size: 36px;
+        font-weight: 700;
     }
 
     .discInfo {
-        margin-bottom: 25px;
         display: inline-block;
 
         > div {
@@ -84,9 +93,6 @@
         }
 
         .discNewPrice {
-            margin-bottom: 6px;
-            color: $colorDark;
-
             span {
                 font-size: 46px;
                 font-weight: 800;
@@ -96,11 +102,13 @@
                 font-size: 34px;
             }
         }
+    }
 
-        .discUpTo {
-            color: #333333;
-            opacity: 0.75;
-        }
+    .discUpTo {
+        margin-top: 8px;
+        margin-bottom: 25px;
+        color: #333333;
+        opacity: 0.75;
     }
 
     .discButtons {
@@ -109,6 +117,64 @@
 
         .orange {
             margin-right: 20px;
+        }
+    }
+
+    @media only screen and (max-width: 1024px) {
+        overflow: hidden;
+        min-height: 400px;
+
+        .slideContent {
+            padding: 30px;
+            max-width: 100%;
+        }
+
+        .discInfo {
+            display: flex;
+            flex-direction: column;
+            max-width: 300px;
+        }
+
+        .discName,
+        .discInfo .discNewPrice span {
+            font-size: 36px;
+        }
+
+        .additional,
+        .discInfo .discNewPrice .rub {
+            font-size: 24px;
+        }
+    }
+
+    @media only screen and (max-width: 768px) {
+        min-height: 250px;
+
+        .slideContent {
+            backdrop-filter: blur(20px);
+        }
+
+        .discButtons {
+            flex-direction: column;
+
+            .button {
+                max-width: 300px;
+                width: 100%;
+            }
+
+            .orange {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+        }
+
+        .discName,
+        .discInfo .discNewPrice span {
+            font-size: 28px;
+        }
+
+        .additional,
+        .discInfo .discNewPrice .rub {
+            font-size: 18px;
         }
     }
 }

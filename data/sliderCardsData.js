@@ -29,18 +29,15 @@ module.exports = [
     {
         type: 'Акция',
         name: 'УЗИ',
-        oldPrice: '1 700',
-        discount: '30',
-        newPrice: '1 190',
-        upTo: '30.09.2021',
+        additional: '-50% на вторую локацию',
+        upTo: '31.06.2021',
         img: '../img/discount/behindMachine.png'
     },
     {
         type: 'Акция',
         name: 'Прием любого врача',
-        oldPrice: '1 700',
-        discount: '30',
-        newPrice: '1 190',
+        additional: '+ УЗИ + ЭКГ',
+        newPrice: '4 200',
         upTo: '30.09.2021',
         img: '../img/discount/doctorSmile.png'
     }

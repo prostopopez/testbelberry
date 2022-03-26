@@ -78,6 +78,13 @@ h2 {
     }
 }
 
+.page {
+    margin-bottom: 126px;
+
+    @media only screen and (max-width: 1024px) {
+        margin-bottom: 50px;
+    }
+}
 
 .wrapper {
     margin: 0 auto;
@@ -120,7 +127,7 @@ a {
     justify-content: center;
     align-items: center;
     border-radius: 40px;
-    padding: 12px 32px;
+    padding: 18px 40px;
     min-width: 200px;
     max-width: 200px;
     font-size: 18px;

@@ -1,7 +1,7 @@
 .discountPage {
-    .slide:first-of-type img,
-    .slide:nth-of-type(2) img,
-    .slide:nth-of-type(5) img {
+    .swiper-slide:first-of-type img,
+    .swiper-slide:nth-of-type(2) img,
+    .swiper-slide:nth-of-type(5) img {
         height: 115%;
 
         @media only screen and (max-width: 1024px) {
@@ -9,13 +9,58 @@
         }
     }
 
-    .slide:nth-of-type(2) img,
-    .slide:nth-of-type(4) img {
+    .swiper-slide:nth-of-type(2) img,
+    .swiper-slide:nth-of-type(4) img {
         right: 10%;
     }
 
+    .swiper-slide:nth-of-type(3),
+    .swiper-slide:nth-of-type(4) {
+        .discName {
+            margin-top: 35px;
+        }
+    }
 
-    .slide:nth-of-type(5) img {
-        right: 15%;
+    .swiper-slide:nth-of-type(4) {
+        .discName {
+            margin-bottom: 5px;
+        }
+
+        .discInfo {
+            display: none;
+        }
+
+        .discUpTo {
+            margin-bottom: 37px;
+        }
+    }
+
+    .swiper-slide:nth-of-type(5){
+        img {
+            height: 110%;
+            right: 15%;
+
+            @media only screen and (max-width: 1024px) {
+                height: 95%;
+            }
+        }
+
+        .discName {
+            margin-bottom: 5px;
+        }
+
+        .additional {
+            margin-bottom: 22px;
+        }
+
+        .discInfo > div {
+            display: none;
+        }
+    }
+
+    @media only screen and (max-width: 768px) {
+        .swiper-slide:first-of-type img {
+            object-position: 300px 0;
+        }
     }
 }

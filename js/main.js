@@ -39,51 +39,10 @@ mobileButtons.addEventListener(`click`, function () {
 });
 
 // Слайдер
-let slideIndex = 1;
-
-showSlides(slideIndex);
-
-function plusSlides(n) {
-    showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-    showSlides(slideIndex = n);
-}
-
-// Swipe Horizontal
-let glideSlide = document.querySelector('.slider');
-let itemTouch = new Hammer(glideSlide);
-let direction;
-
-itemTouch.on('panleft panright panend', e => {
-        if (e.type === 'panleft') {
-            direction = 'left';
-        } else if (e.type === 'panright') {
-            direction = 'right';
-        }
-
-        if (e.type == 'panend' && direction == 'left') {
-            showSlides(slideIndex += 1);
-        } else if (e.type == 'panend' && direction == 'right') {
-            showSlides(slideIndex -= 1);
-        }
-    }
-);
-
-function showSlides(n) {
-    let i;
-    let slides = document.querySelectorAll(".slider .slide");
-
-    if (n > slides.length) {
-        slideIndex = 1;
-    }
-    if (n < 1) {
-        slideIndex = slides.length;
-    }
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-
-    slides[slideIndex - 1].style.display = "block";
-}
+let swiper = new Swiper(".discountSlider", {
+    spaceBetween: 30,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+});
