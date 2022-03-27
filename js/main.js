@@ -23,10 +23,12 @@ function toggleMobileMainMenu(val) {
 
     if (isOpenMobileMainMenu) {
         mobileMainMenu.classList.add('mobile');
+        mobileMainMenu.classList.add('modalAnimation');
         mobileButtons.classList.add(`opened`);
         document.body.classList.add(`noScroll`);
     } else {
         mobileMainMenu.classList.remove('mobile');
+        mobileMainMenu.classList.remove('modalAnimation');
         mobileButtons.classList.remove(`opened`);
         document.body.classList.remove(`noScroll`);
     }
